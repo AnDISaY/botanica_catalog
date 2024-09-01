@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+
+<body>
+    <section class="header">
+        <div class="header__container container">
+            <a href="{% url 'home' %}" class="header__logo">
+                <img src="{% static 'images/icon-logo.svg' %}" alt="logo">
+            </a>
+            <div class="header__list">
+                <a href="{% url 'home' %}" class="header__list__item">Главная</a>
+                <a href="#" class="header__list__item">Список проектов</a>
+                <a href="{% url 'about' %}" class="header__list__item">О застройщике</a>
+                <a href="#" class="header__list__item">Контакты</a>
+            </div>
+            <div class="header__icons">
+                <a href="#" class="icon-wa">
+                    <img src="{% static 'images/icon-whatsapp.svg' %}" alt="watsapp icon">
+                </a>
+                <a href="#" class="icon-tg">
+                    <img src="{% static 'images/icon-tg.svg' %}" alt="telegram icon">
+                </a>
+            </div>
+            <a href="#header-popup" class="header__menu popup-link"><img src="{% static 'images/icon-menu-burger.svg' %}" alt="Menu burger icon"></a>
+        </div>
+    </section>
+    <div class="popup" id="header-popup">
+        <div class="popup__container">bebebe
+            <div class="close-popup">X</div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <section class="footer">
+        <div class="footer_container container">
+            <div class="footer__content">
+                <div class="footer__list">
+                    <div class="footer__list-title">Контакты</div>
+                    <a href="tel:+66 84 153 4555" class="footer__list-item contact-list-item">+66 84 153 4555</a>
+                    <a href="https://botanicaluxuryvillas.com" class="footer__list-item contact-list-item">botanicaluxuryvillas.com</a>
+                    <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__list-item contact-list-item">ru@botanicaluxuryvilla.com</a>
+                    <a href="https://botanicaluxuryvillas.com/policy" class="footer__list-item contact-list-item footer-policy-link">Политика обработки персоанальных данных</a>
+                </div>
+                <div class="footer__list">
+                    <div class="footer__list-title">Проекты</div>
+                    <a href="#" class="footer__list-item project-list-item">Botanica Modern Loft II</a>
+                    <a href="#" class="footer__list-item project-list-item">Botanica Forestique</a>
+                    <a href="#" class="footer__list-item project-list-item">Botanica Lakeside</a>
+                    <a href="#" class="footer__list-item project-list-item">Botanica Four Seasons</a>
+                    <a href="#" class="footer__list-item project-list-item">Botanica Sky Valley</a>
+                </div>
+                <div class="footer__list">
+                    <div class="footer__list-title">Соц. сети</div>
+                    <a href="#" class="footer__list-item social-list-item">Instagram</a>
+                    <a href="#" class="footer__list-item social-list-item">Facebook</a>
+                    <a href="#" class="footer__list-item social-list-item">Youtube</a>
+                </div>
+                <div class="footer__address">
+                    <div class="footer__list-title">Адрес</div>
+                    <a href="#" class="footer__address__certain">125/397 Moo 5, TungkaRoad Rassada Sub-district, Muang Phuket District Phuket Province 83000 Thailand</a>
+                </div>
+            </div>
+            <div class="footer__callback">
+                <div class="footer__callback__icon">
+                    <img src="{% static 'images/icon-phone.svg' %}" alt="phone icon">
+                </div>
+                <div class="footer__callback__content">
+                    <div class="footer__callback__title">Мы будем рады ответить на ваши вопросы</div>
+                    <div class="footer__callback__text">и помочь с подходящим вам выбором виллы!</div>
+                </div>
+                <a href="#" class="footer__callback__button">Перезвоните мне</a>
+            </div>
+        </div>
+    </section>
+    <section class="footer-mobile">
+        <div class="footer-mobile__container container">
+            <div class="footer-mobile__head">
+                <div class="footer-mobile__icon-logo"><img src="{% static 'images/icon-secondlogo.svg' %}" alt="Logo"></div>
+                <div class="footer-mobile__icons">
+                    <div class="footer-mobile__icon-wa"><img src="{% static 'images/icon-whatsapp.svg' %}" alt="Whatsapp icon"></div>
+                    <div class="footer-mobile__icon-tg"><img src="{% static 'images/icon-tg.svg' %}" alt="Telegram icon"></div>
+                </div>
+            </div>
+            <div class="footer-mobile__accordeon-block">
+                <div class="footer-mobile__accordeon">
+                    <div class="footer-mobile__accordeon__btn">
+                        <span>Контакты</span>
+                        <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
+                    </div>
+                    <div class="footer-mobile__accordeon__content">
+                        <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
+                        <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
+                        <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
+                    </div>
+                </div>
+                <div class="footer-mobile__accordeon">
+                    <div class="footer-mobile__accordeon__btn">
+                        <span>Проекты</span>
+                        <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
+                    </div>
+                    <div class="footer-mobile__accordeon__content">
+                        <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
+                        <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
+                        <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
+                    </div>
+                </div>
+                <div class="footer-mobile__accordeon">
+                    <div class="footer-mobile__accordeon__btn">
+                        <span>Адрес</span>
+                        <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
+                    </div>
+                    <div class="footer-mobile__accordeon__content">
+                        <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
+                        <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
+                        <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-mobile__policy"><a href="https://botanicaluxuryvillas.com/policy">Политика обработки персоанальных данных</a></div>
+            <div class="footer-mobile__callback">
+                <div class="footer-mobile__callback__content">
+                    <div class="footer-mobile__callback__icon"><img src="{% static 'images/icon-phone.svg' %}" alt="Phone icon"></div>
+                    <div class="footer-mobile__callback__title">Мы будем рады ответить на ваши вопросы</div>
+                    <div class="footer-mobile__callback__text">и помочь с подходящим вам выбором виллы!</div>
+                    <a href="#" class="footer-mobile__callback__btn">Перезвоните мне</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'js/popup.js' %}"></script>
+    <script src="{% static 'js/accordeon.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}О застройщике{% endblock %}
+
+{% block content %}
+<section class="about-start">
+    <div class="about-start__container container">
+        <div class="about-start__row1">
+            <div class="about-start__title-block">
+                <div class="about-start__title-left">О</div>
+                <div class="about-start__title-content">
+                    <div class="about-start__subheading">Botanica Luxury Villas</div>
+                    <div class="about-start__title">застройщике</div>
+                </div>
+            </div>
+            <div class="about-start__text-block">
+                <div class="about-start__row1__content">
+                    <div class="about-start__row1__text1">Архитектурное совершенство в сочетании с природной красотой</div>
+                    <div class="about-start__row1__btn-block">
+                        <img src="{% static 'images/aboutstart-line.jpg' %}" alt="Just line">
+                        <div class="about-start__row1__btn">
+                            <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
+                            <span>выбрать проект</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-start__row1__image"><img src="{% static 'images/aboutstart-mainimage.png  ' %}" alt="Villa's image"></div>
+            </div>
+            <div class="about-start__row1__text2">Проектов-фаз вилл запустила Botanica Luxury Villas</div>
+        </div>
+        <div class="about-start__row1-mobile">
+            <div class="about-start__row1-mobile__container container">
+                <div class="about-start__row1-mobile__image-block" style="background-image: url('{% static 'images/aboutstart-mainimage-mobile.png' %}');">
+                    <span>о нашей компании</span>
+                </div>
+                <div class="about-start__row1-mobile__text"><span>Архитектурное совершенство в сочетании с природной красотой</span></div>
+                <div class="about-start__row1-mobile__btn">
+                    <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
+                    <span>выбрать проект</span>
+                </div>
+            </div>
+        </div>
+        <div class="about-start__row2">
+            <div class="about-start__column">
+                <div class="about-start__column__content">
+                    <span class="about-start__column__content__number">20</span>
+                    <span class="about-start__column__content__text">Лет опыта в строительной сфере</span>
+                </div>
+                <div class="about-start__column__number">20</div>
+            </div>
+            <div class="about-start__column">
+                <div class="about-start__column__content">
+                    <span class="about-start__column__content__number">>15</span>
+                    <span class="about-start__column__content__text">Проектов-фаз вилл запустила Botanica Luxury Villas</span>
+                </div>
+                <div class="about-start__column__number">15</div>
+            </div>
+        </div>
+        <div class="about-start__row3">
+            <div class="about-start__row3__title">О компании</div>
+            <div class="about-start__row3__text">Botanica Luxury Villas — не просто недвижимость, это произведение искусства от компании AAP Architecture Properties & Development. Более 20 лет успешной работы в строительстве, более 15 уникальных проектов вилл и безупречная репутация. Во главе нашей команды стоит выдающийся тайский архитектор Аттасит Интарачоти, который привносит в каждый проект частичку своего таланта.</div>
+        </div>
+    </div>
+</section>
+<section class="project-slider">
+    <div class="project-slider__container container">
+        <div class="project-slider__title">Наши проекты</div>
+    </div>
+</section>
+<section class="awards">
+    <div class="awards__container container">
+        <div class="awards__row1">
+            <div class="awards__image"><img src="{% static 'images/awards1.png' %}" alt="Awards image #1"></div>
+            <div class="awards__image"><img src="{% static 'images/awards2.png' %}" alt="Awards image #2"></div>
+            <div class="awards__image"><img src="{% static 'images/awards3.png' %}" alt="Awards image #3"></div>
+            <div class="awards__image"><img src="{% static 'images/awards4.png' %}" alt="Awards image #4"></div>
+            <div class="awards__image"><img src="{% static 'images/awards5.png' %}" alt="Awards image #5"></div>
+            <div class="awards__image"><img src="{% static 'images/awards6.png' %}" alt="Awards image #6"></div>
+        </div>
+        <div class="awards__row2">
+            <div class="awards__column">
+                <div class="awards__column__title">Индивидуальность</div>
+                <div class="awards__column__text">Дома, которые будут построены по вашему индивидуальному заказу</div>
+                <div class="awards__column__icon"><img src="{% static 'images/icon-awards1.svg' %}" alt="Just icon"></div>
+            </div>
+            <div class="awards__column">
+                <div class="awards__column__title">Гибкость</div>
+                <div class="awards__column__text">Гибкие планы платежей для поддержки зарубежных покупателей</div>
+                <div class="awards__column__icon"><img src="{% static 'images/icon-awards2.svg' %}" alt="Just icon"></div>
+            </div>
+            <div class="awards__column">
+                <div class="awards__column__title">Прозрачность</div>
+                <div class="awards__column__text">Привязку графика платежей к завершенным этапам строительства дома</div>
+                <div class="awards__column__icon"><img src="{% static 'images/icon-awards3.svg' %}" alt="Just icon"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="advantages">
+    <div class="advantages__container container">
+        <div class="advantages__row1">
+            <div class="advantages__row1__column"><span>Владение Botanica Villas:</span></div>
+            <div class="advantages__row1__column">
+                <div class="advantages__row1__head-block">
+                    <div class="advantages__row1__head-number">01</div>
+                    <div class="advantages__row1__head-line"></div>
+                </div>
+                <div class="advantages__row1__text">Роскошная вилла Botanica продается как во Freehold, так и в Leasehold</div>
+            </div>
+            <div class="advantages__row1__column">
+                <div class="advantages__row1__head-block">
+                    <div class="advantages__row1__head-number">02</div>
+                    <div class="advantages__row1__head-line"></div>
+                </div>
+                <div class="advantages__row1__text">Все налоги и плата за перевод будут разделены 50/50 между застройщиком и покупателем</div>
+            </div>
+        </div>
+        <div class="advantages__row2">
+            <div class="advantages__row2__column">
+                <div class="advantages__row2__heading">Рассрочка <span>0%</span></div>
+                <div class="advantages__row2__text">Для строящихся вилл мы предлагаем беспроцентную рассрочку платежей на все время строительства, где каждый платеж привязан к этапу возведения виллы</div>
+            </div>
+            <div class="advantages__row2__column">
+                <div class="advantages__row2__text2">Если вы выбрали готовую виллу, то процесс еще проще: <span>всего три этапа от резервации до получения ключей!</span></div>
+                <div class="advantages__row2__content">
+                    <div class="advantages__row2__content__block">
+                        <div class="advantages__row2__content__step">
+                            <span>1</span>
+                            <img src="{% static 'images/icon-aboutblackarrowright.svg' %}" alt="Black right arrow icon">
+                        </div>
+                        <div class="advantages__row2__content__text">Депозит</div>
+                    </div>
+                    <div class="advantages__row2__content__block">
+                        <div class="advantages__row2__content__step">
+                            <span>2</span>
+                            <img src="{% static 'images/icon-aboutblackarrowright.svg' %}" alt="Black right arrow icon">
+                        </div>
+                        <div class="advantages__row2__content__text">Контракт</div>
+                    </div>
+                    <div class="advantages__row2__content__block">
+                        <div class="advantages__row2__content__step">
+                            <span>3</span>
+                        </div>
+                        <div class="advantages__row2__content__text">Регистрация</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="priceup">
+    <div class="priceup__container container">
+        <div class="priceup__column priceup__column1">
+            <div class="priceup__column1__title">План повышения цены:</div>
+            <div class="priceup__column1__image"><img src="{% static 'images/image-priceup.svg' %}" alt="Raising price image"></div>
+            <div class="priceup__column1__text-block">
+                <div class="priceup__column1__percent">30%</div>
+                <div class="priceup__column1__text">Рост цены за время строительства виллы</div>
+            </div>
+        </div>
+        <div class="priceup__column priceup__column2">
+            <div class="priceup__column2__month-block">
+                <div class="priceup__column2__month-number">6 месяцев:</div>
+                <div class="priceup__column2__month-text">Завершение возведения стен</div>
+            </div>
+            <div class="priceup__column2__divider"></div>
+            <div class="priceup__column2__month-block">
+                <div class="priceup__column2__month-number">9 месяцев:</div>
+                <div class="priceup__column2__month-text">Завершение возведений коробки зданий</div>
+            </div>
+            <div class="priceup__column2__divider"></div>
+            <div class="priceup__column2__month-block">
+                <div class="priceup__column2__month-number">12 месяцев:</div>
+                <div class="priceup__column2__month-text">Приемка в эксплуатацию</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="location">
+    <div class="location__container container">
+        <div class="location__title">Локации наших проектов:</div>
+        <div class="location__map" style="background-image: url('{% static 'images/map.jpg' %}');">
+            <a href="#" class="location__map__place map__place1">
+                <div class="location__map__number">1</div>
+                <div class="location__map__text">Grand Avenue</div>
+            </a>
+            <a href="#" class="location__map__place map__place2">
+                <div class="location__map__number">2</div>
+                <div class="location__map__text">Forestique</div>
+            </a>
+            <a href="#" class="location__map__place map__place3">
+                <div class="location__map__number">3</div>
+                <div class="location__map__text">Four Seasons</div>
+            </a>
+            <a href="#" class="location__map__place map__place4">
+                <div class="location__map__number">4</div>
+                <div class="location__map__text">Moder Loft II</div>
+            </a>
+            <a href="#" class="location__map__place map__place5">
+                <div class="location__map__number">5</div>
+                <div class="location__map__text">Lakeside</div>
+            </a>
+            <a href="#" class="location__map__place map__place6">
+                <div class="location__map__number">6</div>
+                <div class="location__map__text">Sky Valley</div>
+            </a>
+        </div>
+        <div class="location__text-block">
+            <div class="location__icon"><img src="{% static 'images/icon-mapclick.svg' %}" alt="Map icon click"></div>
+            <div class="location__text">Нажмите на любой проект, чтобы перейти на его страницу</div>
+        </div>
+    </div>
+</section>
+{% endblock %}

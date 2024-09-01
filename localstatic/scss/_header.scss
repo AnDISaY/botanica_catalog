@@ -1,0 +1,115 @@
+.header {
+    background-color: #F6F8F7;
+    padding: 38px 0px;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    @media screen and (max-width: $md1) {
+        padding: 23.75px 0px;
+    }
+
+    @media screen and (max-width: $md2) {
+        padding: 25.5px 0px;
+    }
+
+    @media screen and (max-width: $md3) {
+        padding: 13px 0px;
+    }
+
+    &__list {
+        display: flex;
+
+        &__item {
+            text-transform: uppercase;
+            font-family: $fn;
+            font-size: 16px;
+            color: #636363;
+            padding-left: 64px;
+
+            &:first-child {
+                padding-left: 0px;
+            }
+
+            @media screen and (max-width: $md1) {
+                font-size: 10px;
+                padding-left: 40px;
+            }
+
+        }
+
+        @media screen and (max-width: $md2) {
+            display: none;
+        }
+    }
+
+    &__icons {
+        display: flex;
+
+        img {
+            width: 40px;
+            height: 40px;
+
+            @media screen and (max-width: $md1) {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        @media screen and (max-width: $md2) {
+            display: none;
+        }
+    }
+
+    &__logo {
+        width: 132px;
+        height: 44px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width: $md1) {
+            width: 83px;
+            height: 28px;
+        }
+
+        @media screen and (max-width: $md2) {
+            width: 10.9.5px;
+            height: 36.5px;
+        }
+
+        @media screen and (max-width: $md3) {
+            width: 73px;
+            height: 24.31px;
+        }
+    }
+
+    &__menu {
+        display: none;
+        cursor: pointer;
+
+        @media screen and (max-width: $md2) {
+            display: block;
+        }
+
+        @media screen and (max-width: $md3) {
+            img {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
+
+.icon-tg img {
+    padding-left: 8px;
+
+    @media screen and (max-width: $md1) {
+        padding-left: 5px;
+    }
+}

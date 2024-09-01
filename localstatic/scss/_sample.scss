@@ -1,0 +1,25 @@
+.text1 {
+
+}
+
+.container {
+    max-width: $maxWidthContainer;
+    margin: auto;
+
+    @media screen and (max-width: $md1) {
+        max-width: 757.5px;
+    }
+
+    @media screen and (max-width: $md2) {
+        max-width: 420px;
+    }
+
+    @media screen and (max-width: $md3) {
+        max-width: 280px;
+    }
+}
+
+.wrapper {
+    padding: 50px;
+    border-radius: 12px;
+}

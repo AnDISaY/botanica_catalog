@@ -1,0 +1,76 @@
+//<ШРИФТЫ>
+
+//<Подключение>
+@font-face {
+    font-family: "Gilroy";
+    src: url("/localstatic/fonts/Gilroy-Medium.woff2");
+}
+
+@font-face {
+    font-family: "Neue Machina";
+    src: url("/localstatic/fonts/NeueMachina-Medium.woff2");
+}
+//</Подключение>
+
+//<Шрифт по умолчанию>
+$fg: "Gilroy";
+$fn: "Neue Machina";
+//</Шрифт по умолчанию>
+
+//</ШРИФТЫ>
+
+//</ПЕРЕМЕННЫЕ>
+$minWidth: 320px;
+$maxWidth: 1440px;
+$maxWidthContainer: 1212px;
+$md1: $maxWidthContainer + 24px;
+$md2: 785px;
+$md3: 480px;
+// $md4: 479.98;
+//<ПЕРЕМЕННЫЕ>
+
+//<ОБНУЛЕНИЕ>
+body {
+    color: #121212;
+    margin: 0px 0px 0px 0px;
+    font-family: $fg;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #121212;
+    margin: 0px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+h2 {
+    margin: 0px;
+}
+
+//</ОБНУЛЕНИЕ>
+
+//<ОБЩИЕ КЛАССЫ>
+@import "_sample";
+//</ОБЩИЕ КЛАССЫ>
+
+//<HEADER>
+@import "_header";
+//</HEADER>
+
+//<HTML>
+@import "_popup";
+@import "_home";
+@import "_about";
+@import "_project_detail";
+//</HTML>
+
+//<FOOTER>
+@import "_footer";
+//</FOOTER>
+
+

@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ project.title }}{% endblock %}
+
+{% block content %}
+<section class="project-start">
+    <div class="project-start__container container">
+        <div class="project-start__main-image"><img src="{{ project.main_image.url }}" alt="Main image"></div>
+        <div class="project-start__content">
+            <div class="project-start__title-block">
+                <div class="project-start__subheading">BOTANICA</div>
+                <div class="project-start__title">{{ project.title }}</div>
+            </div>
+            <a href="#" class="project-start__request">
+                <img src="{% static 'images/icon-greyarrowright.svg' %}" alt="Grey right arrow icon">
+                <span>ОСТАВИТЬ ЗАЯВКУ</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="project-descr">
+    <div class="project-descr__container container">
+        <div class="project-descr__slider">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                </div>
+                <div class="swiper-button-prev-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowleft.svg' %}" alt="Black left arrow icon"></div>
+                <div class="swiper-button-next-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Black right arrow icon"></div>
+            </div>
+        </div>
+        <div class="project-descr__content">
+            <div class="project-descr__text">{{ project.description|linebreaks }}</div>
+            <div class="project-descr__about">О Проекте</div>
+        </div>
+    </div>
+</section>
+<secion class="project-master-plan">
+    <div class="project-master-plan__container container">
+        <div class="project-master-plan__wrapper wrapper">
+            <div class="project-master-plan__content">
+                <div class="project-master-plan__title">Мастер-план</div>
+                <div class="project-master-plan__line"></div>
+                <a href="#" class="project-master-plan__zoom"><img src="{% static 'images/icon-zoom-white.svg' %}" alt="Zoom icon"></a>
+            </div>
+            <div class="project-master-plan__image"><img src="{{ project.master_plan.url }}" alt="Master plan image"></div>
+        </div>
+    </div>
+</secion>
+<section class="project-structure">
+    <div class="project-structure__container container">
+        <div class="project-structure__wrapper wrapper">
+            <div class="project-structure__title">инфраструктура проекта</div>
+            <div class="project-structure__content">
+                {% for param in project.parametres.all %}
+                <div class="project-structure__param">{{ param.name }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="project-filter">
+    <div class="project-filter__container container">
+        <div class="project-filter__wrapper wrapper">
+            <div class="project-filter__title">Выберите виллу</div>
+            <form method="post" id="my-form" class="project-filter__form">
+                {% csrf_token %}
+                <div class="project-filter__radio-block project-filter__form__el">
+                    <div class="project-filter__input-title">Спальни:</div>
+                    <div class="project-filter__radio-wrapper">
+                        <label for="nr1" class="project-filter__radio radio-active">
+                            <input type="radio" id="nr1" name="number-radio" value="1" checked>
+                            1
+                        </label>
+                        <label for="nr2" class="project-filter__radio">
+                            <input type="radio" id="nr2" name="number-radio" value="2">
+                            2
+                        </label>
+                        <label for="nr3" class="project-filter__radio">
+                            <input type="radio" id="nr3" name="number-radio" value="3">
+                            3
+                        </label>
+                        <label for="nr4" class="project-filter__radio">
+                            <input type="radio" id="nr4" name="number-radio" value="4">
+                            4+
+                        </label>
+                    </div>
+                </div>
+                <div class="project-filter__range-wrapper project-filter__form__el">
+                    <div class="project-filter__input-title">Цена:</div>
+                    <div class="project-filter__number-input price-input">
+                        <div class="project-filter__field">
+                            <div class="project-filter__text">от</div>
+                            <input type="number" name="price-number" class="project-filter__number-input price-input-style input-min" value="2500000" min="0" max="10000000"><span>$</span>
+                        </div>
+                        <div class="project-filter__field">
+                            <div class="project-filter__text">до</div>
+                            <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="7500000" min="0" max="10000000"><span>$</span>
+                        </div>
+                    </div>
+                    <div class="project-filter__slider">
+                        <div class="project-filter__progress__left"></div>
+                        <div class="project-filter__progress"></div>
+                        <div class="project-filter__progress__right"></div>
+                    </div>
+                    <div class="project-filter__range-input range-input-price">
+                        <input type="range" name="price-range" class="range-min" min="0" max="10000000" value="2500000" step="500">
+                        <input type="range" name="price-range" class="range-max" min="0" max="10000000" value="7500000" step="500">
+                    </div>
+                </div>
+                <div class="project-filter__range-wrapper project-filter__form__el">
+                    <div class="project-filter__input-title">Общая площадь:</div>
+                    <div class="project-filter__number-input square-input">
+                        <div class="project-filter__field">
+                            <div class="project-filter__text">от</div>
+                            <input type="number" name="square-number" class="project-filter__number-input square-input-style input-min2" value="2500" min="0"><span>м²</span>
+                        </div>
+                        <div class="project-filter__field">
+                            <div class="project-filter__text">до</div>
+                            <input type="number" name="square-number" class="project-filter__number-input square-input-style" value="7500" min="0"><span>м²</span>
+                        </div>
+                    </div>
+                    <div class="project-filter__slider">
+                        <div class="project-filter__progress__left"></div>
+                        <div class="project-filter__progress"></div>
+                        <div class="project-filter__progress__right"></div>
+                    </div>
+                    <div class="project-filter__range-input range-input-square">
+                        <input type="range" name="square-range" class="range-min2" min="0" max="10000" value="2500" step="10">
+                        <input type="range" name="square-range" class="range-max2" min="0" max="10000" value="7500" step="10">
+                    </div>
+                </div>
+                <button type="submit" class="project-filter__submit">submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="project-apartments">
+    <div class="project-apartments__container container">
+        <div class="project-apartments__wrapper wrapper">
+            {% for apart in apartments %}
+                <div class="project-apartments__apart">
+                    <div class="project-apartments__apart__tags">
+                        <div class="project-apartments__apart__tag">{{ apart.name }}</div>
+                        <div class="project-apartments__apart__tag">{{ apart.description }}</div>
+                    </div>
+                    <div class="project-apartments__apart__image"><img src="{{ apart.image.url }}" alt="Apartment image"></div>
+                    <div class="project-apartments__apart__content">
+                        <div class="project-apartments__apart__row">
+                            <div class="project-apartments__apart__text">Тип — GFB</div>
+                            <div class="project-apartments__apart__text2">{{ apart.bedroom }} спальни</div>
+                        </div>
+                        <div class="project-apartments__apart__row">
+                            <div class="project-apartments__apart__text">Площадь</div>
+                            <div class="project-apartments__apart__text2">{{ apart.square }} м²</div>
+                        </div>
+                        <div class="project-apartments__apart__row">
+                            <div class="project-apartments__apart__text">Застроено</div>
+                            <div class="project-apartments__apart__text2">{{ apart.built_square }} м²</div>
+                        </div>
+                        <div class="project-apartments__apart__row">
+                            <div class="project-apartments__apart__text">Площадь дома</div>
+                            <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="project-facilites">
+    <div class="project-facilites__container container">
+        <div class="project-facilites__title">Доступность локации</div>
+        <div class="project-facilites__grid">
+            {% for facility in project.facilities.all %}
+            <div class="project-facilites__card">
+                <div class="project-facilites__name">{{ facility.name }}</div>
+                {% if facility.distance|stringformat:"d"|length > 3 %}
+                    <div class="project-facilites__distance">{{ facility.distance|stringformat:"d"|slice:"0:1" }},{{ facility.distance|stringformat:"d"|slice:"1:2" }} км</div>
+                {% else %}
+                    <div class="project-facilites__distance">{{ facility.distance }} м</div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="project-facilites__map">
+            {{ project.map_iframe|safe }}
+            <div class="project-facilites__map-content">
+                <div class="project-facilites__map-content__title">Локация и Контакты</div>
+                <div class="project-facilites__map-content__row">
+                    <div class="project-facilites__map-content__column">
+                        <div class="project-facilites__map-content__subheading">Call Center</div>
+                        <a href="tel:+66 84 153 4555" class="project-facilites__map-content__text">+66 84 153 4555</a>
+                    </div>
+                    <div class="project-facilites__map-content__column">
+                        <div class="project-facilites__map-content__subheading">Адрес объекта</div>
+                        <a href="#" class="project-facilites__map-content__text">125/397 Moo 5, TungkaRoad Rassada Sub-district, Muang Phuket District Phuket Province 83000 Thailand</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="project-consult">
+    <div class="project-consult__container container">
+        <div class="project-consult__wrapper wrapper">
+            <div class="project-consult__content">
+                <div class="project-consult__title">Индивидуальная консультация</div>
+                <div class="project-consult__text">Наши эксперты выберут для Вас оптимальные условия покупки виллы по этому проекту за 10 минут</div>
+            </div>
+            <a href="#" class="project-consult__btn">Заказать консультацию</a>
+        </div>
+    </div>
+</section>
+
+<script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'js/filterPostData.js' %}"></script>
+<script src="{% static 'js/rangeSlider.js' %}"></script>
+<script src="{% static 'js/radioActive.js' %}"></script>
+<script src="{% static 'js/createApart.js' %}"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+      },
+    });
+</script>
+{% endblock %}
