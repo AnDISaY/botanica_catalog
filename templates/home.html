@@ -94,12 +94,14 @@
                         </div>
                         <div class="project__master-plan">
                             <div class="project__master-plan__container container">
-                                <div class="project__master-content">
-                                    <div class="project__master-title">Мастер-план</div>
-                                    <div class="project__master-line"></div>
-                                    <a href="#" class="project__master-zoom"><img src="{% static 'images/icon-zoom-white.svg' %}" alt="Zoom icon"></a>
+                                <div class="project__master-plan__wrapper wrapper">
+                                    <div class="project__master-content">
+                                        <div class="project__master-title">Мастер-план</div>
+                                        <div class="project__master-line"></div>
+                                        <a href="#" class="project__master-zoom"><img src="{% static 'images/icon-zoom-white.svg' %}" alt="Zoom icon"></a>
+                                    </div>
+                                    <div class="project__master-image"><img src="{{ project.master_plan.url }}" alt="Master plan image"></div>
                                 </div>
-                                <div class="project__master-image"><img src="{{ project.master_plan.url }}" alt="Master plan image"></div>
                             </div>
                         </div>
                         <div class="project__video-block">

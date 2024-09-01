@@ -44,6 +44,23 @@ h2 {
   padding: 50px;
   border-radius: 12px;
 }
+@media screen and (max-width: 1236px) {
+  .wrapper {
+    padding: 31px;
+    border-radius: 7.5px;
+  }
+}
+@media screen and (max-width: 785px) {
+  .wrapper {
+    padding: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 12px;
+    border-radius: 5px;
+  }
+}
 
 .header {
   background-color: #F6F8F7;
@@ -1210,7 +1227,7 @@ h2 {
 .project__master-plan {
   margin-bottom: 20px;
 }
-.project__master-plan__container {
+.project__master-plan__wrapper {
   display: flex;
   flex-direction: column;
   padding: 60px 50px;
@@ -1219,21 +1236,34 @@ h2 {
   max-width: 1112px;
 }
 @media screen and (max-width: 1236px) {
-  .project__master-plan {
-    padding: 37.5px 31.5px;
-    margin-bottom: 12.5px;
+  .project__master-plan__wrapper {
+    padding: 37px 31px;
     border-radius: 7.5px;
   }
 }
 @media screen and (max-width: 785px) {
+  .project__master-plan__wrapper {
+    padding: 24px 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .project__master-plan__wrapper {
+    padding: 16px 12px;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 1236px) {
   .project__master-plan {
-    padding: 18px 18px 24px;
+    margin-bottom: 12.5px;
+  }
+}
+@media screen and (max-width: 785px) {
+  .project__master-plan {
     margin-bottom: 36px;
   }
 }
 @media screen and (max-width: 480px) {
   .project__master-plan {
-    padding: 12px 12px 16px;
     margin-bottom: 24px;
   }
 }

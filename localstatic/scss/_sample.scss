@@ -22,4 +22,18 @@
 .wrapper {
     padding: 50px;
     border-radius: 12px;
+
+    @media screen and (max-width: $md1) {
+        padding: 31px;
+        border-radius: 7.5px;
+    }
+
+    @media screen and (max-width: $md2) {
+        padding: 18px;
+    }
+
+    @media screen and (max-width: $md3) {
+        padding: 12px;
+        border-radius: 5px;
+    }
 }
