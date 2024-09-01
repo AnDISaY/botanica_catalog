@@ -9,8 +9,27 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
-
 <body>
+    <style type="text/css">
+        @font-face {
+            font-family: "Gilroy";
+            src: url({% static 'fonts/Gilroy-Medium.eot' %});
+            src: url({% static 'fonts/Gilroy-Medium.eot' %}#iefix) format('embedded-opentype'),
+                 url({% static 'fonts/Gilroy-Medium.woff2' %}) format('woff2'),
+                 url({% static 'fonts/Gilroy-Medium.woff' %}) format('woff'),
+                 url({% static 'fonts/Gilroy-Medium.ttf' %}) format('truetype'),
+                 url({% static 'fonts/Gilroy-Medium.svg' %}#svgFontName) format('svg');
+        }
+        @font-face {
+            font-family: "Neue Machina";
+            src: url({% static 'fonts/NeueMachina-Medium.eot' %});
+            src: url({% static 'fonts/NeueMachina-Medium.eot' %}#iefix) format('embedded-opentype'),
+                 url({% static 'fonts/NeueMachina-Medium.woff2' %}) format('woff2'),
+                 url({% static 'fonts/NeueMachina-Medium.woff' %}) format('woff'),
+                 url({% static 'fonts/NeueMachina-Medium.ttf' %}) format('truetype'),
+                 url({% static 'fonts/NeueMachina-Medium.svg' %}#svgFontName) format('svg');
+        }
+    </style>
     <section class="header">
         <div class="header__container container">
             <a href="{% url 'home' %}" class="header__logo">
