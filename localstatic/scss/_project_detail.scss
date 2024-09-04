@@ -1,6 +1,10 @@
 .project-start {
     margin: 40px 0px 120px;
 
+    @media screen and (max-width: $md1) {
+        margin: 25px 0px 75px;
+    }
+
     &__container {
         display: flex;
         flex-direction: column;
@@ -17,6 +21,17 @@
             height: 100%;
             border-radius: 12px;
         }
+
+        @media screen and (max-width: $md1) {
+            width: 757.5px;
+            height: 346.5px;
+            border-radius: 7.5px;
+            margin-bottom: 12.5px;
+
+            img {
+                border-radius: 7.5px;
+            }
+        }
     }
 
     &__content {
@@ -28,6 +43,11 @@
         padding: 42px 40px;
         background-color: #F6F8F7;
         border-radius: 12px;
+
+        @media screen and (max-width: $md1) {
+            padding: 26px 25px;
+            border-radius: 7.5px;
+        }
     }
 
     &__subheading {
@@ -36,13 +56,22 @@
         line-height: 100%;
         color: #E7A827;
         margin-bottom: 24px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
     }
 
     &__title {
         font-family: $fn;
         font-size: 64px;
-        line-height: 100%;
+        line-height: 80%;
         text-transform: uppercase;
+
+        @media screen and (max-width: $md1) {
+            font-size: 40px;
+        }
     }
 
     &__request {
@@ -64,6 +93,21 @@
             font-size: 16px;
             color: #898989;
         }
+
+        @media screen and (max-width: $md1) {
+            right: -29.37px;
+            border: 1.25px solid #DFA633;
+            padding: 96.87px 54.25px 95.5px 35.63px;
+
+            img {
+                width: 7.5px;
+                margin-right: 5px;
+            }
+
+            span {
+                font-size: 10px;
+            }
+        }
     }
 }
 
@@ -71,9 +115,17 @@
 .project-descr {
     margin-bottom: 120px;
 
+    @media screen and (max-width: $md1) {
+        margin-bottom: 75px;
+    }
+
     &__container {
         background-color: #F6F8F7;
         border-radius: 12px;
+
+        @media screen and (max-width: $md1) {
+            border-radius: 7,5px;
+        }
     }
 
     &__slider {
@@ -93,6 +145,21 @@
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
         }
+
+        @media screen and (max-width: $md1) {
+            
+            .swiper-slide {
+                padding-top: 37.5px;
+            }
+
+            img {
+                width: 682.5px;
+                height: 312.5px;
+                border-radius: 7.5px;
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+        }
     }
 
     .project-slider-arrow {
@@ -109,16 +176,35 @@
             width: 20px;
             height: 14.5px;
         }
+
+        @media screen and (max-width: $md1) {
+            padding: 14px 12.5px;
+
+            img {
+                width: 12.3px;
+                height: 9.11px;
+            }
+        }
     }
 
     .swiper-button-prev-custom {
         top: 250px;
         left: 30px;
+
+        @media screen and (max-width: $md1) {
+            top: 156.25px;
+            left: 18.75px
+        }
     }
     
     .swiper-button-next-custom {
         top: 250px;
         right: 30px;
+
+        @media screen and (max-width: $md1) {
+            top: 156.25px;
+            right: 18.75px
+        }
     }
 
     &__content {
@@ -126,12 +212,21 @@
         justify-content: space-between;
         align-items: center;
         padding: 60px;
+
+        @media screen and (max-width: $md1) {
+            padding: 37.5px;
+        }
     }
 
     &__text {
         font-size: 20px;
         line-height: 160%;
         max-width: 490px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 12.5px;
+            max-width: 307px;
+        }
     }
 
     &__about {
@@ -139,6 +234,10 @@
         font-weight: 700;
         font-size: 40px;
         text-transform: uppercase;
+
+        @media screen and (max-width: $md1) {
+            font-size: 25px;
+        }
     }
 }
 
@@ -151,22 +250,22 @@
         background-color: #F6F8F7;
         padding: 60px 50px;
         margin-bottom: 120px;
-    }
 
-    @media screen and (max-width: $md1) {
-        padding: 37.5px 31.5px;
-        margin-bottom: 12.5px;
-        border-radius: 7.5px;
-    }
-
-    @media screen and (max-width: $md2) {
-        padding: 18px 18px 24px;
-        margin-bottom: 36px;
-    }
-
-    @media screen and (max-width: $md3) {
-        padding: 12px 12px 16px;
-        margin-bottom: 24px;
+        @media screen and (max-width: $md1) {
+            padding: 37.5px 31.5px;
+            margin-bottom: 75px;
+            border-radius: 7.5px;
+        }
+    
+        @media screen and (max-width: $md2) {
+            padding: 18px 18px 24px;
+            margin-bottom: 36px;
+        }
+    
+        @media screen and (max-width: $md3) {
+            padding: 12px 12px 16px;
+            margin-bottom: 24px;
+        }
     }
 
     &__content {
@@ -288,9 +387,17 @@
 .project-structure {
     margin-bottom: 120px;
 
+    @media screen and (max-width: $md1) {
+        margin-bottom: 75px;
+    }
+
     &__wrapper {
         background-color: #F6F8F7;
         padding: 60px 0px 60px 50px;
+
+        @media screen and (max-width: $md1) {
+            padding: 37.5px 0px 37.5px 31.25px;
+        }
     }
 
     &__title {
@@ -300,6 +407,11 @@
         line-height: 100%;
         text-transform: uppercase;
         margin-bottom: 41px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
     }
 
     &__content {
@@ -307,6 +419,11 @@
         flex-wrap: wrap;
         gap: 32px;
         max-width: 810px;
+
+        @media screen and (max-width: $md1) {
+            gap: 19.5px;
+            max-width: 507px;
+        }
     }
 
     &__param {
@@ -314,12 +431,22 @@
         padding: 20px 40px;
         background-color: #fff;
         border-radius: 29px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 15px;
+            padding: 12.5px 25px;
+            border-radius: 18px;
+        }
     }
 }
 
 
 .project-filter {
     margin-bottom: 24px;
+
+    @media screen and (max-width: $md1) {
+        margin-bottom: 15px;
+    }
 
     &__wrapper {
         display: flex;
@@ -334,6 +461,11 @@
         line-height: 100%;
         text-transform: uppercase;
         margin-bottom: 36px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 25px;
+            margin-bottom: 22px;
+        }
     }
 
     &__input-title {
@@ -341,6 +473,11 @@
         font-size: 18px;
         line-height: 100%;
         margin-bottom: 16px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 11.25px;
+            margin-bottom: 10px;
+        }
     }
 
     &__form {
@@ -352,6 +489,9 @@
 
         &__el + &__el {
             margin-left: 80px;
+            @media screen and (max-width: $md1) {
+                margin-left: 50px;
+            }
         }
     }
 
@@ -377,6 +517,18 @@
             width: 60px;
             margin-right: 0px;
         }
+
+        @media screen and (max-width: $md1) {
+            border-radius: 2.5px;
+            padding: 10.5px 0px;
+            width: 31.25px;
+            font-size: 15px;
+            margin-right: 5px;
+
+            &:last-child {
+                width: 37.5px;
+            }
+        }
     }
 
     .radio-active {
@@ -386,12 +538,20 @@
     &__range-wrapper {
         .project-filter__input-title, .project-filter__field {
             margin-left: 10px;
+
+            @media screen and (max-width: $md1) {
+                margin-left: 6px;
+            }
         }
     }
 
     &__number-input {
         display: flex;
         margin-bottom: 16px;
+
+        @media screen and (max-width: $md1) {
+            margin-bottom: 10.5px;
+        }
     }
 
     &__text {
@@ -399,6 +559,11 @@
         color: #949494;
         margin-right: 8px;
         line-height: 100%;
+
+        @media screen and (max-width: $md1) {
+            font-size: 11.25px;
+            margin-right: 4.75px;
+        }
     }
 
     &__field {
@@ -406,17 +571,27 @@
         align-items: center;
         margin-right: 30px;
 
+        @media screen and (max-width: $md1) {
+            margin-right: 18.5px;
+        }
+
         input {
+            font-family: $fg;
             display: flex;
             background-color: inherit;
             border: 0px;
             padding: 0;
             margin: 0px;
-            width: 106px;
+            width: 103.5px;
             font-weight: 600;
             font-size: 24px;
             line-height: 100%;
             pointer-events: none;
+
+            @media screen and (max-width: $md1) {
+                width: 66px;
+                font-size: 15px;
+            }
         }
         
         input[type="number"]::-webkit-outer-spin-button,
@@ -428,10 +603,18 @@
             font-weight: 600;
             font-size: 24px;
             line-height: 100%;
+
+            @media screen and (max-width: $md1) {
+                font-size: 15px;
+            }
         }
 
         .square-input-style {
-            width: 66.5px;
+            width: 69px;
+
+            @media screen and (max-width: $md1) {
+                width: 42px;
+            }
         }
     }
     
@@ -439,12 +622,21 @@
         position: relative;
         height: 2px;
         background-color: #B2B2B2;
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: $md1) {
+            height: 1.25px;
+        }
     }
 
     &__progress {
+        display: flex;
+        align-items: center;
         height: 100%;
-        left: 25%;
-        right: 25%;
+        left: 0%;
+        width: 50%;
+        height: 2px;
         position: absolute;
         background-color: #DFA633;
 
@@ -454,7 +646,7 @@
             height: 8px;
             top: -3px;
             border-radius: 50%;
-            background-color: #B2B3B2;
+            background-color: #DFA633;
         }
         
         &__right {
@@ -465,6 +657,20 @@
             right: 0;
             border-radius: 50%;
             background-color: #B2B3B2;
+        }
+
+        @media screen and (max-width: $md1) {
+            height: 1.25px;
+            &__left {
+                width: 6px;
+                height: 6px;
+                top: -2px;
+            }
+            &__right {
+                width: 6px;
+                height: 6px;
+                top: -2px;
+            }
         }
     }
 
@@ -480,28 +686,47 @@
             background: none;
             pointer-events: none;
             -webkit-appearance: none;
+
+            @media screen and (max-width: $md1) {
+                height: 1.25px;
+                top: -1.25px;
+            }
         }
     }
     
     input[type="range"]::-webkit-slider-thumb {
-        height: 8px;
-        width: 8px;
+        height: 12px;
+        width: 12px;
         border-radius: 50%;
         background: #DFA633;
         pointer-events: auto;
         -webkit-appearance: none;
+
+        @media screen and (max-width: $md1) {
+            width: 7.5px;
+            height: 7.5px;
+        }
     }
 }
 
 
 .project-apartments {
     margin-bottom: 120px;
+    
+    @media screen and (max-width: $md1) {
+        margin-bottom: 75px;
+    }
 
     &__wrapper {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
         background-color: #F6F8F7;
+
+        @media screen and (max-width: $md1) {
+            gap: 12.5px;
+            padding: 31.25px;
+        }
     }
 
     &__apart {
@@ -512,13 +737,25 @@
         background-color: #fff;
         border-radius: 12px;
 
+        @media screen and (max-width: $md1) {
+            padding: 25px 28.5px;
+        }
+
         &__tags {
             display: flex;
             margin-bottom: 20px;
+
+            @media screen and (max-width: $md1) {
+                margin-bottom: 12.5px;
+            }
         }
 
         &__tag + &__tag {
             margin-left: 4px;
+
+            @media screen and (max-width: $md1) {
+                margin-left: 2.5px;
+            }
         }
 
         &__tag {
@@ -529,6 +766,12 @@
             padding: 15px 20px;
             background-color: #DFA633;
             border-radius: 21.5px;
+
+            @media screen and (max-width: $md1) {
+                font-size: 11.25px;
+                padding: 9.37px 12.5px;
+                border-radius: 13.44px;
+            }
         }
 
         &__image {
@@ -540,10 +783,20 @@
                 width: 100%;
                 height: 100%;
             }
+
+            @media screen and (max-width: $md1) {
+                width: 135px;
+                height: 181px;
+                margin-bottom: 18.75px;
+            }
         }
 
         &__content {
             width: 265px;
+
+            @media screen and (max-width: $md1) {
+                width: 166.25px;
+            }
         }
 
         &__row {
@@ -553,7 +806,7 @@
             padding: 15px 0px;
             border-bottom: 1px solid #E9E9E9;
 
-            :first-child {
+            &:first-child {
                 padding-top: 0px;
             }
 
@@ -561,24 +814,60 @@
                 border-bottom: 0px;
                 padding-bottom: 0px;
             }
+
+            @media screen and (max-width: $md1) {
+                padding: 9px 0px;
+            }
         }
 
         &__text {
             font-size: 15px;
             line-height: 100%;
+
+            @media screen and (max-width: $md1) {
+                font-size: 9.38[x];
+            }
         }
 
         &__text2 {
             font-weight: 600;
             font-size: 20px;
+
+            @media screen and (max-width: $md1) {
+                font-size: 12.5px;
+            }
+        }
+    }
+
+    &__show-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 357px;
+        height: 653.2px;
+
+        span {
+            font-size: 16px;
         }
     }
     
+    .hide-content {
+        overflow: hidden;
+        display: none;
+        // opacity: 0;
+        // height: 0px;
+        // padding: 0px;
+    }
 }
 
 
 .project-facilites {
     margin-bottom: 120px;
+
+    @media screen and (max-width: $md1) {
+        margin-bottom: 75px;
+    }
 
     &__title {
         font-family: $fn;
@@ -587,6 +876,11 @@
         line-height: 100%;
         text-transform: uppercase;
         margin-bottom: 32px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 25px;
+            margin-bottom: 19.5px;
+        }
     }
 
     &__grid {
@@ -594,6 +888,11 @@
         flex-wrap: wrap;
         gap: 12px;
         margin-bottom: 20px;
+
+        @media screen and (max-width: $md1) {
+            gap: 7.5px;
+            margin-bottom: 12.5px;
+        }
     }
 
     &__card {
@@ -604,12 +903,23 @@
         width: 316px;
         border-radius: 12px;
         padding: 70px 40px;
+
+        @media screen and (max-width: $md1) {
+            width: 197.5px;
+            border-radius: 7.5px;
+            padding: 43.5px 25px;
+        }
     }
 
     &__name {
         font-size: 20px;
         line-height: 130%;
         max-width: 170px; 
+
+        @media screen and (max-width: $md1) {
+            font-size: 12.5px;
+            max-width: 107px;
+        }
     }
 
     &__distance {
@@ -617,6 +927,10 @@
         font-weight: 700;
         font-size: 30px;
         color: #DFA633;
+
+        @media screen and (max-width: $md1) {
+            font-size: 18.75px;
+        }
     }
 
     &__map {
@@ -624,6 +938,12 @@
 
         iframe {
             border-radius: 12px;
+
+            @media screen and (max-width: $md1) {
+                width: 757.6px;
+                height: 379px;
+                border-radius: 7.5px;                
+            }
         }
     }
 
@@ -635,6 +955,12 @@
         background-color: #fff;
         border-radius: 8px;
 
+        @media screen and (max-width: $md1) {
+            left: 31.25px;
+            bottom: 31.25px;
+            padding: 30px 32.5px;
+        }
+
         &__title {
             font-family: $fn;
             font-weight: 600;
@@ -642,6 +968,11 @@
             line-height: 100%;
             text-transform: uppercase;
             margin-bottom: 24px;
+
+            @media screen and (max-width: $md1) {
+                font-size: 15px;
+                margin-bottom: 15px;
+            }
         }
 
         &__row {
@@ -650,6 +981,10 @@
 
         &__column + &__column {
             margin-left: 56px;
+
+            @media screen and (max-width: $md1) {
+                margin-left: 35px;
+            }
         }
 
         &__subheading {
@@ -657,6 +992,11 @@
             line-height: 100%;
             color: #DFA633;
             margin-bottom: 16px;
+
+            @media screen and (max-width: $md1) {
+                font-size: 7.5px;
+                margin-bottom: 10px;
+            }
         }
 
         &__text {
@@ -664,6 +1004,11 @@
             font-weight: 600;
             font-size: 13px;
             max-width: 204px;
+
+            @media screen and (max-width: $md1) {
+                font-size: 8px;
+                max-width: 127px;
+            }
         }
     }
 }
@@ -672,12 +1017,20 @@
 .project-consult {
     margin-bottom: 160px;
 
+    @media screen and (max-width: $md1) {
+        margin-bottom: 100px;
+    }
+
     &__wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 80px 70px;
         background-color: #F6F8F7;
+
+        @media screen and (max-width: $md1) {
+            padding: 50px 43.75px;
+        }
     }
 
     &__title {
@@ -688,12 +1041,23 @@
         text-transform: uppercase;
         margin-bottom: 48px;
         max-width: 397px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 25px;
+            margin-bottom: 30px;
+            max-width: 250px;
+        }
     }
 
     &__text {
         font-size: 20px;
         line-height: 160%;
         max-width: 506px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 12.5px;
+            max-width: 317px;
+        }
     }
 
     &__btn {
@@ -707,5 +1071,11 @@
         padding: 40px 65px;
         background-color: #DFA633;
         border-radius: 12px;
+
+        @media screen and (max-width: $md1) {
+            font-size: 18.75px;
+            padding: 25px 40.5px;
+            border-radius: 7.5px;
+        }
     }
 }

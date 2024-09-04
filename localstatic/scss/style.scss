@@ -2,13 +2,13 @@
 
 //<Подключение>
 // @font-face {
-//     font-family: "Gilroy";
-//     src: url("/localstatic/fonts/Gilroy-Medium.woff2");
+//     font-family: "Gilroy", sans-serif;
+//     src: url("/localstatic/fonts/medium/Gilroy-Medium.woff2");
 // }
 
 // @font-face {
-//     font-family: "Neue Machina";
-//     src: url("/localstatic/fonts/NeueMachina-Medium.woff2");
+//     font-family: "Neue Machina", sans-serif;
+//     src: url("/localstatic/fonts/medium/NeueMachina-Medium.woff2");
 // }
 //</Подключение>
 
@@ -67,6 +67,7 @@ h2 {
 @import "_home";
 @import "_about";
 @import "_project_detail";
+@import "_villa_detail";
 //</HTML>
 
 //<FOOTER>

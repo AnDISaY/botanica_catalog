@@ -8,4 +8,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     # path('submit/', views.submit, name='submit'),
     path('<slug:slug>/', views.project_detail, name='project_detail'),
+    path('<str:project_slug>/<int:pk>/', views.villa_detail, name='villa_detail'),
 ]

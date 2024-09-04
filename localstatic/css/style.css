@@ -46,7 +46,7 @@ h2 {
 }
 @media screen and (max-width: 1236px) {
   .wrapper {
-    padding: 31px;
+    padding: 31.25px;
     border-radius: 7.5px;
   }
 }
@@ -3437,6 +3437,11 @@ h2 {
 .project-start {
   margin: 40px 0px 120px;
 }
+@media screen and (max-width: 1236px) {
+  .project-start {
+    margin: 25px 0px 75px;
+  }
+}
 .project-start__container {
   display: flex;
   flex-direction: column;
@@ -3452,6 +3457,17 @@ h2 {
   height: 100%;
   border-radius: 12px;
 }
+@media screen and (max-width: 1236px) {
+  .project-start__main-image {
+    width: 757.5px;
+    height: 346.5px;
+    border-radius: 7.5px;
+    margin-bottom: 12.5px;
+  }
+  .project-start__main-image img {
+    border-radius: 7.5px;
+  }
+}
 .project-start__content {
   position: relative;
   overflow: hidden;
@@ -3462,6 +3478,12 @@ h2 {
   background-color: #F6F8F7;
   border-radius: 12px;
 }
+@media screen and (max-width: 1236px) {
+  .project-start__content {
+    padding: 26px 25px;
+    border-radius: 7.5px;
+  }
+}
 .project-start__subheading {
   font-family: "Neue Machina";
   font-size: 32px;
@@ -3469,11 +3491,22 @@ h2 {
   color: #E7A827;
   margin-bottom: 24px;
 }
+@media screen and (max-width: 1236px) {
+  .project-start__subheading {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
 .project-start__title {
   font-family: "Neue Machina";
   font-size: 64px;
-  line-height: 100%;
+  line-height: 80%;
   text-transform: uppercase;
+}
+@media screen and (max-width: 1236px) {
+  .project-start__title {
+    font-size: 40px;
+  }
 }
 .project-start__request {
   position: absolute;
@@ -3493,13 +3526,37 @@ h2 {
   font-size: 16px;
   color: #898989;
 }
+@media screen and (max-width: 1236px) {
+  .project-start__request {
+    right: -29.37px;
+    border: 1.25px solid #DFA633;
+    padding: 96.87px 54.25px 95.5px 35.63px;
+  }
+  .project-start__request img {
+    width: 7.5px;
+    margin-right: 5px;
+  }
+  .project-start__request span {
+    font-size: 10px;
+  }
+}
 
 .project-descr {
   margin-bottom: 120px;
 }
+@media screen and (max-width: 1236px) {
+  .project-descr {
+    margin-bottom: 75px;
+  }
+}
 .project-descr__container {
   background-color: #F6F8F7;
   border-radius: 12px;
+}
+@media screen and (max-width: 1236px) {
+  .project-descr__container {
+    border-radius: 7, 5px;
+  }
 }
 .project-descr__slider {
   position: relative;
@@ -3517,6 +3574,18 @@ h2 {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
+@media screen and (max-width: 1236px) {
+  .project-descr__slider .swiper-slide {
+    padding-top: 37.5px;
+  }
+  .project-descr__slider img {
+    width: 682.5px;
+    height: 312.5px;
+    border-radius: 7.5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
 .project-descr .project-slider-arrow {
   position: absolute;
   z-index: 3;
@@ -3531,13 +3600,34 @@ h2 {
   width: 20px;
   height: 14.5px;
 }
+@media screen and (max-width: 1236px) {
+  .project-descr .project-slider-arrow {
+    padding: 14px 12.5px;
+  }
+  .project-descr .project-slider-arrow img {
+    width: 12.3px;
+    height: 9.11px;
+  }
+}
 .project-descr .swiper-button-prev-custom {
   top: 250px;
   left: 30px;
 }
+@media screen and (max-width: 1236px) {
+  .project-descr .swiper-button-prev-custom {
+    top: 156.25px;
+    left: 18.75px;
+  }
+}
 .project-descr .swiper-button-next-custom {
   top: 250px;
   right: 30px;
+}
+@media screen and (max-width: 1236px) {
+  .project-descr .swiper-button-next-custom {
+    top: 156.25px;
+    right: 18.75px;
+  }
 }
 .project-descr__content {
   display: flex;
@@ -3545,16 +3635,32 @@ h2 {
   align-items: center;
   padding: 60px;
 }
+@media screen and (max-width: 1236px) {
+  .project-descr__content {
+    padding: 37.5px;
+  }
+}
 .project-descr__text {
   font-size: 20px;
   line-height: 160%;
   max-width: 490px;
+}
+@media screen and (max-width: 1236px) {
+  .project-descr__text {
+    font-size: 12.5px;
+    max-width: 307px;
+  }
 }
 .project-descr__about {
   font-family: "Neue Machina";
   font-weight: 700;
   font-size: 40px;
   text-transform: uppercase;
+}
+@media screen and (max-width: 1236px) {
+  .project-descr__about {
+    font-size: 25px;
+  }
 }
 
 .project-master-plan__wrapper {
@@ -3565,20 +3671,20 @@ h2 {
   margin-bottom: 120px;
 }
 @media screen and (max-width: 1236px) {
-  .project-master-plan {
+  .project-master-plan__wrapper {
     padding: 37.5px 31.5px;
-    margin-bottom: 12.5px;
+    margin-bottom: 75px;
     border-radius: 7.5px;
   }
 }
 @media screen and (max-width: 785px) {
-  .project-master-plan {
+  .project-master-plan__wrapper {
     padding: 18px 18px 24px;
     margin-bottom: 36px;
   }
 }
 @media screen and (max-width: 480px) {
-  .project-master-plan {
+  .project-master-plan__wrapper {
     padding: 12px 12px 16px;
     margin-bottom: 24px;
   }
@@ -3709,9 +3815,19 @@ h2 {
 .project-structure {
   margin-bottom: 120px;
 }
+@media screen and (max-width: 1236px) {
+  .project-structure {
+    margin-bottom: 75px;
+  }
+}
 .project-structure__wrapper {
   background-color: #F6F8F7;
   padding: 60px 0px 60px 50px;
+}
+@media screen and (max-width: 1236px) {
+  .project-structure__wrapper {
+    padding: 37.5px 0px 37.5px 31.25px;
+  }
 }
 .project-structure__title {
   font-family: "Neue Machina";
@@ -3721,11 +3837,23 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 41px;
 }
+@media screen and (max-width: 1236px) {
+  .project-structure__title {
+    font-size: 25px;
+    margin-bottom: 25px;
+  }
+}
 .project-structure__content {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
   max-width: 810px;
+}
+@media screen and (max-width: 1236px) {
+  .project-structure__content {
+    gap: 19.5px;
+    max-width: 507px;
+  }
 }
 .project-structure__param {
   font-size: 24px;
@@ -3733,9 +3861,21 @@ h2 {
   background-color: #fff;
   border-radius: 29px;
 }
+@media screen and (max-width: 1236px) {
+  .project-structure__param {
+    font-size: 15px;
+    padding: 12.5px 25px;
+    border-radius: 18px;
+  }
+}
 
 .project-filter {
   margin-bottom: 24px;
+}
+@media screen and (max-width: 1236px) {
+  .project-filter {
+    margin-bottom: 15px;
+  }
 }
 .project-filter__wrapper {
   display: flex;
@@ -3750,11 +3890,23 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 36px;
 }
+@media screen and (max-width: 1236px) {
+  .project-filter__title {
+    font-size: 25px;
+    margin-bottom: 22px;
+  }
+}
 .project-filter__input-title {
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
   margin-bottom: 16px;
+}
+@media screen and (max-width: 1236px) {
+  .project-filter__input-title {
+    font-size: 11.25px;
+    margin-bottom: 10px;
+  }
 }
 .project-filter__form {
   display: flex;
@@ -3764,6 +3916,11 @@ h2 {
 }
 .project-filter__form__el + .project-filter__form__el {
   margin-left: 80px;
+}
+@media screen and (max-width: 1236px) {
+  .project-filter__form__el + .project-filter__form__el {
+    margin-left: 50px;
+  }
 }
 .project-filter__radio-wrapper {
   display: flex;
@@ -3786,15 +3943,37 @@ h2 {
   width: 60px;
   margin-right: 0px;
 }
+@media screen and (max-width: 1236px) {
+  .project-filter__radio {
+    border-radius: 2.5px;
+    padding: 10.5px 0px;
+    width: 31.25px;
+    font-size: 15px;
+    margin-right: 5px;
+  }
+  .project-filter__radio:last-child {
+    width: 37.5px;
+  }
+}
 .project-filter .radio-active {
   background-color: #DFA633;
 }
 .project-filter__range-wrapper .project-filter__input-title, .project-filter__range-wrapper .project-filter__field {
   margin-left: 10px;
 }
+@media screen and (max-width: 1236px) {
+  .project-filter__range-wrapper .project-filter__input-title, .project-filter__range-wrapper .project-filter__field {
+    margin-left: 6px;
+  }
+}
 .project-filter__number-input {
   display: flex;
   margin-bottom: 16px;
+}
+@media screen and (max-width: 1236px) {
+  .project-filter__number-input {
+    margin-bottom: 10.5px;
+  }
 }
 .project-filter__text {
   font-size: 18px;
@@ -3802,22 +3981,40 @@ h2 {
   margin-right: 8px;
   line-height: 100%;
 }
+@media screen and (max-width: 1236px) {
+  .project-filter__text {
+    font-size: 11.25px;
+    margin-right: 4.75px;
+  }
+}
 .project-filter__field {
   display: flex;
   align-items: center;
   margin-right: 30px;
 }
+@media screen and (max-width: 1236px) {
+  .project-filter__field {
+    margin-right: 18.5px;
+  }
+}
 .project-filter__field input {
+  font-family: "Gilroy";
   display: flex;
   background-color: inherit;
   border: 0px;
   padding: 0;
   margin: 0px;
-  width: 106px;
+  width: 103.5px;
   font-weight: 600;
   font-size: 24px;
   line-height: 100%;
   pointer-events: none;
+}
+@media screen and (max-width: 1236px) {
+  .project-filter__field input {
+    width: 66px;
+    font-size: 15px;
+  }
 }
 .project-filter__field input[type=number]::-webkit-outer-spin-button,
 .project-filter__field input[type=number]::-webkit-inner-spin-button {
@@ -3828,18 +4025,38 @@ h2 {
   font-size: 24px;
   line-height: 100%;
 }
+@media screen and (max-width: 1236px) {
+  .project-filter__field span {
+    font-size: 15px;
+  }
+}
 .project-filter__field .square-input-style {
-  width: 66.5px;
+  width: 69px;
+}
+@media screen and (max-width: 1236px) {
+  .project-filter__field .square-input-style {
+    width: 42px;
+  }
 }
 .project-filter__slider {
   position: relative;
   height: 2px;
   background-color: #B2B2B2;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 1236px) {
+  .project-filter__slider {
+    height: 1.25px;
+  }
 }
 .project-filter__progress {
+  display: flex;
+  align-items: center;
   height: 100%;
-  left: 25%;
-  right: 25%;
+  left: 0%;
+  width: 50%;
+  height: 2px;
   position: absolute;
   background-color: #DFA633;
 }
@@ -3849,7 +4066,7 @@ h2 {
   height: 8px;
   top: -3px;
   border-radius: 50%;
-  background-color: #B2B3B2;
+  background-color: #DFA633;
 }
 .project-filter__progress__right {
   position: absolute;
@@ -3859,6 +4076,21 @@ h2 {
   right: 0;
   border-radius: 50%;
   background-color: #B2B3B2;
+}
+@media screen and (max-width: 1236px) {
+  .project-filter__progress {
+    height: 1.25px;
+  }
+  .project-filter__progress__left {
+    width: 6px;
+    height: 6px;
+    top: -2px;
+  }
+  .project-filter__progress__right {
+    width: 6px;
+    height: 6px;
+    top: -2px;
+  }
 }
 .project-filter__range-input {
   position: relative;
@@ -3873,23 +4105,46 @@ h2 {
   pointer-events: none;
   -webkit-appearance: none;
 }
+@media screen and (max-width: 1236px) {
+  .project-filter__range-input input {
+    height: 1.25px;
+    top: -1.25px;
+  }
+}
 .project-filter input[type=range]::-webkit-slider-thumb {
-  height: 8px;
-  width: 8px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
   background: #DFA633;
   pointer-events: auto;
   -webkit-appearance: none;
 }
+@media screen and (max-width: 1236px) {
+  .project-filter input[type=range]::-webkit-slider-thumb {
+    width: 7.5px;
+    height: 7.5px;
+  }
+}
 
 .project-apartments {
   margin-bottom: 120px;
+}
+@media screen and (max-width: 1236px) {
+  .project-apartments {
+    margin-bottom: 75px;
+  }
 }
 .project-apartments__wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   background-color: #F6F8F7;
+}
+@media screen and (max-width: 1236px) {
+  .project-apartments__wrapper {
+    gap: 12.5px;
+    padding: 31.25px;
+  }
 }
 .project-apartments__apart {
   display: flex;
@@ -3899,12 +4154,27 @@ h2 {
   background-color: #fff;
   border-radius: 12px;
 }
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart {
+    padding: 25px 28.5px;
+  }
+}
 .project-apartments__apart__tags {
   display: flex;
   margin-bottom: 20px;
 }
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart__tags {
+    margin-bottom: 12.5px;
+  }
+}
 .project-apartments__apart__tag + .project-apartments__apart__tag {
   margin-left: 4px;
+}
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart__tag + .project-apartments__apart__tag {
+    margin-left: 2.5px;
+  }
 }
 .project-apartments__apart__tag {
   font-weight: 600;
@@ -3915,6 +4185,13 @@ h2 {
   background-color: #DFA633;
   border-radius: 21.5px;
 }
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart__tag {
+    font-size: 11.25px;
+    padding: 9.37px 12.5px;
+    border-radius: 13.44px;
+  }
+}
 .project-apartments__apart__image {
   width: 216px;
   height: 290px;
@@ -3924,8 +4201,20 @@ h2 {
   width: 100%;
   height: 100%;
 }
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart__image {
+    width: 135px;
+    height: 181px;
+    margin-bottom: 18.75px;
+  }
+}
 .project-apartments__apart__content {
   width: 265px;
+}
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart__content {
+    width: 166.25px;
+  }
 }
 .project-apartments__apart__row {
   display: flex;
@@ -3934,24 +4223,59 @@ h2 {
   padding: 15px 0px;
   border-bottom: 1px solid #E9E9E9;
 }
-.project-apartments__apart__row :first-child {
+.project-apartments__apart__row:first-child {
   padding-top: 0px;
 }
 .project-apartments__apart__row:last-child {
   border-bottom: 0px;
   padding-bottom: 0px;
 }
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart__row {
+    padding: 9px 0px;
+  }
+}
 .project-apartments__apart__text {
   font-size: 15px;
   line-height: 100%;
+}
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart__text {
+    font-size: 9.38 [x];
+  }
 }
 .project-apartments__apart__text2 {
   font-weight: 600;
   font-size: 20px;
 }
+@media screen and (max-width: 1236px) {
+  .project-apartments__apart__text2 {
+    font-size: 12.5px;
+  }
+}
+.project-apartments__show-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 357px;
+  height: 653.2px;
+}
+.project-apartments__show-more span {
+  font-size: 16px;
+}
+.project-apartments .hide-content {
+  overflow: hidden;
+  display: none;
+}
 
 .project-facilites {
   margin-bottom: 120px;
+}
+@media screen and (max-width: 1236px) {
+  .project-facilites {
+    margin-bottom: 75px;
+  }
 }
 .project-facilites__title {
   font-family: "Neue Machina";
@@ -3961,11 +4285,23 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 32px;
 }
+@media screen and (max-width: 1236px) {
+  .project-facilites__title {
+    font-size: 25px;
+    margin-bottom: 19.5px;
+  }
+}
 .project-facilites__grid {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 1236px) {
+  .project-facilites__grid {
+    gap: 7.5px;
+    margin-bottom: 12.5px;
+  }
 }
 .project-facilites__card {
   display: flex;
@@ -3976,10 +4312,23 @@ h2 {
   border-radius: 12px;
   padding: 70px 40px;
 }
+@media screen and (max-width: 1236px) {
+  .project-facilites__card {
+    width: 197.5px;
+    border-radius: 7.5px;
+    padding: 43.5px 25px;
+  }
+}
 .project-facilites__name {
   font-size: 20px;
   line-height: 130%;
   max-width: 170px;
+}
+@media screen and (max-width: 1236px) {
+  .project-facilites__name {
+    font-size: 12.5px;
+    max-width: 107px;
+  }
 }
 .project-facilites__distance {
   font-family: "Neue Machina";
@@ -3987,11 +4336,23 @@ h2 {
   font-size: 30px;
   color: #DFA633;
 }
+@media screen and (max-width: 1236px) {
+  .project-facilites__distance {
+    font-size: 18.75px;
+  }
+}
 .project-facilites__map {
   position: relative;
 }
 .project-facilites__map iframe {
   border-radius: 12px;
+}
+@media screen and (max-width: 1236px) {
+  .project-facilites__map iframe {
+    width: 757.6px;
+    height: 379px;
+    border-radius: 7.5px;
+  }
 }
 .project-facilites__map-content {
   position: absolute;
@@ -4001,6 +4362,13 @@ h2 {
   background-color: #fff;
   border-radius: 8px;
 }
+@media screen and (max-width: 1236px) {
+  .project-facilites__map-content {
+    left: 31.25px;
+    bottom: 31.25px;
+    padding: 30px 32.5px;
+  }
+}
 .project-facilites__map-content__title {
   font-family: "Neue Machina";
   font-weight: 600;
@@ -4009,11 +4377,22 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 24px;
 }
+@media screen and (max-width: 1236px) {
+  .project-facilites__map-content__title {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+}
 .project-facilites__map-content__row {
   display: flex;
 }
 .project-facilites__map-content__column + .project-facilites__map-content__column {
   margin-left: 56px;
+}
+@media screen and (max-width: 1236px) {
+  .project-facilites__map-content__column + .project-facilites__map-content__column {
+    margin-left: 35px;
+  }
 }
 .project-facilites__map-content__subheading {
   font-size: 12px;
@@ -4021,15 +4400,32 @@ h2 {
   color: #DFA633;
   margin-bottom: 16px;
 }
+@media screen and (max-width: 1236px) {
+  .project-facilites__map-content__subheading {
+    font-size: 7.5px;
+    margin-bottom: 10px;
+  }
+}
 .project-facilites__map-content__text {
   display: block;
   font-weight: 600;
   font-size: 13px;
   max-width: 204px;
 }
+@media screen and (max-width: 1236px) {
+  .project-facilites__map-content__text {
+    font-size: 8px;
+    max-width: 127px;
+  }
+}
 
 .project-consult {
   margin-bottom: 160px;
+}
+@media screen and (max-width: 1236px) {
+  .project-consult {
+    margin-bottom: 100px;
+  }
 }
 .project-consult__wrapper {
   display: flex;
@@ -4037,6 +4433,11 @@ h2 {
   align-items: center;
   padding: 80px 70px;
   background-color: #F6F8F7;
+}
+@media screen and (max-width: 1236px) {
+  .project-consult__wrapper {
+    padding: 50px 43.75px;
+  }
 }
 .project-consult__title {
   font-family: "Neue Machina";
@@ -4047,10 +4448,23 @@ h2 {
   margin-bottom: 48px;
   max-width: 397px;
 }
+@media screen and (max-width: 1236px) {
+  .project-consult__title {
+    font-size: 25px;
+    margin-bottom: 30px;
+    max-width: 250px;
+  }
+}
 .project-consult__text {
   font-size: 20px;
   line-height: 160%;
   max-width: 506px;
+}
+@media screen and (max-width: 1236px) {
+  .project-consult__text {
+    font-size: 12.5px;
+    max-width: 317px;
+  }
 }
 .project-consult__btn {
   display: flex;
@@ -4063,6 +4477,132 @@ h2 {
   padding: 40px 65px;
   background-color: #DFA633;
   border-radius: 12px;
+}
+@media screen and (max-width: 1236px) {
+  .project-consult__btn {
+    font-size: 18.75px;
+    padding: 25px 40.5px;
+    border-radius: 7.5px;
+  }
+}
+
+.villa-start {
+  margin: 105px 0px 120px;
+}
+.villa-start__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 945px;
+}
+.villa-start__image {
+  width: 483px;
+  height: 600px;
+}
+.villa-start__image img {
+  width: 100%;
+  height: 100%;
+}
+.villa-start__subheading {
+  font-family: "Neue Machina";
+  font-size: 16px;
+  line-height: 70%;
+  margin-bottom: 24px;
+  text-transform: capitalize;
+}
+.villa-start__title {
+  font-family: "Neue Machina";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 70%;
+  color: #E7A827;
+  margin-bottom: 24px;
+}
+.villa-start__price {
+  font-family: "Neue Machina";
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 70%;
+  margin-bottom: 40px;
+}
+.villa-start__params {
+  width: 362px;
+  margin-bottom: 40px;
+}
+.villa-start__param {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  border-bottom: 1px solid #E7E7E7;
+}
+.villa-start__param:first-child {
+  border-top: 1px solid #E7E7E7;
+}
+.villa-start__text1 {
+  font-family: "Neue Machina";
+  font-size: 14px;
+  line-height: 70%;
+  color: #888888;
+}
+.villa-start__text2 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 70%;
+}
+.villa-start__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E7A827;
+  border-radius: 6px;
+  padding: 24px 118px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 70%;
+  color: #fff;
+}
+
+.villa-slider {
+  margin-bottom: 120px;
+}
+.villa-slider__slider {
+  text-align: center;
+  position: relative;
+}
+.villa-slider__title {
+  font-family: "Neue Machina";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  margin-bottom: 46px;
+  text-transform: uppercase;
+}
+.villa-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.villa-slider .swiper-slide img {
+  width: 1000px;
+  height: 600px;
+  border-radius: 20px;
+}
+.villa-slider .villa-slider-arrow {
+  position: absolute;
+  z-index: 3;
+  background-color: #DFA633;
+  padding: 23px 20px;
+  width: 20px;
+  height: 14.01px;
+  border-radius: 50%;
+}
+.villa-slider .swiper-button-prev-villa {
+  top: 270px;
+  left: 0px;
+}
+.villa-slider .swiper-button-next-villa {
+  top: 270px;
+  right: 0px;
 }
 
 .footer {

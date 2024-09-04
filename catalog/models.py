@@ -44,7 +44,7 @@ class Facility(models.Model):
         verbose_name_plural = 'facilities'
     
 
-class Image(models.Model):
+class ProjectImage(models.Model):
     image = models.ImageField(upload_to='project/images')
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='images')
 
@@ -55,7 +55,9 @@ class Apartment(models.Model):
     name = models.CharField(max_length=4)
     description = models.CharField(max_length=100)
     price = models.PositiveIntegerField()
+    type = models.CharField(max_length=10)
     bedroom = models.PositiveSmallIntegerField()
+    bathroom = models.PositiveSmallIntegerField(default=0)
     square = models.PositiveSmallIntegerField()
     built_square = models.PositiveSmallIntegerField()
     house_square = models.PositiveSmallIntegerField()
@@ -64,3 +66,7 @@ class Apartment(models.Model):
     def __str__(self):
         return self.name
     
+        
+class ApartmentImage(models.Model):
+    image = models.ImageField(upload_to='apartment/images')
+    apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE, related_name='images')
