@@ -11,58 +11,47 @@
 </head>
 <body>
     <style type="text/css">
-        /* @font-face {
-            font-family: "Gilroy";
-            font-display: swap;
-            src: url(../localstatic/fonts/medium/Gilroy-Medium.eot);
-            src: url(../localstatic/fonts/medium/Gilroy-Medium.eot#iefix) format('embedded-opentype'),
-                 url(../localstatic/fonts/medium/Gilroy-Medium.woff2) format('woff2'),
-                 url(../localstatic/fonts/medium/Gilroy-Medium.woff) format('woff'),
-                 url(../localstatic/fonts/medium/Gilroy-Medium.ttf) format('truetype');
-            font-weight: 500;
-        } */
         @font-face {
             font-family: "Gilroy";
             font-display: swap;
+            src: url("{% static 'fonts/medium/Gilroy-Medium.eot' %}");
+            src: url("{% static 'fonts/medium/Gilroy-Medium.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/medium/Gilroy-Medium.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/medium/Gilroy-Medium.woff' %}") format('woff');
+            src: url("{% static 'fonts/medium/Gilroy-Medium.ttf' %}") format('truetype');
             font-weight: 500;
-            src: url("{% static 'fonts/medium/Gilroy-Medium.eot' %}"),
-                 url("{% static 'fonts/medium/Gilroy-Medium.eot' %}#iefix") format('embedded-opentype'),
-                 url("{% static 'fonts/medium/Gilroy-Medium.woff2' %}") format('woff2'),
-                 url("{% static 'fonts/medium/Gilroy-Medium.woff' %}") format('woff'),
-                 url("{% static 'fonts/medium/Gilroy-Medium.ttf' %}") format('truetype');
         }
-        /* @font-face {
+        @font-face {
             font-family: "Gilroy", sans-serif;
             font-display: swap;
-            src: url('{% static 'fonts/semibold/Gilroy-Semibold.eot' %}')
-            src: url('{% static 'fonts/semibold/Gilroy-Semibold.eot' %}#iefix') format('embedded-opentype'),
-                 url('{% static 'fonts/semibold/Gilroy-Semibold.woff2' %}') format('woff2'),
-                 url('{% static 'fonts/semibold/Gilroy-Semibold.woff' %}') format('woff'),
-                 url('{% static 'fonts/semibold/Gilroy-Semibold.ttf' %}') format('truetype');
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.eot' %}");
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.woff' %}") format('woff');
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.ttf' %}") format('truetype');
             font-weight: 600;
         }
         @font-face {
             font-family: "Gilroy", sans-serif;
             font-display: swap;
-            src: url('{% static 'fonts/bold/Gilroy-Bold.eot' %}');
-            src: url('{% static 'fonts/bold/Gilroy-Bold.eot' %}#iefix') format('embedded-opentype'),
-                 url('{% static 'fonts/bold/Gilroy-Bold.woff2' %}') format('woff2'),
-                 url('{% static 'fonts/bold/Gilroy-Bold.woff' %}') format('woff'),
-                 url('{% static 'fonts/bold/Gilroy-Bold.ttf' %}') format('truetype');
+            src: url("{% static 'fonts/bold/Gilroy-Bold.eot' %}");
+            src: url("{% static 'fonts/bold/Gilroy-Bold.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/bold/Gilroy-Bold.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/bold/Gilroy-Bold.woff' %}") format('woff');
+            src: url("{% static 'fonts/bold/Gilroy-Bold.ttf' %}") format('truetype');
             font-weight: 700;
         }
 
         @font-face {
             font-family: "Neue Machina", sans-serif;
             font-display: swap;
-            src: url('{% static "fonts/medium/NeueMachina-Medium.eot" %}');
-
-            /* src: url('{% static 'fonts/medium/NeueMachina-Medium.eot' %}#iefix') format('embedded-opentype'),
-                 url('{% static 'fonts/medium/NeueMachina-Medium.woff2' %}') format('woff2'),
-                 url('{% static 'fonts/medium/NeueMachina-Medium.woff' %}') format('woff'),
-                 url('{% static 'fonts/medium/NeueMachina-Medium.ttf' %}') format('truetype'); */
-            /* font-weight: 500; */
-        /* } */
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.eot' %}");
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.woff' %}") format('woff');
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.ttf' %}") format('truetype');
+            font-weight: 500;
+        }
         @font-face {
             font-family: "Neue Machina";
             font-display: swap;
