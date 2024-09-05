@@ -455,7 +455,7 @@ h2 {
 @media screen and (max-width: 480px) {
   .hello__row1__subtitle {
     margin-bottom: 6.25vw;
-    max-width: 41.563vw;
+    max-width: 42vw;
   }
 }
 .hello__row1__description {
