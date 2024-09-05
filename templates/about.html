@@ -18,10 +18,10 @@
                     <div class="about-start__row1__text1">Архитектурное совершенство в сочетании с природной красотой</div>
                     <div class="about-start__row1__btn-block">
                         <img src="{% static 'images/aboutstart-line.jpg' %}" alt="Just line">
-                        <div class="about-start__row1__btn">
+                        <a href="#project-slider__title" class="about-start__row1__btn">
                             <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
                             <span>выбрать проект</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="about-start__row1__image"><img src="{% static 'images/aboutstart-mainimage.png' %}" alt="Villa's image"></div>
@@ -34,10 +34,10 @@
                     <span>о нашей компании</span>
                 </div>
                 <div class="about-start__row1-mobile__text"><span>Архитектурное совершенство в сочетании с природной красотой</span></div>
-                <div class="about-start__row1-mobile__btn">
+                <a href="#project-slider__title" class="about-start__row1-mobile__btn">
                     <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
                     <span>выбрать проект</span>
-                </div>
+                </a>
             </div>
         </div>
         <div class="about-start__row2">
@@ -64,7 +64,22 @@
 </section>
 <section class="project-slider">
     <div class="project-slider__container container">
-        <div class="project-slider__title">Наши проекты</div>
+    </div>
+</section>
+<section class="project-slider">
+    <div class="project-slider__container container">
+        <div class="project-slider__slider">
+        <div class="project-slider__title" id="project-slider__title">Наши проекты</div>
+            <div class="swiper mySwiperProject">
+                <div class="swiper-wrapper">
+                    {% for project in projects %}
+                    <div class="swiper-slide"><a href="{% url 'project_detail' project.slug%}"><img src="{{ project.main_image.url }}" alt="Project main image"></a></div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-prev-project project-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowleft.svg' %}" alt="White left arrow icon"></div>
+                <div class="swiper-button-next-project project-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowright.svg' %}" alt="White right arrow icon"></div>
+            </div>
+        </div>
     </div>
 </section>
 <section class="awards">
@@ -211,4 +226,20 @@
         </div>
     </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiperProject", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-project",
+        prevEl: ".swiper-button-prev-project",
+      },
+    });
+</script>
 {% endblock %}

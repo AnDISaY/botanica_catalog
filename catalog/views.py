@@ -23,7 +23,8 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'about.html')
+    projects = Project.objects.all()
+    return render(request, 'about.html', {'projects': projects})
 
 
 def project_detail(request, slug):

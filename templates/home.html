@@ -7,13 +7,13 @@
     <div class="hello__container container">
         <div class="hello__column1" style="background-image: url('{% static 'images/hello-villa1.jpg' %}');">
             <h1 class="hello__title">Каталог вилл Botanica Luxury Villas</h1>
-            <a href="#" class="hello__btn">
+            <a href="#projects__title-block" class="hello__btn">
                 <div class="icon-white-arrow-right"><img src="{% static 'images/icon-whitearrowright.svg' %}" alt="white right arrow"></div>
                 <span class="btn-text">выбрать проект</span>
             </a>
-            <a href="#" class="hello__icon black-arrow-down icon-arrow"><img src="{% static 'images/icon-blackarrowdown.svg' %}" alt="black down arrow"></a>
+            <a href="#projects__title-block" class="hello__icon black-arrow-down icon-arrow"><img src="{% static 'images/icon-blackarrowdown.svg' %}" alt="black down arrow"></a>
         </div>
-        <a href="#" class="hello__btn-mobile">
+        <a href="#projects__title-block" class="hello__btn-mobile">
             <div class="icon-white-arrow-right"><img src="{% static 'images/icon-whitearrowright.svg' %}" alt="white right arrow"></div>
             <span class="btn-text">выбрать проект</span>
         </a>
@@ -22,7 +22,7 @@
                 <div class="hello__row1__subtitle subtitle-border">О «Botanica Luxury Villas»</div>
                 <div class="hello__row1__description">Компания AAP Architecture Properties & Development, возглавляемая известным тайским архитектором Аттаситом Интарачоти, воплощает на острове Пхукет уже 22-ю фазу проекта «Botanica Luxury Villas».</div>
                 <div class="hello__row1__icon icon-shortlogo"><img src="{% static 'images/icon-shortlogo.svg' %}" alt="logo"></div>
-                <a href="#" class="hello__row1__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt=""></a>
+                <a href="{% url 'about' %}" class="hello__row1__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt=""></a>
             </div>  
             <div class="hello__row2" style="background-image: url('{% static 'images/hello-villa2.jpg' %}');">
                 <div class="hello__row2__subtitle subtitle-border">Новейший проект</div>
@@ -34,7 +34,7 @@
 </section>
 <section class="projects">
     <div class="projects__container container">
-        <div class="projects__title-block">
+        <div class="projects__title-block" id="projects__title-block">
             <h2 class="projects__title">Список проектов Botanica:</h2>
             <div class="projects__tabs">
                 {% for project in projects %}
@@ -65,7 +65,7 @@
                         </div>
                         <div class="project__row2">
                             <div class="project__descr-block"><span class="project__description">{{ project.description|linebreaks }}</span></div>
-                            <a href="#" class="project__view-btn-mobile">
+                            <a href="{% url 'project_detail' project.slug %}" class="project__view-btn-mobile">
                                 <div class="icon-white-arrow-right"><img src="{% static 'images/icon-whitearrowright.svg' %}" alt="white right arrow"></div>
                                 <span>Смотреть детально</span>
                             </a>
