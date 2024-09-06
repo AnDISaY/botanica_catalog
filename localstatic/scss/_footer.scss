@@ -338,6 +338,7 @@
         }
 
         &__title {
+            font-family: $fg;
             font-weight: 600;
             font-size: 18px;
             margin-bottom: 18px;
@@ -363,6 +364,7 @@
         }
 
         &__btn {
+            font-family: $fg;
             display: flex;
             justify-content: center;
             align-items: center;
