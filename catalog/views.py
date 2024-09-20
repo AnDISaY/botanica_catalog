@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Project, Apartment
+from .models import Project, Apartment, ApartmentImage
 from django.http import JsonResponse, HttpResponse
 from django.core.serializers import serialize
 import json
@@ -47,6 +47,8 @@ def project_detail(request, slug):
 def villa_detail(request, project_slug, pk):
     project = Project.objects.get(slug=project_slug)
     villa = Apartment.objects.get(id=pk)
+    apartment_images = ApartmentImage.objects.filter(apartment=pk)
+    print(apartment_images)
     price = str(villa.price)
     # count = 0
     if len(price) > 6:
@@ -56,7 +58,7 @@ def villa_detail(request, project_slug, pk):
     # price = price[-6:-3]
     # print(price)
     # print(price[-6:-3][::-1])
-    return render(request, 'villa_detail.html', {'villa': villa, 'project': project,}) # 'count': count})
+    return render(request, 'villa_detail.html', {'villa': villa, 'project': project, 'apartment_images': apartment_images,}) # 'count': count})
 
 
 # def submit(request):

@@ -4615,10 +4615,14 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-.villa-slider .swiper-slide img {
+.villa-slider__image {
   width: 1000px;
   height: 600px;
   border-radius: 20px;
+  overflow: hidden;
+}
+.villa-slider__image img {
+  width: 100%;
 }
 .villa-slider .villa-slider-arrow {
   position: absolute;

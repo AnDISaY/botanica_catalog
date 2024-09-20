@@ -44,13 +44,14 @@
 <section class="villa-slider">
     <div class="villa-slider__container container">
         <div class="villa-slider__slider">
-            <div class="villa-slider__title">Галерея grand avenue</div>
+            <div class="villa-slider__title">Галерея виллы</div>
             <div class="swiper mySwiperVilla">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="{{ villa.image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ villa.image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ villa.image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ villa.image.url }}" alt=""></div>
+                    {% for ai in apartment_images %}
+                    <div class="swiper-slide">
+                        <div class="villa-slider__image"><img src="{{ ai.image.url }}" alt=""></div>
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="swiper-button-prev-villa villa-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowleft.svg' %}" alt="White left arrow icon"></div>
                 <div class="swiper-button-next-villa villa-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowright.svg' %}" alt="White right arrow icon"></div>

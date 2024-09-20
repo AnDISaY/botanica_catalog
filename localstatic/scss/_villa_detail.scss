@@ -108,11 +108,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &__image {
+        width: 1000px;
+        height: 600px;
+        border-radius: 20px;
+        overflow: hidden;
 
         img {
-            width: 1000px;
-            height: 600px;
-            border-radius: 20px;
+            width: 100%;
         }
     }
 
