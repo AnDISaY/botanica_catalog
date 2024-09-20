@@ -4619,10 +4619,9 @@ h2 {
   width: 1000px;
   height: 600px;
   border-radius: 20px;
-  overflow: hidden;
-}
-.villa-slider__image img {
-  width: 100%;
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .villa-slider .villa-slider-arrow {
   position: absolute;
