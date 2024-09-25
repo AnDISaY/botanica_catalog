@@ -17,6 +17,10 @@
                 <span>ОСТАВИТЬ ЗАЯВКУ</span>
             </a>
         </div>
+        <a href="#" class="project-start__request-mobile">
+            <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="Grey right arrow icon">
+            <span>ОСТАВИТЬ ЗАЯВКУ</span>
+        </a>
     </div>
 </section>
 <section class="project-descr">
@@ -29,9 +33,13 @@
                   <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
                   <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
                 </div>
-                <div class="swiper-button-prev-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowleft.svg' %}" alt="Black left arrow icon"></div>
-                <div class="swiper-button-next-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Black right arrow icon"></div>
             </div>
+            <div class="swiper-button-prev-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowleft.svg' %}" alt="Black left arrow icon"></div>
+            <div class="swiper-button-next-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Black right arrow icon"></div>
+            <!-- <div class="project-descr__slider__arrows">
+                <div class="project-descr__slider__arrow swiper-button-prev-custom"><img src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}" alt="Arrow left"></div>
+                <div class="project-descr__slider__arrow swiper-button-next-custom"><img src="{% static 'images/icon-sliderarrowright-mobile.svg' %}" alt="Arrow right"></div>
+            </div> -->
         </div>
         <div class="project-descr__content">
             <div class="project-descr__text">{{ project.description|linebreaks }}</div>
@@ -70,7 +78,7 @@
             <form method="post" id="my-form" class="project-filter__form">
                 {% csrf_token %}
                 <div class="project-filter__radio-block project-filter__form__el">
-                    <div class="project-filter__input-title">Спальни:</div>
+                    <div class="project-filter__input-title project-filter__bedroom">Спальни:</div>
                     <div class="project-filter__radio-wrapper">
                         <label for="nr1" class="project-filter__radio radio-active">
                             <input type="radio" id="nr1" name="number-radio" value="1" checked>
@@ -112,38 +120,40 @@
                         <input type="range" name="price-range" class="range-max" min="0" max="10000000" value="7500000" step="500">
                     </div>
                 </div> -->
-                <div class="project-filter__range-wrapper project-filter__form__el">
-                    <div class="project-filter__input-title">Цена:</div>
-                    <div class="project-filter__number-input price-input">
-                        <div class="project-filter__field">
-                            <div class="project-filter__text">до</div>
-                            <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="3000000" min="0"><span>$</span>
+                <div class="project-filter__range-block">
+                    <div class="project-filter__range-wrapper project-filter__form__el">
+                        <div class="project-filter__input-title">Цена:</div>
+                        <div class="project-filter__number-input price-input">
+                            <div class="project-filter__field">
+                                <div class="project-filter__text">до</div>
+                                <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="3000000" min="0"><span>$</span>
+                            </div>
+                        </div>
+                        <div class="project-filter__slider">
+                            <div class="project-filter__progress__left"></div>
+                            <div class="project-filter__progress"></div>
+                            <div class="project-filter__progress__right"></div>
+                        </div>
+                        <div class="project-filter__range-input range-input-price">
+                            <input type="range" name="price-range" class="project-range" min="0" max="6000000" value="3000000" step="500">
                         </div>
                     </div>
-                    <div class="project-filter__slider">
-                        <div class="project-filter__progress__left"></div>
-                        <div class="project-filter__progress"></div>
-                        <div class="project-filter__progress__right"></div>
-                    </div>
-                    <div class="project-filter__range-input range-input-price">
-                        <input type="range" name="price-range" class="project-range" min="0" max="6000000" value="3000000" step="500">
-                    </div>
-                </div>
-                <div class="project-filter__range-wrapper project-filter__form__el">
-                    <div class="project-filter__input-title">Общая площадь:</div>
-                    <div class="project-filter__number-input square-input">
-                        <div class="project-filter__field">
-                            <div class="project-filter__text">до</div>
-                            <input type="number" name="square-number" class="project-filter__number-input square-input-style" value="5000" min="0"><span>м²</span>
+                    <div class="project-filter__range-wrapper project-filter__form__el">
+                        <div class="project-filter__input-title">Общая площадь:</div>
+                        <div class="project-filter__number-input square-input">
+                            <div class="project-filter__field">
+                                <div class="project-filter__text">до</div>
+                                <input type="number" name="square-number" class="project-filter__number-input square-input-style" value="5000" min="0"><span>м²</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="project-filter__slider">
-                        <div class="project-filter__progress__left"></div>
-                        <div class="project-filter__progress"></div>
-                        <div class="project-filter__progress__right"></div>
-                    </div>
-                    <div class="project-filter__range-input range-input-square">
-                        <input type="range" name="square-range" class="project-range" min="0" max="10000" value="5000" step="10">
+                        <div class="project-filter__slider">
+                            <div class="project-filter__progress__left"></div>
+                            <div class="project-filter__progress"></div>
+                            <div class="project-filter__progress__right"></div>
+                        </div>
+                        <div class="project-filter__range-input range-input-square">
+                            <input type="range" name="square-range" class="project-range" min="0" max="10000" value="5000" step="10">
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="project-filter__submit">submit</button>
@@ -183,11 +193,12 @@
                         <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
                     </div>
                 </div>
+                <div class="project-apartments__apart__show-more-mobile">подробнее</div>
             </a>
             {% else %}
             {% if is_true == 0 %}
             <div class="project-apartments__show-more show-content">
-                <span>Посмотреть больше вилл</span>
+                <span>Cмотреть больше вилл</span>
             </div>
             {% add is_true as is_true %}
             {% endif %}
@@ -215,6 +226,7 @@
                         <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
                     </div>
                 </div>
+                <div class="project-apartments__apart__show-more-mobile">подробнее</div>
             </a>
             {% endif %}
             {% add count as count %}
@@ -222,30 +234,31 @@
             {% else %}
             {% for apart in apartments %}
             <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart">
-                    <div class="project-apartments__apart__tags">
-                        <div class="project-apartments__apart__tag">{{ apart.name }}</div>
-                        <div class="project-apartments__apart__tag">{{ apart.description }}</div>
+                <div class="project-apartments__apart__tags">
+                    <div class="project-apartments__apart__tag">{{ apart.name }}</div>
+                    <div class="project-apartments__apart__tag">{{ apart.description }}</div>
+                </div>
+                <div class="project-apartments__apart__image"><img src="{{ apart.image.url }}" alt="Apartment image"></div>
+                <div class="project-apartments__apart__content">
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Тип — {{ apart.type }}</div>
+                        <div class="project-apartments__apart__text2">{{ apart.bedroom }} спальни</div>
                     </div>
-                    <div class="project-apartments__apart__image"><img src="{{ apart.image.url }}" alt="Apartment image"></div>
-                    <div class="project-apartments__apart__content">
-                        <div class="project-apartments__apart__row">
-                            <div class="project-apartments__apart__text">Тип — {{ apart.type }}</div>
-                            <div class="project-apartments__apart__text2">{{ apart.bedroom }} спальни</div>
-                        </div>
-                        <div class="project-apartments__apart__row">
-                            <div class="project-apartments__apart__text">Площадь</div>
-                            <div class="project-apartments__apart__text2">{{ apart.square }} м²</div>
-                        </div>
-                        <div class="project-apartments__apart__row">
-                            <div class="project-apartments__apart__text">Застроено</div>
-                            <div class="project-apartments__apart__text2">{{ apart.built_square }} м²</div>
-                        </div>
-                        <div class="project-apartments__apart__row">
-                            <div class="project-apartments__apart__text">Площадь дома</div>
-                            <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
-                        </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Площадь</div>
+                        <div class="project-apartments__apart__text2">{{ apart.square }} м²</div>
                     </div>
-                </a>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Застроено</div>
+                        <div class="project-apartments__apart__text2">{{ apart.built_square }} м²</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Площадь дома</div>
+                        <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
+                    </div>
+                </div>
+                <div class="project-apartments__apart__show-more-mobile">подробнее</div>
+            </a>
             {% endfor %}
             {% endif %}
         </div>
@@ -253,18 +266,20 @@
 </section>
 <section class="project-facilites">
     <div class="project-facilites__container container">
-        <div class="project-facilites__title">Доступность локации</div>
-        <div class="project-facilites__grid">
-            {% for facility in project.facilities.all %}
-            <div class="project-facilites__card">
-                <div class="project-facilites__name">{{ facility.name }}</div>
-                {% if facility.distance|stringformat:"d"|length > 3 %}
-                    <div class="project-facilites__distance">{{ facility.distance|stringformat:"d"|slice:"0:1" }},{{ facility.distance|stringformat:"d"|slice:"1:2" }} км</div>
-                {% else %}
-                    <div class="project-facilites__distance">{{ facility.distance }} м</div>
-                {% endif %}
+            <div class="project-facilites__content">
+            <div class="project-facilites__title">Доступность локации</div>
+            <div class="project-facilites__grid">
+                {% for facility in project.facilities.all %}
+                <div class="project-facilites__card">
+                    <div class="project-facilites__name">{{ facility.name }}</div>
+                    {% if facility.distance|stringformat:"d"|length > 3 %}
+                        <div class="project-facilites__distance">{{ facility.distance|stringformat:"d"|slice:"0:1" }},{{ facility.distance|stringformat:"d"|slice:"1:2" }} км</div>
+                    {% else %}
+                        <div class="project-facilites__distance">{{ facility.distance }} м</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
         <div class="project-facilites__map">
             {{ project.map_iframe|safe }}
@@ -291,7 +306,45 @@
                 <div class="project-consult__title">Индивидуальная консультация</div>
                 <div class="project-consult__text">Наши эксперты помогут Вам выбрать лучшую виллу и согласовать оптимальные условия покупки по этому проекту</div>
             </div>
-            <a href="#" class="project-consult__btn">Заказать консультацию</a>
+            <a href="#" class="project-consult__btn">
+                <img src="/localstatic/images/icon-whitearrowright.svg" alt="White right arrow icon">
+                <span>Заказать консультацию</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="location project-location">
+    <div class="location__container container">
+        <div class="location__title">Локации наших проектов</div>
+        <div class="location__map" style="background-image: url('{% static 'images/map.jpg' %}');">
+            <a href="/grand_avenue" class="location__map__place map__place1">
+                <div class="location__map__number">1</div>
+                <div class="location__map__text">Grand Avenue</div>
+            </a>
+            <a href="/forestique" class="location__map__place map__place2">
+                <div class="location__map__number">2</div>
+                <div class="location__map__text">Forestique</div>
+            </a>
+            <a href="#" class="location__map__place map__place3">
+                <div class="location__map__number">3</div>
+                <div class="location__map__text">Four Seasons</div>
+            </a>
+            <a href="#" class="location__map__place map__place4">
+                <div class="location__map__number">4</div>
+                <div class="location__map__text">Moder Loft II</div>
+            </a>
+            <a href="#" class="location__map__place map__place5">
+                <div class="location__map__number">5</div>
+                <div class="location__map__text">Lakeside</div>
+            </a>
+            <a href="#" class="location__map__place map__place6">
+                <div class="location__map__number">6</div>
+                <div class="location__map__text">Sky Valley</div>
+            </a>
+        </div>
+        <div class="location__text-block">
+            <div class="location__icon"><img src="{% static 'images/icon-mapclick.svg' %}" alt="Map icon click"></div>
+            <div class="location__text">Нажмите на любой проект, чтобы перейти на его страницу</div>
         </div>
     </div>
 </section>
@@ -320,5 +373,24 @@
         prevEl: ".swiper-button-prev-custom",
       },
     });
+</script>
+<script>
+    const arrows = document.querySelectorAll('.project-slider-arrow img');
+    if (window.screen.width <= 785) {
+        arrows[0].src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}";
+        arrows[1].src="{% static 'images/icon-sliderarrowright-mobile.svg' %}";
+    } else {
+        arrows[0].src="{% static 'images/icon-blackarrowleft.svg' %}";
+        arrows[1].src="{% static 'images/icon-blackarrowright.svg' %}";
+    }
+    window.addEventListener("resize", function(event) {
+        if (window.screen.width <= 785) {
+            arrows[0].src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}";
+            arrows[1].src="{% static 'images/icon-sliderarrowright-mobile.svg' %}";
+        } else {
+            arrows[0].src="{% static 'images/icon-blackarrowleft.svg' %}";
+            arrows[1].src="{% static 'images/icon-blackarrowright.svg' %}";
+        }
+    })
 </script>
 {% endblock %}

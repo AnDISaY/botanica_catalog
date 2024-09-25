@@ -25,5 +25,6 @@ class ApartmentImageInline(admin.TabularInline):
 class ApartmentAdmin(admin.ModelAdmin):
     inlines = [ApartmentImageInline]
 
+
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Apartment, ApartmentAdmin)

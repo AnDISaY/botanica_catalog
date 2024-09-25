@@ -75,8 +75,9 @@
         }
 
         @media screen and (max-width: $md3) {
-            max-width: 40vw;
-            font-size: 4.688vw;
+            line-height: 110%;
+            max-width: 62.5vw;
+            font-size: 7.5vw;
         }
     }
 
@@ -134,7 +135,7 @@
             margin-bottom: 3.125vw;
 
             span {
-                font-size: 3.125vw;
+                font-size: 4.375vw;
             }
         }
     }
@@ -236,8 +237,8 @@
             }
 
             @media screen and (max-width: $md3) {
-                margin-bottom: 6.25vw;
-                max-width: 42vw;
+                margin-bottom: 7.5vw;
+                max-width: 61.563vw;
             }
         }
 
@@ -257,8 +258,8 @@
             }
 
             @media screen and (max-width: $md3) {
-                font-size: 2.813vw;
-                max-width: 65vw;
+                font-size: 3.438vw;
+                max-width: 60.5vw;
             }
         }
 
@@ -374,9 +375,9 @@
         }
 
         @media screen and (max-width: $md3) {
-            font-size: 3.438vw;
-            padding: 3.125vw 5vw;
-            border-radius: 4.375vw;
+            font-size: 4.063vw;
+            padding: 3.75vw 6.25vw;
+            border-radius: 5.313vw;
         }
     }
 
@@ -496,9 +497,9 @@
         }
 
         @media screen and (max-width: $md3) {
-            font-size: 3.75vw;
-            margin-bottom: 4.375vw;
-            max-width: 40.625vw;
+            font-size: 5.625vw;
+            margin-bottom: 5vw;
+            max-width: 57.5vw;
         }
     }
 
@@ -538,11 +539,11 @@
         }
 
         @media screen and (max-width: $md3) {
-            padding: 1.875vw 3.75vw;
-            font-size: 2.5vw;
-            border: #121212 solid 0.2vw;
-            border-radius: 2.813vw;
-            margin: 0px 1.875vw 1.875vw 0px;
+            padding: 2.5vw 5vw;
+            font-size: 3.438vw;
+            border: #121212 solid 0.313vw;
+            border-radius: 3.75vw;
+            margin: 0px 2.5vw 2.5vw 0px;
             line-height: 2.188vw;
         }
     }
@@ -555,7 +556,7 @@
         }
 
         @media screen and (max-width: $md3) {
-            border: #121212 solid 0.125vw;
+            border: #121212 solid 0.313vw;
         }
     }
 
@@ -680,8 +681,9 @@
         }
 
         @media screen and (max-width: $md3) {
-            font-size: 3.125vw;
-            margin-bottom: 2.5vw;
+            letter-spacing: 1.6px;
+            font-size: 3.75vw;
+            margin-bottom: 3.125vw;
             line-height: 2.188vw;
         }
     }
@@ -720,38 +722,39 @@
         }
 
         @media screen and (max-width: $md3) {
-            font-size: 5.625vw;
+            font-size: 7.5vw;
             line-height: 4.063vw;
         }
     }
 
     &__main-image {
+        width: 842px;
+        height: 400px;
         margin-right: 20px;
         position: relative;
 
         img {
-            max-width: 842px;
-            max-height: 400px;
+            width: 100%;
+            height: 100%;
             border-radius: 12px;
         }
 
         @media screen and (max-width: $md1) {
+            width: 526.25px;
+            height: 250px;
             margin-right: 12.5px;
 
             img {
-                width: 526.25px;
-                height: 250px;
                 border-radius: 7.5px;
             }
         }
 
         @media screen and (max-width: $md2) {
-            margin-right: 0;
+            width: 420px;
             height: 240px;
+            margin-right: 0;
 
             img {
-                width: 420px;
-                height: 240px;
                 border-radius: 0px;
                 border-top-left-radius: 7.5px;
                 border-top-right-radius: 7.5px;
@@ -760,11 +763,10 @@
         }
 
         @media screen and (max-width: $md3) {
+            width: 87.5vw;
             height: 50vw;
 
             img {
-                width: 87.5vw;
-                height: 50vw;
                 border-top-left-radius: 1.563vw;
                 border-top-right-radius: 1.563vw;
             }
@@ -847,9 +849,9 @@
         }
 
         @media screen and (max-width: $md3) {
-            font-size: 3.125vw;
-            padding: 5.313vw 0px;
-            border-radius: 5px;
+            font-size: 4.375vw;
+            padding: 6.875vw 0px;
+            border-radius: 1.563vw;
             margin-bottom: 7.5vw;
 
             .icon-white-arrow-right {
@@ -905,7 +907,7 @@
         }
 
         @media screen and (max-width: $md3) {
-            padding: 6.25vw 0px 6.25vw 5vw;
+            padding: 7.5vw 0px 7.5vw 5vw;
             margin-bottom: 3.125vw;
         }
     }
@@ -926,8 +928,8 @@
         }
 
         @media screen and (max-width: $md3) {
-            max-width: 59.375vw;
-            font-size: 2.813vw;
+            max-width: 71.875vw;
+            font-size: 3.438vw;
         }
     }
 
@@ -980,11 +982,11 @@
         }
 
         @media screen and (max-width: $md3) {
-            font-size: 2.813vw;
-            padding: 2.5vw 6.25vw;
+            font-size: 3.438vw;
+            padding: 2.5vw 5vw;
             line-height: 1.875vw;
-            border-radius: 3.253vw;
-            margin: 0px 1.875vw 1.875vw 0px;
+            border-radius: 3.75vw;
+            margin: 0px 1.875vw 2.5vw 0px;
         }
     }
 
@@ -1061,7 +1063,7 @@
         }
 
         @media screen and (max-width: $md3) {
-            font-size: 3.75vw;
+            font-size: 5.625vw;
         }
     }
 
@@ -1081,8 +1083,9 @@
         }
         
         @media screen and (max-width: $md3) {
-            height: 0.072vw;
-            width: 37.188vw;
+            display: none;
+            // height: 0.072vw;
+            // width: 37.188vw;
         }
     }
 
@@ -1114,9 +1117,9 @@
         }
 
         @media screen and (max-width: $md3) {
-            width: 1.875vw;
-            height: 1.875vw;
-            padding: 1.563vw;
+            width: 3.516vw;
+            height: 3.516vw;
+            padding: 2.928vw;
         }
     }
 
@@ -1159,7 +1162,7 @@
         }
 
         @media screen and (max-width: $md3) {
-            padding: 6.25vw 5vw;
+            padding: 7.5vw 5vw;
         }
     }
 
@@ -1200,7 +1203,7 @@
         }
 
         @media screen and (max-width: $md3) {
-            font-size: 3.75vw;
+            font-size: 5.625vw;
         }
     }
 
@@ -1232,9 +1235,9 @@
         }
 
         @media screen and (max-width: $md3) {
-            width: 1.834vw;
-            height: 1.344vw;
-            padding: 2.188vw 1.875vw;
+            width: 3.125vw;
+            height: 2.188vw;
+            padding: 3.75vw 3.125vw;
         }
     }
 

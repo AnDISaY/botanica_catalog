@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    <link rel=”mask-icon” href=”favicon.svg”>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
@@ -121,12 +123,14 @@
                 </div>
             </div>
             <div class="footer__callback">
-                <div class="footer__callback__icon">
-                    <img src="{% static 'images/icon-phone.svg' %}" alt="phone icon">
-                </div>
-                <div class="footer__callback__content">
-                    <div class="footer__callback__title">Мы будем рады ответить на ваши вопросы</div>
-                    <div class="footer__callback__text">и помочь вам c выбором виллы!
+                <div class="footer__callback__content-block">
+                    <div class="footer__callback__icon">
+                        <img src="{% static 'images/icon-phone.svg' %}" alt="phone icon">
+                    </div>
+                    <div class="footer__callback__content">
+                        <div class="footer__callback__title">Мы будем рады ответить на ваши вопросы</div>
+                        <div class="footer__callback__text">и помочь вам c выбором виллы!
+                        </div>
                     </div>
                 </div>
                 <a href="#" class="footer__callback__button">Перезвоните мне</a>

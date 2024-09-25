@@ -23,7 +23,7 @@ class Project(models.Model):
 
 class Parameter(models.Model):
     name = models.CharField(max_length=300)
-    project = models.ForeignKey(Project, on_delete=models.RESTRICT, related_name='parametres')
+    project = models.ForeignKey(Project, on_delete=models.SET_NULL, related_name='parametres', null=True)
 
     def __str__(self):
         return self.name

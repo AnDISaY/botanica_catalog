@@ -63,10 +63,6 @@
 </section>
 <section class="project-slider">
     <div class="project-slider__container container">
-    </div>
-</section>
-<section class="project-slider">
-    <div class="project-slider__container container">
         <div class="project-slider__slider">
         <div class="project-slider__title" id="project-slider__title">Наши проекты</div>
             <div class="swiper mySwiperProject">
@@ -75,8 +71,8 @@
                     <div class="swiper-slide"><a href="{% url 'project_detail' project.slug%}"><img src="{{ project.main_image.url }}" alt="Project main image"></a></div>
                     {% endfor %}
                 </div>
-                <div class="swiper-button-prev-project project-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowleft.svg' %}" alt="White left arrow icon"></div>
-                <div class="swiper-button-next-project project-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowright.svg' %}" alt="White right arrow icon"></div>
+                <div class="swiper-button-prev-project project-slider-arrow"><img src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}" alt="White left arrow icon"></div>
+                <div class="swiper-button-next-project project-slider-arrow"><img src="{% static 'images/icon-sliderarrowright-mobile.svg' %}" alt="White right arrow icon"></div>
             </div>
         </div>
     </div>
@@ -155,7 +151,7 @@
                         <div class="advantages__row2__content__step">
                             <span>3</span>
                         </div>
-                        <div class="advantages__row2__content__text">Регистрация</div>
+                        <div class="advantages__row2__content__text active-text">Регистрация</div>
                     </div>
                 </div>
             </div>
@@ -195,7 +191,7 @@
 </section>
 <section class="location">
     <div class="location__container container">
-        <div class="location__title">Локации наших проектов:</div>
+        <div class="location__title">Локации наших проектов</div>
         <div class="location__map" style="background-image: url('{% static 'images/map.jpg' %}');">
             <a href="/grand_avenue" class="location__map__place map__place1">
                 <div class="location__map__number">1</div>

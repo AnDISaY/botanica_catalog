@@ -9,7 +9,11 @@
         <div class="villa-start__image"><img src="{{ villa.image.url }}" alt="Villa plan image"></div>
         <div class="villa-start__content">
             <h1 class="villa-start__subheading">Botanica {{ villa.project.title }}</h1>
-            <div class="villa-start__title">{{ villa.name }} / {{ villa.description }}</div>
+            <div class="villa-start__title">
+                <span class="villa-start__title-1">{{ villa.name }}</span>
+                <span class="villa-start__title-2"> / </span>
+                <span class="villa-start__title-3">{{ villa.description }}</span>
+            </div>
             <div class="villa-start__price">— ${{ villa.price }}</div>
             <div class="villa-start__params">
                 <div class="villa-start__param">
@@ -17,11 +21,11 @@
                     <div class="villa-start__text2">{{ villa.type }}</div>
                 </div>
                 <div class="villa-start__param">
-                    <div class="villa-start__text1">Спальные комнаты</div>
+                    <div class="villa-start__text1">Спальные</div>
                     <div class="villa-start__text2">{{ villa.bedroom }} спальни</div>
                 </div>
                 <div class="villa-start__param">
-                    <div class="villa-start__text1">Ванные комнаты</div>
+                    <div class="villa-start__text1">Ванные</div>
                     <div class="villa-start__text2">{{ villa.bathroom }} ванные</div>
                 </div>
                 <div class="villa-start__param">
@@ -37,7 +41,13 @@
                     <div class="villa-start__text2">{{ villa.house_square }} м²</div>
                 </div>
             </div>
-            <div class="villa-start__btn">Узнать больше</div>
+            <div class="villa-start__btn">
+                <span>Узнать больше</span>
+            </div>
+            <div class="villa-start__btn villa-start__btn-mobile">
+                <img src="/localstatic/images/icon-whitearrowright.svg" alt="White right arrow icon">
+                <span>смотреть детально</span>
+            </div>
         </div>
     </div>
 </section>
@@ -51,10 +61,15 @@
                     <div class="swiper-slide">
                         <div class="villa-slider__image" style="background-image: url('{{ ai.image.url }}');"></div>
                     </div>
-                    {% endfor %}
+                    <div class="swiper-slide">
+                        <div class="villa-slider__image" style="background-image: url('{{ ai.image.url }}');"></div>
+                    </div>
+                    {% endfor %}    
                 </div>
-                <div class="swiper-button-prev-villa villa-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowleft.svg' %}" alt="White left arrow icon"></div>
-                <div class="swiper-button-next-villa villa-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowright.svg' %}" alt="White right arrow icon"></div>
+                <div class="villa-slider-arrows">
+                    <div class="swiper-button-prev-villa villa-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowleft.svg' %}" alt="White left arrow icon"></div>
+                    <div class="swiper-button-next-villa villa-slider-arrow"><img src="{% static 'images/icon-sliderwhitearrowright.svg' %}" alt="White right arrow icon"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -62,7 +77,7 @@
 <section class="project-apartments">
     <div class="project-apartments__container container">
         <div class="project-apartments__wrapper wrapper">
-            {% for apart in project.apartments.all %}
+            {% for apart in project.apartments.all|slice:":7" %}
             {% if not apart.id == villa.id %}
                 <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart">
                     <div class="project-apartments__apart__tags">
@@ -88,6 +103,7 @@
                             <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
                         </div>
                     </div>
+                    <div class="project-apartments__apart__show-more-mobile">подробнее</div>
                 </a>
             {% endif %}
             {% endfor %}
@@ -110,5 +126,24 @@
         prevEl: ".swiper-button-prev-villa",
       },
     });
+</script>
+<script>
+    const arrows = document.querySelectorAll('.villa-slider-arrow img');
+    if (window.screen.width <= 785) {
+        arrows[0].src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}";
+        arrows[1].src="{% static 'images/icon-sliderarrowright-mobile.svg' %}";
+    } else {
+        arrows[0].src="{% static 'images/icon-sliderwhitearrowleft.svg' %}";
+        arrows[1].src="{% static 'images/icon-sliderwhitearrowright.svg' %}";
+    }
+    window.addEventListener("resize", function(event) {
+        if (window.screen.width <= 785) {
+            arrows[0].src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}";
+            arrows[1].src="{% static 'images/icon-sliderarrowright-mobile.svg' %}";
+        } else {
+            arrows[0].src="{% static 'images/icon-sliderwhitearrowleft.svg' %}";
+            arrows[1].src="{% static 'images/icon-sliderwhitearrowright.svg' %}";
+        }
+    })
 </script>
 {% endblock %}
