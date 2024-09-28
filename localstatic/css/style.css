@@ -696,6 +696,24 @@ h2 {
     max-width: 57.3vw;
   }
 }
+.hello__row1 .subtitle-ru {
+  max-width: 193px;
+}
+@media screen and (max-width: 1236px) {
+  .hello__row1 .subtitle-ru {
+    max-width: 121px;
+  }
+}
+@media screen and (max-width: 785px) {
+  .hello__row1 .subtitle-ru {
+    max-width: 199px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hello__row1 .subtitle-ru {
+    max-width: 49.1vw;
+  }
+}
 .hello__row1__description {
   font-size: 13px;
   max-width: 290px;
