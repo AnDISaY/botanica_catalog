@@ -224,21 +224,21 @@
 
         &__subtitle {
             margin-bottom: 137px;
-            max-width: 193px;
+            max-width: 226px;
 
             @media screen and (max-width: $md1) {
                 margin-bottom: 85.63px;
-                max-width: 121px;
+                max-width: 141px;
             }
 
             @media screen and (max-width: $md2) {
                 margin-bottom: 30px;
-                max-width: 199px;
+                max-width: 233px;
             }
 
             @media screen and (max-width: $md3) {
                 margin-bottom: 7.5vw;
-                max-width: 61.563vw;
+                max-width: 57.3vw;
             }
         }
 

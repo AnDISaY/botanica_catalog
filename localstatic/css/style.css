@@ -123,7 +123,7 @@ h2 {
   font-family: "Neue Machina";
   font-weight: 700;
   font-size: 20px;
-  line-height: 100%;
+  line-height: 80%;
   color: #fff;
   padding: 13px 23px;
   background-color: #E7A827;
@@ -676,24 +676,24 @@ h2 {
 }
 .hello__row1__subtitle {
   margin-bottom: 137px;
-  max-width: 193px;
+  max-width: 226px;
 }
 @media screen and (max-width: 1236px) {
   .hello__row1__subtitle {
     margin-bottom: 85.63px;
-    max-width: 121px;
+    max-width: 141px;
   }
 }
 @media screen and (max-width: 785px) {
   .hello__row1__subtitle {
     margin-bottom: 30px;
-    max-width: 199px;
+    max-width: 233px;
   }
 }
 @media screen and (max-width: 480px) {
   .hello__row1__subtitle {
     margin-bottom: 7.5vw;
-    max-width: 61.563vw;
+    max-width: 57.3vw;
   }
 }
 .hello__row1__description {
