@@ -22,7 +22,7 @@
                 <div class="hello__row1__subtitle subtitle-border">About «Botanica Luxury Villas»</div>
                 <div class="hello__row1__description">AAP Architecture Properties & Development, headed by renowned Thai architect Attasit Intarachoti, has implemented more than 15 phases of the Botanica Luxury Villas project on Phuket Island.</div>
                 <div class="hello__row1__icon icon-shortlogo"><img src="{% static 'images/icon-shortlogo.svg' %}" alt="logo"></div>
-                <a href="{% url 'about' %}" class="hello__row1__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt=""></a>
+                <a href="{% url 'eng:about' %}" class="hello__row1__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt=""></a>
             </div>  
             <div class="hello__row2" style="background-image: url('{% static 'images/hello-villa2.jpg' %}');">
                 <div class="hello__row2__subtitle subtitle-border">Latest project</div>
@@ -60,12 +60,12 @@
                                     </div>
                                     <div class="project__title">{{ project.title }}</div>
                                 </div>
-                                <a href="{% url 'project_detail' project.slug %}" class="project__view-btn">Learn more</a>
+                                <a href="{% url 'eng:project_detail' project.slug %}" class="project__view-btn">Learn more</a>
                             </div>
                         </div>
                         <div class="project__row2">
                             <div class="project__descr-block"><span class="project__description">{{ project.description|linebreaks }}</span></div>
-                            <a href="{% url 'project_detail' project.slug %}" class="project__view-btn-mobile">
+                            <a href="{% url 'eng:project_detail' project.slug %}" class="project__view-btn-mobile">
                                 <div class="icon-white-arrow-right"><img src="{% static 'images/icon-whitearrowright.svg' %}" alt="white right arrow"></div>
                                 <span>Learn more</span>
                             </a>

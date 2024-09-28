@@ -172,7 +172,7 @@
             {% if apartments|length > 6 %}
             {% for apart in apartments %}
             {% if count < 5 %}
-            <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart show-content">
+            <a href="{% url 'eng:villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart show-content">
                 <div class="project-apartments__apart__tags">
                     <div class="project-apartments__apart__tag">{{ apart.name }}</div>
                     <div class="project-apartments__apart__tag">{{ apart.description }}</div>
@@ -205,7 +205,7 @@
             </div>
             {% add is_true as is_true %}
             {% endif %}
-            <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart hide-content">
+            <a href="{% url 'eng:villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart hide-content">
                 <div class="project-apartments__apart__tags">
                     <div class="project-apartments__apart__tag">{{ apart.name }}</div>
                     <div class="project-apartments__apart__tag">{{ apart.description }}</div>
@@ -236,7 +236,7 @@
             {% endfor %}
             {% else %}
             {% for apart in apartments %}
-            <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart">
+            <a href="{% url 'eng:villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart">
                 <div class="project-apartments__apart__tags">
                     <div class="project-apartments__apart__tag">{{ apart.name }}</div>
                     <div class="project-apartments__apart__tag">{{ apart.description }}</div>

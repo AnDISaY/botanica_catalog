@@ -79,7 +79,7 @@
         <div class="project-apartments__wrapper wrapper">
             {% for apart in project.apartments.all|slice:":7" %}
             {% if not apart.id == villa.id %}
-                <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart">
+                <a href="{% url 'eng:villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart">
                     <div class="project-apartments__apart__tags">
                         <div class="project-apartments__apart__tag">{{ apart.name }}</div>
                         <div class="project-apartments__apart__tag">{{ apart.description }}</div>

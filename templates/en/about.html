@@ -67,7 +67,7 @@
             <div class="swiper mySwiperProject">
                 <div class="swiper-wrapper">
                     {% for project in projects %}
-                    <div class="swiper-slide"><a href="{% url 'project_detail' project.slug%}"><img src="{{ project.main_image.url }}" alt="Project main image"></a></div>
+                    <div class="swiper-slide"><a href="{% url 'eng:project_detail' project.slug%}"><img src="{{ project.main_image.url }}" alt="Project main image"></a></div>
                     {% endfor %}
                 </div>
                 <div class="swiper-button-prev-project project-slider-arrow"><img src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}" alt="White left arrow icon"></div>

@@ -80,86 +80,66 @@
             <div class="project-filter__title">Выберите виллу</div>
             <form method="post" id="my-form" class="project-filter__form">
                 {% csrf_token %}
-                <div class="project-filter__radio-block project-filter__form__el">
-                    <div class="project-filter__input-title project-filter__bedroom">Спальни:</div>
-                    <div class="project-filter__radio-wrapper">
-                        <label for="nr1" class="project-filter__radio radio-active">
-                            <input type="radio" id="nr1" name="number-radio" value="1" checked>
-                            1
-                        </label>
-                        <label for="nr2" class="project-filter__radio">
-                            <input type="radio" id="nr2" name="number-radio" value="2">
-                            2
-                        </label>
-                        <label for="nr3" class="project-filter__radio">
-                            <input type="radio" id="nr3" name="number-radio" value="3">
-                            3
-                        </label>
-                        <label for="nr4" class="project-filter__radio">
-                            <input type="radio" id="nr4" name="number-radio" value="4">
-                            4+
-                        </label>
-                    </div>
-                </div>
-                <!-- <div class="project-filter__range-wrapper project-filter__form__el">
-                    <div class="project-filter__input-title">Цена:</div>
-                    <div class="project-filter__number-input price-input">
-                        <div class="project-filter__field">
-                            <div class="project-filter__text">от</div>
-                            <input type="number" name="price-number" class="project-filter__number-input price-input-style input-min" value="2500000" min="0" max="10000000"><span>$</span>
-                        </div>
-                        <div class="project-filter__field">
-                            <div class="project-filter__text">до</div>
-                            <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="7500000" min="0" max="10000000"><span>$</span>
+                <div class="project-filter__form-blocks">
+                    <div class="project-filter__radio-block project-filter__form__el">
+                        <div class="project-filter__input-title project-filter__bedroom">Спальни:</div>
+                        <div class="project-filter__radio-wrapper">
+                            <label for="nr1" class="project-filter__radio radio-active">
+                                <input type="radio" id="nr1" name="number-radio" value="1" checked>
+                                1
+                            </label>
+                            <label for="nr2" class="project-filter__radio">
+                                <input type="radio" id="nr2" name="number-radio" value="2">
+                                2
+                            </label>
+                            <label for="nr3" class="project-filter__radio">
+                                <input type="radio" id="nr3" name="number-radio" value="3">
+                                3
+                            </label>
+                            <label for="nr4" class="project-filter__radio">
+                                <input type="radio" id="nr4" name="number-radio" value="4">
+                                4+
+                            </label>
                         </div>
                     </div>
-                    <div class="project-filter__slider">
-                        <div class="project-filter__progress__left"></div>
-                        <div class="project-filter__progress"></div>
-                        <div class="project-filter__progress__right"></div>
-                    </div>
-                    <div class="project-filter__range-input range-input-price">
-                        <input type="range" name="price-range" class="range-min" min="0" max="10000000" value="2500000" step="500">
-                        <input type="range" name="price-range" class="range-max" min="0" max="10000000" value="7500000" step="500">
-                    </div>
-                </div> -->
-                <div class="project-filter__range-block">
-                    <div class="project-filter__range-wrapper project-filter__form__el">
-                        <div class="project-filter__input-title">Цена:</div>
-                        <div class="project-filter__number-input price-input">
-                            <div class="project-filter__field">
-                                <div class="project-filter__text">до</div>
-                                <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="3000000" min="0"><span>$</span>
+                    <div class="project-filter__range-block">
+                        <div class="project-filter__range-wrapper project-filter__form__el">
+                            <div class="project-filter__input-title">Цена:</div>
+                            <div class="project-filter__number-input price-input">
+                                <div class="project-filter__field">
+                                    <div class="project-filter__text">до</div>
+                                    <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="3000000" min="0"><span>$</span>
+                                </div>
+                            </div>
+                            <div class="project-filter__slider">
+                                <div class="project-filter__progress__left"></div>
+                                <div class="project-filter__progress"></div>
+                                <div class="project-filter__progress__right"></div>
+                            </div>
+                            <div class="project-filter__range-input range-input-price">
+                                <input type="range" name="price-range" class="project-range" min="0" max="6000000" value="3000000" step="500">
                             </div>
                         </div>
-                        <div class="project-filter__slider">
-                            <div class="project-filter__progress__left"></div>
-                            <div class="project-filter__progress"></div>
-                            <div class="project-filter__progress__right"></div>
-                        </div>
-                        <div class="project-filter__range-input range-input-price">
-                            <input type="range" name="price-range" class="project-range" min="0" max="6000000" value="3000000" step="500">
-                        </div>
-                    </div>
-                    <div class="project-filter__range-wrapper project-filter__form__el">
-                        <div class="project-filter__input-title">Общая площадь:</div>
-                        <div class="project-filter__number-input square-input">
-                            <div class="project-filter__field">
-                                <div class="project-filter__text">до</div>
-                                <input type="number" name="square-number" class="project-filter__number-input square-input-style" value="5000" min="0"><span>м²</span>
+                        <div class="project-filter__range-wrapper project-filter__form__el">
+                            <div class="project-filter__input-title">Общая площадь:</div>
+                            <div class="project-filter__number-input square-input">
+                                <div class="project-filter__field">
+                                    <div class="project-filter__text">до</div>
+                                    <input type="number" name="square-number" class="project-filter__number-input square-input-style" value="5000" min="0"><span>м²</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project-filter__slider">
-                            <div class="project-filter__progress__left"></div>
-                            <div class="project-filter__progress"></div>
-                            <div class="project-filter__progress__right"></div>
-                        </div>
-                        <div class="project-filter__range-input range-input-square">
-                            <input type="range" name="square-range" class="project-range" min="0" max="10000" value="5000" step="10">
+                            <div class="project-filter__slider">
+                                <div class="project-filter__progress__left"></div>
+                                <div class="project-filter__progress"></div>
+                                <div class="project-filter__progress__right"></div>
+                            </div>
+                            <div class="project-filter__range-input range-input-square">
+                                <input type="range" name="square-range" class="project-range" min="0" max="10000" value="5000" step="10">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="project-filter__submit">submit</button>
+                <button type="submit" class="project-filter__submit">Применить</button>
             </form>
         </div>
     </div>

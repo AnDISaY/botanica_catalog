@@ -68,13 +68,13 @@
     <section class="header">
         <div class="header__container container">
             <a href="#header-popup" class="header__menu popup-link"><img src="{% static 'images/icon-menu-burger.svg' %}" alt="Menu burger icon"></a>
-            <a href="{% url 'home' %}" class="header__logo">
+            <a href="{% url 'eng:home' %}" class="header__logo">
                 <img src="{% static 'images/icon-logo.svg' %}" alt="logo">
             </a>
             <div class="header__list">
-                <a href="{% url 'home' %}" class="header__list__item">Home</a>
-                <a href="{% url 'home' %}#projects__title-block" class="header__list__item smooth_anchor">Projects</a>
-                <a href="{% url 'about' %}" class="header__list__item">developer</a>
+                <a href="{% url 'eng:home' %}" class="header__list__item">Home</a>
+                <a href="{% url 'eng:home' %}#projects__title-block" class="header__list__item smooth_anchor">Projects</a>
+                <a href="{% url 'eng:about' %}" class="header__list__item">developer</a>
                 <a href="#footer" class="header__list__item">Contacts</a>
             </div>
             <div class="header__dropdown">
@@ -93,15 +93,15 @@
                 <div class="popup-header__close close-popup"><img src="{% static 'images/icon-popup_close.svg' %}" alt="Close icon"></div>
             </div>
             <div class="popup-header__list">
-                <a href="{% url 'home' %}" class="popup-header__li">
+                <a href="{% url 'eng:home' %}" class="popup-header__li">
                     <div class="popup-header__li-text">Home</div>
                     <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-main.svg' %}" alt="Popup icon"></div>
                 </a>
-                <a href="{% url 'home' %}#projects__title-block" class="popup-header__li smooth_anchor close-popup">
+                <a href="{% url 'eng:home' %}#projects__title-block" class="popup-header__li smooth_anchor close-popup">
                     <div class="popup-header__li-text">Projects</div>
                     <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-projects.svg' %}" alt="Popup icon"></div>
                 </a>
-                <a href="{% url 'about' %}" class="popup-header__li">
+                <a href="{% url 'eng:about' %}" class="popup-header__li">
                     <div class="popup-header__li-text">Developer</div>
                     <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-about.svg' %}" alt="Popup icon"></div>
                 </a>
@@ -137,7 +137,7 @@
                 <div class="footer__list">
                     <div class="footer__list-title">Projects</div>
                     {% for project in projects %}
-                    <a href="{% url 'project_detail' project.slug %}" class="footer__list-item project-list-item">{{ project.title }}</a>
+                    <a href="{% url 'eng:project_detail' project.slug %}" class="footer__list-item project-list-item">{{ project.title }}</a>
                     {% endfor %}
                 </div>
                 <div class="footer__list">
@@ -200,7 +200,7 @@
                     <div class="footer-mobile__accordeon__content">
                         <div class="footer-mobile__accordeon__container">
                             {% for project in projects %}
-                            <a href="{% url 'project_detail' project.slug %}" class="footer__content-item">{{ project.title }}</a>
+                            <a href="{% url 'eng:project_detail' project.slug %}" class="footer__content-item">{{ project.title }}</a>
                             {% endfor %}
                         </div>
                     </div>
