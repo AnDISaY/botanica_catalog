@@ -7,6 +7,7 @@ import json
 
 def home(request):
     projects = Project.objects.all()
+    print(projects)
     for project in projects:
         min_price = str(project.min_price)
         max_price = str(project.max_price)
@@ -19,12 +20,12 @@ def home(request):
         else:
             project.max_price = (max_price[-3:][::-1] + ' ' + max_price[-6:-3][::-1] )[::-1]
         project.villas_quantity = str(project.villas_quantity)
-    return render(request, 'ru/home.html', {'projects': projects})
+    return render(request, 'en/home.html', {'projects': projects})
 
 
 def about(request):
     projects = Project.objects.all()
-    return render(request, 'ru/about.html', {'projects': projects})
+    return render(request, 'en/about.html', {'projects': projects})
 
 
 def project_detail(request, slug):
@@ -42,7 +43,7 @@ def project_detail(request, slug):
         serialized_data = serialize("json", apartmentsf)
         serialized_data = json.loads(serialized_data)
         return JsonResponse({"apartmentsf": serialized_data})
-    return render(request, 'ru/project_detail.html', {"project": project, "projects": projects, "apartments": apartments})
+    return render(request, 'en/project_detail.html', {"project": project, "projects": projects, "apartments": apartments})
 
 
 def villa_detail(request, project_slug, pk):
@@ -51,19 +52,8 @@ def villa_detail(request, project_slug, pk):
     villa = Apartment.objects.get(id=pk)
     apartment_images = ApartmentImage.objects.filter(apartment=pk)
     price = str(villa.price)
-    # count = 0
     if len(price) > 6:
         villa.price = (price[-3:][::-1] + ' ' + price[-6:-3][::-1] + ' ' + price[-9:-6][::-1])[::-1]
     else:
         villa.price = (price[-3:][::-1] + ' ' + price[-6:-3][::-1])[::-1]
-    # price = price[-6:-3]
-    # print(price)
-    # print(price[-6:-3][::-1])
-    return render(request, 'ru/villa_detail.html', {'villa': villa, 'project': project, "projects": projects, 'apartment_images': apartment_images,}) # 'count': count})
-
-
-# def submit(request):
-#     if request.method == 'POST':
-#         print(request.POST)
-#         return JsonResponse({"status": "success"})
-#     return HttpResponse('bebebe')
+    return render(request, 'en/villa_detail.html', {'villa': villa, 'project': project, "projects": projects, 'apartment_images': apartment_images,}) # 'count': count})

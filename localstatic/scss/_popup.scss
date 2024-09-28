@@ -12,9 +12,127 @@
     visibility: hidden;
     overflow-y: auto;
     overflow-x: hidden;
+    transition: all 0.3s ease;
 }
 
 .open {
     opacity: 1;
     visibility: visible;
 }
+
+.popup-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+
+    &__container {
+        background-color: #fff;
+        padding: 36px 30px;
+        border-radius: 7.5px;
+
+        @media screen and (max-width: $md3) {
+            padding: 7.5vw 6.25vw;
+            border-radius: 1.563vw;
+        }
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+
+        @media screen and (max-width: $md3) {
+            margin-bottom: 6.719vw;
+        }
+    }
+
+    &__title {
+        font-family: $fn;
+        font-size: 27px;
+        line-height: 100%;
+
+        @media screen and (max-width: $md3) {
+            font-size: 5.625vw;
+        }
+    }
+
+    &__close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #E7A827;
+        border-radius: 4.5px;
+        width: 36px;
+        height: 36px;
+
+        img {
+            width: 11.1px;
+            height: 11.1px;
+        }
+
+        @media screen and (max-width: $md3) {
+            border-radius: 0.938vw;
+            width: 7.5vw;
+            height: 7.5vw;
+
+            img {
+                width: 2.313vw;
+                height: 2.313vw;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 9px 0px;
+
+        @media screen and (max-width: $md3) {
+            gap: 1.875vw 0px;
+        }
+    }
+
+    &__li {
+        display: flex;
+        justify-content: space-between;
+        background-color: #F6F8F7;
+        padding: 20px 15px;
+        border-radius: 6px;
+        width: 360px;
+
+        @media screen and (max-width: $md3) {
+            padding: 4.063vw 3.125vw;
+            border-radius: 1.25vw;
+            width: 75vw;
+        }
+    }
+
+    &__li-text {
+        font-family: $fn;
+        font-size: 18px;
+        color: #636363;
+
+        @media screen and (max-width: $md3) {
+            font-size: 3.75vw;
+        }
+    }
+
+    &__icon {
+        width: 18px;
+        height: 18px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width: $md3) {
+            width: 3.75vw;
+            height: 3.75vw;
+        }
+    }
+}
+
+// .popup-master-plan {}

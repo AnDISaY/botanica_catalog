@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'en/base.html' %}
 {% load static %}
 
 {% block title %}{{ villa.project.title }} — {{ villa.name }}{% endblock %}
@@ -17,36 +17,36 @@
             <div class="villa-start__price">— ${{ villa.price }}</div>
             <div class="villa-start__params">
                 <div class="villa-start__param">
-                    <div class="villa-start__text1">Тип</div>
+                    <div class="villa-start__text1">Type</div>
                     <div class="villa-start__text2">{{ villa.type }}</div>
                 </div>
                 <div class="villa-start__param">
-                    <div class="villa-start__text1">Спальные</div>
+                    <div class="villa-start__text1">Bedrooms</div>
                     <div class="villa-start__text2">{{ villa.bedroom }} спальни</div>
                 </div>
                 <div class="villa-start__param">
-                    <div class="villa-start__text1">Ванные</div>
+                    <div class="villa-start__text1">Bathrooms</div>
                     <div class="villa-start__text2">{{ villa.bathroom }} ванные</div>
                 </div>
                 <div class="villa-start__param">
-                    <div class="villa-start__text1">Площадь</div>
+                    <div class="villa-start__text1">Square</div>
                     <div class="villa-start__text2">{{ villa.square }} м²</div>
                 </div>
                 <div class="villa-start__param">
-                    <div class="villa-start__text1">Застроено</div>
+                    <div class="villa-start__text1">Built square</div>
                     <div class="villa-start__text2">{{ villa.built_square }} м²</div>
                 </div>
                 <div class="villa-start__param">
-                    <div class="villa-start__text1">Площадь виллы</div>
+                    <div class="villa-start__text1">House square</div>
                     <div class="villa-start__text2">{{ villa.house_square }} м²</div>
                 </div>
             </div>
             <div class="villa-start__btn">
-                <span>Узнать больше</span>
+                <span>Learn more</span>
             </div>
             <div class="villa-start__btn villa-start__btn-mobile">
                 <img src="/localstatic/images/icon-whitearrowright.svg" alt="White right arrow icon">
-                <span>смотреть детально</span>
+                <span>Learn more</span>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
 <section class="villa-slider">
     <div class="villa-slider__container container">
         <div class="villa-slider__slider">
-            <div class="villa-slider__title">Галерея виллы</div>
+            <div class="villa-slider__title">Villa's gallery</div>
             <div class="swiper mySwiperVilla">
                 <div class="swiper-wrapper">
                     {% for ai in apartment_images %}
@@ -87,23 +87,23 @@
                     <div class="project-apartments__apart__image"><img src="{{ apart.image.url }}" alt="Apartment image"></div>
                     <div class="project-apartments__apart__content">
                         <div class="project-apartments__apart__row">
-                            <div class="project-apartments__apart__text">Тип — {{ apart.type }}</div>
-                            <div class="project-apartments__apart__text2">{{ apart.bedroom }} спальни</div>
+                            <div class="project-apartments__apart__text">Type — {{ apart.type }}</div>
+                            <div class="project-apartments__apart__text2">{{ apart.bedroom }} bedrooms</div>
                         </div>
                         <div class="project-apartments__apart__row">
-                            <div class="project-apartments__apart__text">Площадь</div>
+                            <div class="project-apartments__apart__text">Square</div>
                             <div class="project-apartments__apart__text2">{{ apart.square }} м²</div>
                         </div>
                         <div class="project-apartments__apart__row">
-                            <div class="project-apartments__apart__text">Застроено</div>
+                            <div class="project-apartments__apart__text">Built square</div>
                             <div class="project-apartments__apart__text2">{{ apart.built_square }} м²</div>
                         </div>
                         <div class="project-apartments__apart__row">
-                            <div class="project-apartments__apart__text">Площадь дома</div>
+                            <div class="project-apartments__apart__text">House square</div>
                             <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
                         </div>
                     </div>
-                    <div class="project-apartments__apart__show-more-mobile">подробнее</div>
+                    <div class="project-apartments__apart__show-more-mobile">learn more</div>
                 </a>
             {% endif %}
             {% endfor %}

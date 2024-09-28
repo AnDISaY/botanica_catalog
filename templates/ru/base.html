@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    <link rel=”mask-icon” href=”favicon.svg”>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+    <style type="text/css">
+        @font-face {
+            font-family: "Gilroy";
+            font-display: swap;
+            src: url("{% static 'fonts/medium/Gilroy-Medium.eot' %}");
+            src: url("{% static 'fonts/medium/Gilroy-Medium.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/medium/Gilroy-Medium.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/medium/Gilroy-Medium.woff' %}") format('woff');
+            src: url("{% static 'fonts/medium/Gilroy-Medium.ttf' %}") format('truetype');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: "Gilroy", sans-serif;
+            font-display: swap;
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.eot' %}");
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.woff' %}") format('woff');
+            src: url("{% static 'fonts/semibold/Gilroy-Semibold.ttf' %}") format('truetype');
+            font-weight: 600;
+        }
+        @font-face {
+            font-family: "Gilroy", sans-serif;
+            font-display: swap;
+            src: url("{% static 'fonts/bold/Gilroy-Bold.eot' %}");
+            src: url("{% static 'fonts/bold/Gilroy-Bold.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/bold/Gilroy-Bold.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/bold/Gilroy-Bold.woff' %}") format('woff');
+            src: url("{% static 'fonts/bold/Gilroy-Bold.ttf' %}") format('truetype');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: "Neue Machina", sans-serif;
+            font-display: swap;
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.eot' %}");
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.woff' %}") format('woff');
+            src: url("{% static 'fonts/medium/NeueMachina-Medium.ttf' %}") format('truetype');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: "Neue Machina";
+            font-display: swap;
+            src: url("{% static 'fonts/bold/NeueMachina-Bold.eot' %}");
+            src: url("{% static 'fonts/bold/NeueMachina-Bold.eot' %}#iefix") format('embedded-opentype');
+            src: url("{% static 'fonts/bold/NeueMachina-Bold.woff2' %}") format('woff2');
+            src: url("{% static 'fonts/bold/NeueMachina-Bold.woff' %}") format('woff');
+            src: url("{% static 'fonts/bold/NeueMachina-Bold.ttf' %}") format('truetype');
+            font-weight: 700;
+        }
+    </style>
+    <section class="header">
+        <div class="header__container container">
+            <a href="#header-popup" class="header__menu popup-link"><img src="{% static 'images/icon-menu-burger.svg' %}" alt="Menu burger icon"></a>
+            <a href="{% url 'home' %}" class="header__logo">
+                <img src="{% static 'images/icon-logo.svg' %}" alt="logo">
+            </a>
+            <div class="header__list">
+                <a href="{% url 'home' %}" class="header__list__item">Главная</a>
+                <a href="{% url 'home' %}#projects__title-block" class="header__list__item smooth_anchor">Список проектов</a>
+                <a href="{% url 'about' %}" class="header__list__item">О застройщике</a>
+                <a href="#footer" class="header__list__item">Контакты</a>
+            </div>
+            <div class="header__dropdown">
+                <div class="header__dropdown__btn"><span>RU</span><img src="{% static 'images/icon-whitearrowdown.svg' %}" alt="White down arrow icon"></div>
+                <div class="header__dropdown__content">
+                    <a href="" class="header__dropdown__lang">EN</a>
+                </div>
+                <div class="header__dropdown__background"></div>
+            </div>
+        </div>
+    </section>
+    <div class="popup-header popup" id="header-popup">
+        <div class="popup-header__container popup__container">
+            <div class="popup-header__head">
+                <div class="popup-header__title">Навигация по сайту</div>
+                <div class="popup-header__close close-popup"><img src="{% static 'images/icon-popup_close.svg' %}" alt="Close icon"></div>
+            </div>
+            <div class="popup-header__list">
+                <a href="{% url 'home' %}" class="popup-header__li">
+                    <div class="popup-header__li-text">Главная</div>
+                    <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-main.svg' %}" alt="Popup icon"></div>
+                </a>
+                <a href="{% url 'home' %}#projects__title-block" class="popup-header__li smooth_anchor close-popup">
+                    <div class="popup-header__li-text">Список проектов</div>
+                    <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-projects.svg' %}" alt="Popup icon"></div>
+                </a>
+                <a href="{% url 'about' %}" class="popup-header__li">
+                    <div class="popup-header__li-text">О застройщике</div>
+                    <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-about.svg' %}" alt="Popup icon"></div>
+                </a>
+                <a href="#footer_mobile" class="popup-header__li close-popup">
+                    <div class="popup-header__li-text">Контакты</div>
+                    <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-contact.svg' %}" alt="Popup icon"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="popup-master-plan popup">
+        <div class="popup-master-plan__container popup__container">
+            <div class="popup-header__head">
+                <div class="popup-header__title">Мастер-план</div>
+                <div class="popup-header__close close-popup"><img src="{% static 'images/icon-popup_close.svg' %}" alt="Close icon"></div>
+            </div>
+            <div class="popup-master-plan__image">
+                <img src="{% static 'images/' %}" alt="">
+            </div>
+        </div>
+    </div> -->
+    {% block content %}{% endblock %}
+    <section class="footer" id="footer">
+        <div class="footer_container container">
+            <div class="footer__content">
+                <div class="footer__list">
+                    <div class="footer__list-title">Контакты</div>
+                    <a href="tel:+66 84 153 4555" class="footer__list-item contact-list-item">+66 84 153 4555</a>
+                    <a href="https://botanicaluxuryvillas.com" class="footer__list-item contact-list-item">botanicaluxuryvillas.com</a>
+                    <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__list-item contact-list-item">ru@botanicaluxuryvilla.com</a>
+                    <a href="https://botanicaluxuryvillas.com/policy" class="footer__list-item contact-list-item footer-policy-link">Политика обработки персональных данных</a>
+                </div>
+                <div class="footer__list">
+                    <div class="footer__list-title">Проекты</div>
+                    {% for project in projects %}
+                    <a href="{% url 'project_detail' project.slug %}" class="footer__list-item project-list-item">{{ project.title }}</a>
+                    {% endfor %}
+                </div>
+                <div class="footer__list">
+                    <div class="footer__list-title">Соц. сети</div>
+                    <a href="#" class="footer__list-item social-list-item">Instagram</a>
+                    <a href="#" class="footer__list-item social-list-item">Facebook</a>
+                    <a href="#" class="footer__list-item social-list-item">Youtube</a>
+                </div>
+                <div class="footer__address">
+                    <div class="footer__list-title">Адрес</div>
+                    <a href="#" class="footer__address__certain">125/397 Moo 5, TungkaRoad Rassada Sub-district, Muang Phuket District Phuket Province 83000 Thailand</a>
+                </div>
+            </div>
+            <div class="footer__callback">
+                <div class="footer__callback__content-block">
+                    <div class="footer__callback__icon">
+                        <img src="{% static 'images/icon-phone.svg' %}" alt="phone icon">
+                    </div>
+                    <div class="footer__callback__content">
+                        <div class="footer__callback__title">Мы будем рады ответить на ваши вопросы</div>
+                        <div class="footer__callback__text">и помочь вам c выбором виллы!
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="footer__callback__button">Перезвоните мне</a>
+            </div>
+        </div>
+    </section>
+    <section class="footer-mobile" id="footer_mobile">
+        <div class="footer-mobile__container container">
+            <div class="footer-mobile__head">
+                <div class="footer-mobile__icon-logo"><img src="{% static 'images/icon-secondlogo.svg' %}" alt="Logo"></div>
+                <div class="footer-mobile__icons">
+                    <a href="#" class="footer-mobile__icon-wa"><img src="{% static 'images/icon-whatsapp.svg' %}" alt="Whatsapp icon"></a>
+                    <a href="#" class="footer-mobile__icon-tg"><img src="{% static 'images/icon-tg.svg' %}" alt="Telegram icon"></a>
+                    <a href="#" class="footer-mobile__icon-ig"><img src="{% static 'images/icon-insta.svg' %}" alt="Instagram icon"></a>
+                    <a href="#" class="footer-mobile__icon-fb"><img src="{% static 'images/icon-facebook.svg' %}" alt="Facebook icon"></a>
+                    <a href="#" class="footer-mobile__icon-yt"><img src="{% static 'images/icon-youtube.svg' %}" alt="Yuotube icon"></a>
+                </div>
+            </div>
+            <div class="footer-mobile__accordeon-block">
+                <div class="footer-mobile__accordeon">
+                    <div class="footer-mobile__accordeon__btn">
+                        <span>Контакты</span>
+                        <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
+                    </div>
+                    <div class="footer-mobile__accordeon__content">
+                        <div class="footer-mobile__accordeon__container">
+                            <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
+                            <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
+                            <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-mobile__accordeon">
+                    <div class="footer-mobile__accordeon__btn">
+                        <span>Проекты</span>
+                        <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
+                    </div>
+                    <div class="footer-mobile__accordeon__content">
+                        <div class="footer-mobile__accordeon__container">
+                            {% for project in projects %}
+                            <a href="{% url 'project_detail' project.slug %}" class="footer__content-item">{{ project.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-mobile__accordeon">
+                    <div class="footer-mobile__accordeon__btn">
+                        <span>Адрес</span>
+                        <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
+                    </div>
+                    <div class="footer-mobile__accordeon__content">
+                        <div class="footer-mobile__accordeon__container">
+                            <a href="#" class="footer__content-item">125/397 Moo 5, TungkaRoad Rassada Sub-district, Muang Phuket District Phuket Province 83000 Thailand</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-mobile__policy"><a href="https://botanicaluxuryvillas.com/policy">Политика обработки персональных данных</a></div>
+            <div class="footer-mobile__callback">
+                <div class="footer-mobile__callback__content">
+                    <div class="footer-mobile__callback__icon"><img src="{% static 'images/icon-phone.svg' %}" alt="Phone icon"></div>
+                    <div class="footer-mobile__callback__title">Мы будем рады ответить на ваши вопросы</div>
+                    <div class="footer-mobile__callback__text">и помочь с подходящим вам выбором виллы!</div>
+                    <a href="#" class="footer-mobile__callback__btn">Перезвоните мне</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'js/popup.js' %}"></script>
+    <script src="{% static 'js/accordeon.js' %}"></script>
+    <script src="{% static 'js/smoothAnchor.js' %}"></script>
+    <script>
+        let lang = document.querySelector('.header__dropdown__lang');
+        lang.href = `/eng${window.location.pathname.slice(3, )}`;
+    </script>
+</body>
+
+</html>

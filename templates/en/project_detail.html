@@ -1,0 +1,399 @@
+{% extends 'en/base.html' %}
+{% load static %}
+{% load counter %}
+{% block title %}{{ project.title }}{% endblock %}
+
+{% block content %}
+<section class="project-start">
+    <div class="project-start__container container">
+        <div class="project-start__main-image"><img src="{{ project.main_image.url }}" alt="Main image"></div>
+        <div class="project-start__content">
+            <div class="project-start__title-block">
+                <div class="project-start__subheading">BOTANICA</div>
+                <div class="project-start__title">{{ project.title }}</div>
+            </div>
+            <a href="#" class="project-start__request">
+                <img src="{% static 'images/icon-greyarrowright.svg' %}" alt="Grey right arrow icon">
+                <span>LEAVE A REQUEST</span>
+            </a>
+        </div>
+        <a href="#" class="project-start__request-mobile">
+            <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="Grey right arrow icon">
+            <span>LEAVE A REQUEST</span>
+        </a>
+    </div>
+</section>
+<section class="project-descr">
+    <div class="project-descr__container container">
+        <div class="project-descr__slider">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                </div>
+            </div>
+            <div class="swiper-button-prev-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowleft.svg' %}" alt="Black left arrow icon"></div>
+            <div class="swiper-button-next-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Black right arrow icon"></div>
+            <!-- <div class="project-descr__slider__arrows">
+                <div class="project-descr__slider__arrow swiper-button-prev-custom"><img src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}" alt="Arrow left"></div>
+                <div class="project-descr__slider__arrow swiper-button-next-custom"><img src="{% static 'images/icon-sliderarrowright-mobile.svg' %}" alt="Arrow right"></div>
+            </div> -->
+        </div>
+        <div class="project-descr__content">
+            <div class="project-descr__text">{{ project.description|linebreaks }}</div>
+            <div class="project-descr__about">About the project</div>
+        </div>
+    </div>
+</section>
+<secion class="project-master-plan">
+    <div class="project-master-plan__container container">
+        <div class="project-master-plan__wrapper wrapper">
+            <div class="project-master-plan__title">Master plan</div>
+            <div class="project-master-plan__image"><img src="{{ project.master_plan.url }}" alt="Master plan image"></div>
+            <div class="project-master-plan__btn">
+                <span>More information about the Project</span>
+            </div>
+        </div>
+        <div class="project-master-plan__btn project-master-plan__btn-mobile">
+            <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
+            <span>Learn more</span>
+        </div>
+    </div>
+</secion>
+<section class="project-structure">
+    <div class="project-structure__container container">
+        <div class="project-structure__wrapper wrapper">
+            <div class="project-structure__title">project structure</div>
+            <div class="project-structure__content">
+                {% for param in project.parametres.all %}
+                <div class="project-structure__param">{{ param.name }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="project-filter">
+    <div class="project-filter__container container">
+        <div class="project-filter__wrapper wrapper">
+            <div class="project-filter__title">Choose a villa</div>
+            <form method="post" id="my-form" class="project-filter__form">
+                {% csrf_token %}
+                <div class="project-filter__radio-block project-filter__form__el">
+                    <div class="project-filter__input-title project-filter__bedroom">Bedrooms:</div>
+                    <div class="project-filter__radio-wrapper">
+                        <label for="nr1" class="project-filter__radio radio-active">
+                            <input type="radio" id="nr1" name="number-radio" value="1" checked>
+                            1
+                        </label>
+                        <label for="nr2" class="project-filter__radio">
+                            <input type="radio" id="nr2" name="number-radio" value="2">
+                            2
+                        </label>
+                        <label for="nr3" class="project-filter__radio">
+                            <input type="radio" id="nr3" name="number-radio" value="3">
+                            3
+                        </label>
+                        <label for="nr4" class="project-filter__radio">
+                            <input type="radio" id="nr4" name="number-radio" value="4">
+                            4+
+                        </label>
+                    </div>
+                </div>
+                <!-- <div class="project-filter__range-wrapper project-filter__form__el">
+                    <div class="project-filter__input-title">Цена:</div>
+                    <div class="project-filter__number-input price-input">
+                        <div class="project-filter__field">
+                            <div class="project-filter__text">от</div>
+                            <input type="number" name="price-number" class="project-filter__number-input price-input-style input-min" value="2500000" min="0" max="10000000"><span>$</span>
+                        </div>
+                        <div class="project-filter__field">
+                            <div class="project-filter__text">до</div>
+                            <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="7500000" min="0" max="10000000"><span>$</span>
+                        </div>
+                    </div>
+                    <div class="project-filter__slider">
+                        <div class="project-filter__progress__left"></div>
+                        <div class="project-filter__progress"></div>
+                        <div class="project-filter__progress__right"></div>
+                    </div>
+                    <div class="project-filter__range-input range-input-price">
+                        <input type="range" name="price-range" class="range-min" min="0" max="10000000" value="2500000" step="500">
+                        <input type="range" name="price-range" class="range-max" min="0" max="10000000" value="7500000" step="500">
+                    </div>
+                </div> -->
+                <div class="project-filter__range-block">
+                    <div class="project-filter__range-wrapper project-filter__form__el">
+                        <div class="project-filter__input-title">Price:</div>
+                        <div class="project-filter__number-input price-input">
+                            <div class="project-filter__field">
+                                <div class="project-filter__text">up to</div>
+                                <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="3000000" min="0"><span>$</span>
+                            </div>
+                        </div>
+                        <div class="project-filter__slider">
+                            <div class="project-filter__progress__left"></div>
+                            <div class="project-filter__progress"></div>
+                            <div class="project-filter__progress__right"></div>
+                        </div>
+                        <div class="project-filter__range-input range-input-price">
+                            <input type="range" name="price-range" class="project-range" min="0" max="6000000" value="3000000" step="500">
+                        </div>
+                    </div>
+                    <div class="project-filter__range-wrapper project-filter__form__el">
+                        <div class="project-filter__input-title">Square:</div>
+                        <div class="project-filter__number-input square-input">
+                            <div class="project-filter__field">
+                                <div class="project-filter__text">up to</div>
+                                <input type="number" name="square-number" class="project-filter__number-input square-input-style" value="5000" min="0"><span>м²</span>
+                            </div>
+                        </div>
+                        <div class="project-filter__slider">
+                            <div class="project-filter__progress__left"></div>
+                            <div class="project-filter__progress"></div>
+                            <div class="project-filter__progress__right"></div>
+                        </div>
+                        <div class="project-filter__range-input range-input-square">
+                            <input type="range" name="square-range" class="project-range" min="0" max="10000" value="5000" step="10">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="project-filter__submit">submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="project-apartments">
+    <div class="project-apartments__container container">
+        <div class="project-apartments__wrapper wrapper">
+            {% set 0 as count %}
+            {% set 0 as is_true %}
+            {% if apartments|length > 6 %}
+            {% for apart in apartments %}
+            {% if count < 5 %}
+            <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart show-content">
+                <div class="project-apartments__apart__tags">
+                    <div class="project-apartments__apart__tag">{{ apart.name }}</div>
+                    <div class="project-apartments__apart__tag">{{ apart.description }}</div>
+                </div>
+                <div class="project-apartments__apart__image"><img src="{{ apart.image.url }}" alt="Apartment image"></div>
+                <div class="project-apartments__apart__content">
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Type — {{ apart.type }}</div>
+                        <div class="project-apartments__apart__text2">{{ apart.bedroom }} спальни</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.square }} м²</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Built square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.built_square }} м²</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">House square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
+                    </div>
+                </div>
+                <div class="project-apartments__apart__show-more-mobile">learn more</div>
+            </a>
+            {% else %}
+            {% if is_true == 0 %}
+            <div class="project-apartments__show-more show-content">
+                <span>More</span>
+            </div>
+            {% add is_true as is_true %}
+            {% endif %}
+            <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart hide-content">
+                <div class="project-apartments__apart__tags">
+                    <div class="project-apartments__apart__tag">{{ apart.name }}</div>
+                    <div class="project-apartments__apart__tag">{{ apart.description }}</div>
+                </div>
+                <div class="project-apartments__apart__image"><img src="{{ apart.image.url }}" alt="Apartment image"></div>
+                <div class="project-apartments__apart__content">
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Type — {{ apart.type }}</div>
+                        <div class="project-apartments__apart__text2">{{ apart.bedroom }} спальни</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.square }} м²</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Built square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.built_square }} м²</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">House square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
+                    </div>
+                </div>
+                <div class="project-apartments__apart__show-more-mobile">learn more</div>
+            </a>
+            {% endif %}
+            {% add count as count %}
+            {% endfor %}
+            {% else %}
+            {% for apart in apartments %}
+            <a href="{% url 'villa_detail' project_slug=project.slug pk=apart.id %}" class="project-apartments__apart">
+                <div class="project-apartments__apart__tags">
+                    <div class="project-apartments__apart__tag">{{ apart.name }}</div>
+                    <div class="project-apartments__apart__tag">{{ apart.description }}</div>
+                </div>
+                <div class="project-apartments__apart__image"><img src="{{ apart.image.url }}" alt="Apartment image"></div>
+                <div class="project-apartments__apart__content">
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Type — {{ apart.type }}</div>
+                        <div class="project-apartments__apart__text2">{{ apart.bedroom }} спальни</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.square }} м²</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">Built square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.built_square }} м²</div>
+                    </div>
+                    <div class="project-apartments__apart__row">
+                        <div class="project-apartments__apart__text">House square</div>
+                        <div class="project-apartments__apart__text2">{{ apart.house_square }} м²</div>
+                    </div>
+                </div>
+                <div class="project-apartments__apart__show-more-mobile">learn more</div>
+            </a>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+<section class="project-facilites">
+    <div class="project-facilites__container container">
+            <div class="project-facilites__content">
+            <div class="project-facilites__title">Location facilites</div>
+            <div class="project-facilites__grid">
+                {% for facility in project.facilities.all %}
+                <div class="project-facilites__card">
+                    <div class="project-facilites__name">{{ facility.name }}</div>
+                    {% if facility.distance|stringformat:"d"|length > 3 %}
+                        <div class="project-facilites__distance">{{ facility.distance|stringformat:"d"|slice:"0:1" }},{{ facility.distance|stringformat:"d"|slice:"1:2" }} km</div>
+                    {% else %}
+                        <div class="project-facilites__distance">{{ facility.distance }} m</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="project-facilites__map">
+            {{ project.map_iframe|safe }}
+            <div class="project-facilites__map-content">
+                <div class="project-facilites__map-content__title">Location and contacts</div>
+                <div class="project-facilites__map-content__row">
+                    <div class="project-facilites__map-content__column">
+                        <div class="project-facilites__map-content__subheading">Call Center</div>
+                        <a href="tel:+66 84 153 4555" class="project-facilites__map-content__text">+66 84 153 4555</a>
+                    </div>
+                    <div class="project-facilites__map-content__column">
+                        <div class="project-facilites__map-content__subheading">Адрес объекта</div>
+                        <a href="#" class="project-facilites__map-content__text">125/397 Moo 5, TungkaRoad Rassada Sub-district, Muang Phuket District Phuket Province 83000 Thailand</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="project-consult">
+    <div class="project-consult__container container">
+        <div class="project-consult__wrapper wrapper">
+            <div class="project-consult__content">
+                <div class="project-consult__title">Individual consulting</div>
+                <div class="project-consult__text">Our experts will help you choose the best villa and agree on the optimal purchase conditions for this project</div>
+            </div>
+            <a href="#" class="project-consult__btn">
+                <img src="/localstatic/images/icon-whitearrowright.svg" alt="White right arrow icon">
+                <span>Get a consulting</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section class="location project-location">
+    <div class="location__container container">
+        <div class="location__title">Our projects locations</div>
+        <div class="location__map" style="background-image: url('{% static 'images/map.jpg' %}');">
+            <a href="/grand_avenue" class="location__map__place map__place1">
+                <div class="location__map__number">1</div>
+                <div class="location__map__text">Grand Avenue</div>
+            </a>
+            <a href="/forestique" class="location__map__place map__place2">
+                <div class="location__map__number">2</div>
+                <div class="location__map__text">Forestique</div>
+            </a>
+            <a href="#" class="location__map__place map__place3">
+                <div class="location__map__number">3</div>
+                <div class="location__map__text">Four Seasons</div>
+            </a>
+            <a href="#" class="location__map__place map__place4">
+                <div class="location__map__number">4</div>
+                <div class="location__map__text">Moder Loft II</div>
+            </a>
+            <a href="#" class="location__map__place map__place5">
+                <div class="location__map__number">5</div>
+                <div class="location__map__text">Lakeside</div>
+            </a>
+            <a href="#" class="location__map__place map__place6">
+                <div class="location__map__number">6</div>
+                <div class="location__map__text">Sky Valley</div>
+            </a>
+        </div>
+        <div class="location__text-block">
+            <div class="location__icon"><img src="{% static 'images/icon-mapclick.svg' %}" alt="Map icon click"></div>
+            <div class="location__text">Click on any project to go to its page</div>
+        </div>
+    </div>
+</section>
+
+<script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{% static 'js/filterPostData.js' %}"></script>
+<script src="{% static 'js/rangeSlider.js' %}"></script>
+<script src="{% static 'js/radioActive.js' %}"></script>
+<script src="{% static 'js/hideCard.js' %}"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+      },
+    });
+</script>
+<script>
+    const arrows = document.querySelectorAll('.project-slider-arrow img');
+    if (window.screen.width <= 785) {
+        arrows[0].src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}";
+        arrows[1].src="{% static 'images/icon-sliderarrowright-mobile.svg' %}";
+    } else {
+        arrows[0].src="{% static 'images/icon-blackarrowleft.svg' %}";
+        arrows[1].src="{% static 'images/icon-blackarrowright.svg' %}";
+    }
+    window.addEventListener("resize", function(event) {
+        if (window.screen.width <= 785) {
+            arrows[0].src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}";
+            arrows[1].src="{% static 'images/icon-sliderarrowright-mobile.svg' %}";
+        } else {
+            arrows[0].src="{% static 'images/icon-blackarrowleft.svg' %}";
+            arrows[1].src="{% static 'images/icon-blackarrowright.svg' %}";
+        }
+    })
+</script>
+{% endblock %}

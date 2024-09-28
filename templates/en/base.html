@@ -67,58 +67,87 @@
     </style>
     <section class="header">
         <div class="header__container container">
+            <a href="#header-popup" class="header__menu popup-link"><img src="{% static 'images/icon-menu-burger.svg' %}" alt="Menu burger icon"></a>
             <a href="{% url 'home' %}" class="header__logo">
                 <img src="{% static 'images/icon-logo.svg' %}" alt="logo">
             </a>
             <div class="header__list">
-                <a href="{% url 'home' %}" class="header__list__item">Главная</a>
-                <a href="#" class="header__list__item">Список проектов</a>
-                <a href="{% url 'about' %}" class="header__list__item">О застройщике</a>
-                <a href="#" class="header__list__item">Контакты</a>
+                <a href="{% url 'home' %}" class="header__list__item">Home</a>
+                <a href="{% url 'home' %}#projects__title-block" class="header__list__item smooth_anchor">Projects</a>
+                <a href="{% url 'about' %}" class="header__list__item">developer</a>
+                <a href="#footer" class="header__list__item">Contacts</a>
             </div>
-            <div class="header__icons">
-                <a href="#" class="icon-wa">
-                    <img src="{% static 'images/icon-whatsapp.svg' %}" alt="watsapp icon">
-                </a>
-                <a href="#" class="icon-tg">
-                    <img src="{% static 'images/icon-tg.svg' %}" alt="telegram icon">
-                </a>
+            <div class="header__dropdown">
+                <div class="header__dropdown__btn"><span>EN</span><img src="{% static 'images/icon-whitearrowdown.svg' %}" alt="White down arrow icon"></div>
+                <div class="header__dropdown__content">
+                    <a href="" class="header__dropdown__lang">RU</a>
+                </div>
+                <div class="header__dropdown__background"></div>
             </div>
-            <a href="#header-popup" class="header__menu popup-link"><img src="{% static 'images/icon-menu-burger.svg' %}" alt="Menu burger icon"></a>
         </div>
     </section>
-    <div class="popup" id="header-popup">
-        <div class="popup__container">bebebe
-            <div class="close-popup">X</div>
+    <div class="popup-header popup" id="header-popup">
+        <div class="popup-header__container popup__container">
+            <div class="popup-header__head">
+                <div class="popup-header__title">Navigation</div>
+                <div class="popup-header__close close-popup"><img src="{% static 'images/icon-popup_close.svg' %}" alt="Close icon"></div>
+            </div>
+            <div class="popup-header__list">
+                <a href="{% url 'home' %}" class="popup-header__li">
+                    <div class="popup-header__li-text">Home</div>
+                    <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-main.svg' %}" alt="Popup icon"></div>
+                </a>
+                <a href="{% url 'home' %}#projects__title-block" class="popup-header__li smooth_anchor close-popup">
+                    <div class="popup-header__li-text">Projects</div>
+                    <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-projects.svg' %}" alt="Popup icon"></div>
+                </a>
+                <a href="{% url 'about' %}" class="popup-header__li">
+                    <div class="popup-header__li-text">Developer</div>
+                    <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-about.svg' %}" alt="Popup icon"></div>
+                </a>
+                <a href="#footer_mobile" class="popup-header__li close-popup">
+                    <div class="popup-header__li-text">Contacts</div>
+                    <div class="popup-header__li-icon"><img src="{% static 'images/icon-popup-contact.svg' %}" alt="Popup icon"></div>
+                </a>
+            </div>
         </div>
     </div>
+    <!-- <div class="popup-master-plan popup">
+        <div class="popup-master-plan__container popup__container">
+            <div class="popup-header__head">
+                <div class="popup-header__title">Мастер-план</div>
+                <div class="popup-header__close close-popup"><img src="{% static 'images/icon-popup_close.svg' %}" alt="Close icon"></div>
+            </div>
+            <div class="popup-master-plan__image">
+                <img src="{% static 'images/' %}" alt="">
+            </div>
+        </div>
+    </div> -->
     {% block content %}{% endblock %}
-    <section class="footer">
+    <section class="footer" id="footer">
         <div class="footer_container container">
             <div class="footer__content">
                 <div class="footer__list">
-                    <div class="footer__list-title">Контакты</div>
+                    <div class="footer__list-title">Contacts</div>
                     <a href="tel:+66 84 153 4555" class="footer__list-item contact-list-item">+66 84 153 4555</a>
                     <a href="https://botanicaluxuryvillas.com" class="footer__list-item contact-list-item">botanicaluxuryvillas.com</a>
                     <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__list-item contact-list-item">ru@botanicaluxuryvilla.com</a>
-                    <a href="https://botanicaluxuryvillas.com/policy" class="footer__list-item contact-list-item footer-policy-link">Политика обработки персональных данных</a>
+                    <a href="https://botanicaluxuryvillas.com/policy" class="footer__list-item contact-list-item footer-policy-link">Personal Data Processing Policy</a>
                 </div>
                 <div class="footer__list">
-                    <div class="footer__list-title">Проекты</div>
-                    <a href="#" class="footer__list-item project-list-item">Botanica Modern Loft II</a>
-                    <a href="#" class="footer__list-item project-list-item">Botanica Forestique</a>
-                    <a href="#" class="footer__list-item project-list-item">Botanica Lakeside</a>
-                    <a href="#" class="footer__list-item project-list-item">Botanica Four Seasons</a>
-                    <a href="#" class="footer__list-item project-list-item">Botanica Sky Valley</a>
+                    <div class="footer__list-title">Projects</div>
+                    {% for project in projects %}
+                    <a href="{% url 'project_detail' project.slug %}" class="footer__list-item project-list-item">{{ project.title }}</a>
+                    {% endfor %}
                 </div>
                 <div class="footer__list">
-                    <div class="footer__list-title">Соц. сети</div>
+                    <div class="footer__list-title">Social</div>
                     <a href="#" class="footer__list-item social-list-item">Instagram</a>
                     <a href="#" class="footer__list-item social-list-item">Facebook</a>
                     <a href="#" class="footer__list-item social-list-item">Youtube</a>
                 </div>
                 <div class="footer__address">
-                    <div class="footer__list-title">Адрес</div>
+                    <div class="footer__list-title">Address</div>
                     <a href="#" class="footer__address__certain">125/397 Moo 5, TungkaRoad Rassada Sub-district, Muang Phuket District Phuket Province 83000 Thailand</a>
                 </div>
             </div>
@@ -128,66 +157,73 @@
                         <img src="{% static 'images/icon-phone.svg' %}" alt="phone icon">
                     </div>
                     <div class="footer__callback__content">
-                        <div class="footer__callback__title">Мы будем рады ответить на ваши вопросы</div>
-                        <div class="footer__callback__text">и помочь вам c выбором виллы!
+                        <div class="footer__callback__title">We will be happy to answer your questions</div>
+                        <div class="footer__callback__text">and help you with choosing a villa!
                         </div>
                     </div>
                 </div>
-                <a href="#" class="footer__callback__button">Перезвоните мне</a>
+                <a href="#" class="footer__callback__button">Call me back</a>
             </div>
         </div>
     </section>
-    <section class="footer-mobile">
+    <section class="footer-mobile" id="footer_mobile">
         <div class="footer-mobile__container container">
             <div class="footer-mobile__head">
                 <div class="footer-mobile__icon-logo"><img src="{% static 'images/icon-secondlogo.svg' %}" alt="Logo"></div>
                 <div class="footer-mobile__icons">
-                    <div class="footer-mobile__icon-wa"><img src="{% static 'images/icon-whatsapp.svg' %}" alt="Whatsapp icon"></div>
-                    <div class="footer-mobile__icon-tg"><img src="{% static 'images/icon-tg.svg' %}" alt="Telegram icon"></div>
+                    <a href="#" class="footer-mobile__icon-wa"><img src="{% static 'images/icon-whatsapp.svg' %}" alt="Whatsapp icon"></a>
+                    <a href="#" class="footer-mobile__icon-tg"><img src="{% static 'images/icon-tg.svg' %}" alt="Telegram icon"></a>
+                    <a href="#" class="footer-mobile__icon-ig"><img src="{% static 'images/icon-insta.svg' %}" alt="Instagram icon"></a>
+                    <a href="#" class="footer-mobile__icon-fb"><img src="{% static 'images/icon-facebook.svg' %}" alt="Facebook icon"></a>
+                    <a href="#" class="footer-mobile__icon-yt"><img src="{% static 'images/icon-youtube.svg' %}" alt="Yuotube icon"></a>
                 </div>
             </div>
             <div class="footer-mobile__accordeon-block">
                 <div class="footer-mobile__accordeon">
                     <div class="footer-mobile__accordeon__btn">
-                        <span>Контакты</span>
+                        <span>Contacts</span>
                         <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
                     </div>
                     <div class="footer-mobile__accordeon__content">
-                        <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
-                        <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
-                        <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
+                        <div class="footer-mobile__accordeon__container">
+                            <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
+                            <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
+                            <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
+                        </div>
                     </div>
                 </div>
                 <div class="footer-mobile__accordeon">
                     <div class="footer-mobile__accordeon__btn">
-                        <span>Проекты</span>
+                        <span>Projects</span>
                         <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
                     </div>
                     <div class="footer-mobile__accordeon__content">
-                        <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
-                        <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
-                        <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
+                        <div class="footer-mobile__accordeon__container">
+                            {% for project in projects %}
+                            <a href="{% url 'project_detail' project.slug %}" class="footer__content-item">{{ project.title }}</a>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
                 <div class="footer-mobile__accordeon">
                     <div class="footer-mobile__accordeon__btn">
-                        <span>Адрес</span>
+                        <span>Address</span>
                         <img src="{% static 'images/icon-yellowarrowdown.svg' %}" alt="Yellow down arrow icon">
                     </div>
                     <div class="footer-mobile__accordeon__content">
-                        <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
-                        <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
-                        <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
+                        <div class="footer-mobile__accordeon__container">
+                            <a href="#" class="footer__content-item">125/397 Moo 5, TungkaRoad Rassada Sub-district, Muang Phuket District Phuket Province 83000 Thailand</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-mobile__policy"><a href="https://botanicaluxuryvillas.com/policy">Политика обработки персональных данных</a></div>
+            <div class="footer-mobile__policy"><a href="https://botanicaluxuryvillas.com/policy">Personal Data Processing Policy</a></div>
             <div class="footer-mobile__callback">
                 <div class="footer-mobile__callback__content">
                     <div class="footer-mobile__callback__icon"><img src="{% static 'images/icon-phone.svg' %}" alt="Phone icon"></div>
-                    <div class="footer-mobile__callback__title">Мы будем рады ответить на ваши вопросы</div>
-                    <div class="footer-mobile__callback__text">и помочь с подходящим вам выбором виллы!</div>
-                    <a href="#" class="footer-mobile__callback__btn">Перезвоните мне</a>
+                    <div class="footer-mobile__callback__title">We will be happy to answer your questions</div>
+                    <div class="footer-mobile__callback__text">and help you with choosing a villa!</div>
+                    <a href="#" class="footer-mobile__callback__btn">Call me back</a>
                 </div>
             </div>
         </div>
@@ -195,6 +231,10 @@
     <script src="{% static 'js/popup.js' %}"></script>
     <script src="{% static 'js/accordeon.js' %}"></script>
     <script src="{% static 'js/smoothAnchor.js' %}"></script>
+    <script>
+        let lang = document.querySelector('.header__dropdown__lang');
+        lang.href = `/ru${window.location.pathname.slice(4, )}`;
+    </script>
 </body>
 
 </html>

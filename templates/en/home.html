@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'en/base.html' %}
 {% load static %}
 {% block title %}Botanica catalog{% endblock %}
 
@@ -6,26 +6,26 @@
 <section class="hello">
     <div class="hello__container container">
         <div class="hello__column1" style="background-image: url('{% static 'images/hello-villa1.jpg' %}');">
-            <h1 class="hello__title">Каталог вилл Botanica Luxury Villas</h1>
+            <h1 class="hello__title">Catalog of Botanica Luxury Villas</h1>
             <a href="#projects__title-block" class="hello__btn">
                 <div class="icon-white-arrow-right"><img src="{% static 'images/icon-whitearrowright.svg' %}" alt="white right arrow"></div>
-                <span class="btn-text">выбрать проект</span>
+                <span class="btn-text">pick a project</span>
             </a>
             <a href="#projects__title-block" class="hello__icon black-arrow-down icon-arrow"><img src="{% static 'images/icon-blackarrowdown.svg' %}" alt="black down arrow"></a>
         </div>
         <a href="#projects__title-block" class="hello__btn-mobile">
             <div class="icon-white-arrow-right"><img src="{% static 'images/icon-whitearrowright.svg' %}" alt="white right arrow"></div>
-            <span class="btn-text">выбрать проект</span>
+            <span class="btn-text">pick a project</span>
         </a>
         <div class="hello__column2">
             <div class="hello__row1">
-                <div class="hello__row1__subtitle subtitle-border">О «Botanica Luxury Villas»</div>
-                <div class="hello__row1__description">Компания AAP Architecture Properties & Development, возглавляемая известным тайским архитектором Аттаситом Интарачоти, воплотила на острове Пхукет уже более 15 фаз проекта «Botanica Luxury Villas».</div>
+                <div class="hello__row1__subtitle subtitle-border">About «Botanica Luxury Villas»</div>
+                <div class="hello__row1__description">AAP Architecture Properties & Development, headed by renowned Thai architect Attasit Intarachoti, has implemented more than 15 phases of the Botanica Luxury Villas project on Phuket Island.</div>
                 <div class="hello__row1__icon icon-shortlogo"><img src="{% static 'images/icon-shortlogo.svg' %}" alt="logo"></div>
                 <a href="{% url 'about' %}" class="hello__row1__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt=""></a>
             </div>  
             <div class="hello__row2" style="background-image: url('{% static 'images/hello-villa2.jpg' %}');">
-                <div class="hello__row2__subtitle subtitle-border">Новейший проект</div>
+                <div class="hello__row2__subtitle subtitle-border">Latest project</div>
                 <div class="hello__row2__title">Pru Jampa</div>
                 <a href="#" class="hello__row2__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt=""></a>
             </div>
@@ -35,7 +35,7 @@
 <section class="projects">
     <div class="projects__container container">
         <div class="projects__title-block" id="projects__title-block">
-            <h2 class="projects__title">Список проектов Botanica:</h2>
+            <h2 class="projects__title">Botanica projects list:</h2>
             <div class="projects__tabs">
                 {% for project in projects %}
                 <span class="tab-btn">{{ project.title }}</span>
@@ -60,32 +60,27 @@
                                     </div>
                                     <div class="project__title">{{ project.title }}</div>
                                 </div>
-                                <a href="{% url 'project_detail' project.slug %}" class="project__view-btn">Смотреть детально</a>
+                                <a href="{% url 'project_detail' project.slug %}" class="project__view-btn">Learn more</a>
                             </div>
                         </div>
                         <div class="project__row2">
                             <div class="project__descr-block"><span class="project__description">{{ project.description|linebreaks }}</span></div>
                             <a href="{% url 'project_detail' project.slug %}" class="project__view-btn-mobile">
                                 <div class="icon-white-arrow-right"><img src="{% static 'images/icon-whitearrowright.svg' %}" alt="white right arrow"></div>
-                                <span>Смотреть детально</span>
+                                <span>Learn more</span>
                             </a>
                             <div class="project__param-block">
-                                {% if project.villas_quantity|slice:"-1:" == "1" %}
-                                    <div class="project__parameter">{{ project.villas_quantity }} вилла</div>
-                                {% elif project.villas_quantity|slice:"-1:" > "1" and project.villas_quantity|slice:"-1:" < "5" %}
-                                    <div class="project__parameter">{{ project.villas_quantity }} виллы</div>
+                                {% if project.villas_quantity == "1" %}
+                                    <div class="project__parameter">{{ project.villas_quantity }} villa</div>
                                 {% else %}
-                                    <div class="project__parameter">{{ project.villas_quantity }} вилл</div>
+                                    <div class="project__parameter">{{ project.villas_quantity }} villas</div>
                                 {% endif %}
-                                
-                                {% if project.villas_design_quantity|slice:"-1:" == "1" %}
-                                <div class="project__parameter">{{ project.villas_design_quantity }} дизайн вилл</div>
-                                {% elif project.villas_design_quantity|slice:"-1:" > "1" and project.villas_design_quantity|slice:"-1:" < "5" %}
-                                <div class="project__parameter">{{ project.villas_design_quantity }} дизайна вилл</div>
+                                {% if project.villas_design_quantity == "1" %}
+                                <div class="project__parameter">{{ project.villas_design_quantity }} villa design</div>
                                 {% else %}
-                                <div class="project__parameter">{{ project.villas_design_quantity }} дизайнов вилл</div>
+                                <div class="project__parameter">{{ project.villas_design_quantity }} villa designs</div>
                                 {% endif %}
-                                <div class="project__parameter">{{ project.min_square }} — {{ project.max_square }}м²</div>
+                                <div class="project__parameter">{{ project.min_square }} — {{ project.max_square }}m²</div>
                                 <div class="project__parameter">${{ project.min_price }} — ${{ project.max_price }}</div>
                                 {% for parameter in project.parametres.all %}
                                 <div class="project__parameter">{{ parameter }}</div>
@@ -95,18 +90,19 @@
                         <div class="project__master-plan">
                             <div class="project__master-plan__container container">
                                 <div class="project__master-plan__wrapper wrapper">
-                                    <div class="project__master-content">
-                                        <div class="project__master-title">Мастер-план</div>
-                                        <div class="project__master-line"></div>
-                                        <a href="#" class="project__master-zoom"><img src="{% static 'images/icon-zoom-white.svg' %}" alt="Zoom icon"></a>
-                                    </div>
+                                    <div class="project__master-title">Master plan</div>
                                     <div class="project__master-image"><img src="{{ project.master_plan.url }}" alt="Master plan image"></div>
+                                    <div class="project__master-btn">More information about the Project</div>
+                                </div>
+                                <div class="project__master-btn project__master-btn-mobile">
+                                    <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
+                                    <span>Learn more</span>
                                 </div>
                             </div>
                         </div>
                         <div class="project__video-block">
                             <div class="project__video-content">
-                                <div class="project__video-title">Узнать больше<br><span>«{{ project.title }}»</span></div>
+                                <div class="project__video-title">Learn more about<br><span>«{{ project.title }}»</span></div>
                                 <a href="{{ project.video_url }}" class="project__video-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Arrow right"></a>
                             </div>
                             <a href="{{ project.video_url }}" class="project__video-div">
@@ -114,6 +110,7 @@
                             </a>
                         </div>
                     </div>
+                </section>
 </section>
             </div>
             {% endfor %}

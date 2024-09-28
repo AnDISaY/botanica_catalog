@@ -211,7 +211,7 @@
             height: 36px;
         }
 
-        div + div {
+        a + a {
             margin-left: 9px;
         }
 
@@ -221,7 +221,7 @@
                 height: 7.5vw;
             }
 
-            div + div {
+            a + a {
                 margin-left: 1.875vw;
             }
         }
@@ -240,22 +240,43 @@
     }
 
     &__accordeon {
+        border-bottom: 0.6px solid rgba(18, 18, 18, 0.2);
+
+        @media screen and (max-width: $md3) {
+            border-bottom: 0.125vw solid rgba(18, 18, 18, 0.2);
+        }
+
         
         &__btn {
             display: flex;
             justify-content: space-between;
             padding: 30px 0px;
-            border-bottom: 0.6px solid rgba(18, 18, 18, 0.2);
             cursor: pointer;
 
             span {
                 font-weight: 600;
                 font-size: 18px;
+
+                @media screen and (max-width: $md3) {
+                    font-size: 3.75vw;
+                }
             }
+
+            img {
+                transition: all 0.3s ease;
+
+                @media screen and (max-width: $md3) {
+                    width: 2vw;
+                }
+            }
+
+            .img-active {
+                transform: rotateX(180deg);
+            }
+
 
             @media screen and (max-width: $md3) {
                 padding: 6.25vw 0px;
-                border-bottom: 0.125vw solid rgba(18, 18, 18, 0.2);
 
                 span {
                     font-size: 3.75vw;
@@ -265,9 +286,34 @@
 
         &__content {
             max-height: 0px;
-            // display: none;
             overflow: hidden;
             transition: 0.3s ease-in-out;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px 0px;
+            padding: 30px 0px;
+
+            @media screen and (max-width: $md3) {
+                gap: 16px 0px;
+                padding: 20px 0px;
+            }
+        }
+
+        .footer__content-item {
+
+            @media screen and (max-width: $md2) {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 100%;
+                color: #636363;   
+            }
+
+            @media screen and (max-width: $md3) {
+                font-size: 3.334vw;
+            }
         }
 
         &:first-child {
@@ -279,6 +325,10 @@
                     padding: 0px 0px 6.25vw;
                 }
             }
+        }
+
+        .accordeon-padding {
+            padding-bottom: 0 !important;
         }
     }
 

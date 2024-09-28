@@ -1,0 +1,242 @@
+{% extends 'en/base.html' %}
+{% load static %}
+{% block title %}О застройщике{% endblock %}
+
+{% block content %}
+<section class="about-start">
+    <div class="about-start__container container">
+        <div class="about-start__row1">
+            <div class="about-start__title-block">
+                <div class="about-start__title-content">
+                    <div class="about-start__subheading">Botanica Luxury Villas</div>
+                    <div class="about-start__title">the Developer</div>
+                </div>
+            </div>
+            <div class="about-start__text-block">
+                <div class="about-start__row1__content">
+                    <div class="about-start__row1__text1">Architectural perfection combined with natural beauty</div>
+                    <div class="about-start__row1__btn-block">
+                        <img src="{% static 'images/aboutstart-line.jpg' %}" alt="Just line">
+                        <a href="#project-slider__title" class="about-start__row1__btn">
+                            <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
+                            <span>pick a project</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-start__row1__image"><img src="{% static 'images/aboutstart-mainimage.jpg' %}" alt="Villa's image"></div>
+            </div>
+        </div>
+        <div class="about-start__row1-mobile">
+            <div class="about-start__row1-mobile__container container">
+                <div class="about-start__row1-mobile__image-block" style="background-image: url('{% static 'images/aboutstart-mainimage-mobile.jpg' %}');">
+                    <span>About The Company</span>
+                </div>
+                <div class="about-start__row1-mobile__text"><span>Architectural perfection combined with natural beauty</span></div>
+                <a href="#project-slider__title" class="about-start__row1-mobile__btn">
+                    <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
+                    <span>pick a project</span>
+                </a>
+            </div>
+        </div>
+        <div class="about-start__row2">
+            <div class="about-start__column">
+                <div class="about-start__column__content">
+                    <span class="about-start__column__content__number">20</span>
+                    <span class="about-start__column__content__text">Years of experience in the construction industry</span>
+                </div>
+                <div class="about-start__column__number">20</div>
+            </div>
+            <div class="about-start__column">
+                <div class="about-start__column__content">
+                    <span class="about-start__column__content__number">>15</span>
+                    <span class="about-start__column__content__text">Villa project phases launched by Botanica Luxury Villas</span>
+                </div>
+                <div class="about-start__column__number">15</div>
+            </div>
+        </div>
+        <div class="about-start__row3">
+            <div class="about-start__row3__title">About the company</div>
+            <div class="about-start__row3__text">Botanica Luxury Villas is not just real estate, it is a work of art from AAP Architecture Properties & Development. More than 20 years of successful work in construction, more than 15 unique villa projects and an impeccable reputation. Our team is led by an outstanding Thai architect Attasit Intarachoti, who brings a piece of his talent to every project.</div>
+        </div>
+    </div>
+</section>
+<section class="project-slider">
+    <div class="project-slider__container container">
+        <div class="project-slider__slider">
+        <div class="project-slider__title" id="project-slider__title">Our projects</div>
+            <div class="swiper mySwiperProject">
+                <div class="swiper-wrapper">
+                    {% for project in projects %}
+                    <div class="swiper-slide"><a href="{% url 'project_detail' project.slug%}"><img src="{{ project.main_image.url }}" alt="Project main image"></a></div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-prev-project project-slider-arrow"><img src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}" alt="White left arrow icon"></div>
+                <div class="swiper-button-next-project project-slider-arrow"><img src="{% static 'images/icon-sliderarrowright-mobile.svg' %}" alt="White right arrow icon"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="awards">
+    <div class="awards__container container">
+        <div class="awards__row1">
+            <div class="awards__image"><img src="{% static 'images/awards1.jpg' %}" alt="Awards image #1"></div>
+            <div class="awards__image"><img src="{% static 'images/awards2.jpg' %}" alt="Awards image #2"></div>
+            <div class="awards__image"><img src="{% static 'images/awards3.jpg' %}" alt="Awards image #3"></div>
+            <div class="awards__image"><img src="{% static 'images/awards4.png' %}" alt="Awards image #4"></div>
+            <div class="awards__image"><img src="{% static 'images/awards5.jpg' %}" alt="Awards image #5"></div>
+            <div class="awards__image"><img src="{% static 'images/awards6.jpg' %}" alt="Awards image #6"></div>
+        </div>
+        <div class="awards__row2">
+            <div class="awards__column">
+                <div class="awards__column__title">Individuality</div>
+                <div class="awards__column__text">Houses that will be built according to your individual order</div>
+                <div class="awards__column__icon"><img src="{% static 'images/icon-awards1.svg' %}" alt="Just icon"></div>
+            </div>
+            <div class="awards__column">
+                <div class="awards__column__title">Flexibility</div>
+                <div class="awards__column__text">Flexible payment plans to support overseas buyers</div>
+                <div class="awards__column__icon"><img src="{% static 'images/icon-awards2.svg' %}" alt="Just icon"></div>
+            </div>
+            <div class="awards__column">
+                <div class="awards__column__title">Transparency</div>
+                <div class="awards__column__text">Linking the payment schedule to the completed stages of building a house</div>
+                <div class="awards__column__icon"><img src="{% static 'images/icon-awards3.svg' %}" alt="Just icon"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="advantages">
+    <div class="advantages__container container">
+        <div class="advantages__row1">
+            <div class="advantages__row1__column"><span>Ownership of Botanica Villas:</span></div>
+            <div class="advantages__row1__column">
+                <div class="advantages__row1__head-block">
+                    <div class="advantages__row1__head-number">01</div>
+                    <div class="advantages__row1__head-line"></div>
+                </div>
+                <div class="advantages__row1__text">Luxury Villa Botanica is for sale in both Freehold and Leasehold</div>
+            </div>
+            <div class="advantages__row1__column">
+                <div class="advantages__row1__head-block">
+                    <div class="advantages__row1__head-number">02</div>
+                    <div class="advantages__row1__head-line"></div>
+                </div>
+                <div class="advantages__row1__text">All taxes and transfer fees will be split 50/50 between the developer and the buyer</div>
+            </div>
+        </div>
+        <div class="advantages__row2">
+            <div class="advantages__row2__column">
+                <div class="advantages__row2__heading">installments <span>0%</span></div>
+                <div class="advantages__row2__text">For villas under construction, we offer interest-free installment payments for the entire construction period, where each payment is linked to the stage of construction of the villa</div>
+            </div>
+            <div class="advantages__row2__column">
+                <div class="advantages__row2__text2">If you have chosen a ready-made villa, then the payment process is as simple as possible <span>and is carried out in three stages:</span></div>
+                <div class="advantages__row2__content">
+                    <div class="advantages__row2__content__block">
+                        <div class="advantages__row2__content__step">
+                            <span>1</span>
+                            <img src="{% static 'images/icon-aboutblackarrowright.svg' %}" alt="Black right arrow icon">
+                        </div>
+                        <div class="advantages__row2__content__text">Deposit</div>
+                    </div>
+                    <div class="advantages__row2__content__block">
+                        <div class="advantages__row2__content__step">
+                            <span>2</span>
+                            <img src="{% static 'images/icon-aboutblackarrowright.svg' %}" alt="Black right arrow icon">
+                        </div>
+                        <div class="advantages__row2__content__text">Contract</div>
+                    </div>
+                    <div class="advantages__row2__content__block">
+                        <div class="advantages__row2__content__step">
+                            <span>3</span>
+                        </div>
+                        <div class="advantages__row2__content__text active-text">Registration</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="priceup">
+    <div class="priceup__container container">
+        <div class="priceup__column priceup__column1">
+            <div class="priceup__column1__title">Price increase plan:</div>
+            <div class="priceup__column1__image"><img src="{% static 'images/image-priceup.svg' %}" alt="Raising price image"></div>
+            <div class="priceup__column1__text-block">
+                <div class="priceup__column1__percent">30%</div>
+                <div class="priceup__column1__text">Price increase during the construction of the villa</div>
+            </div>
+        </div>
+        <div class="priceup__column priceup__column2">
+            <div class="priceup__column2__month-block">
+                <div class="priceup__column2__month-number">6 months:</div>
+                <div class="priceup__column2__month-text">Completion of the walls</div>
+                <div class="priceup__column2__month-raise">Increase +10%</div>
+            </div>
+            <div class="priceup__column2__divider"></div>
+            <div class="priceup__column2__month-block">
+                <div class="priceup__column2__month-number">9 months:</div>
+                <div class="priceup__column2__month-text">Completion of the construction of the building box</div>
+                <div class="priceup__column2__month-raise">Increase +20%</div>
+            </div>
+            <div class="priceup__column2__divider"></div>
+            <div class="priceup__column2__month-block">
+                <div class="priceup__column2__month-number">12 months:</div>
+                <div class="priceup__column2__month-text">Acceptance into operation</div>
+                <div class="priceup__column2__month-raise">Increase +30%</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="location">
+    <div class="location__container container">
+        <div class="location__title">Our projects locations</div>
+        <div class="location__map" style="background-image: url('{% static 'images/map.jpg' %}');">
+            <a href="/grand_avenue" class="location__map__place map__place1">
+                <div class="location__map__number">1</div>
+                <div class="location__map__text">Grand Avenue</div>
+            </a>
+            <a href="/forestique" class="location__map__place map__place2">
+                <div class="location__map__number">2</div>
+                <div class="location__map__text">Forestique</div>
+            </a>
+            <a href="#" class="location__map__place map__place3">
+                <div class="location__map__number">3</div>
+                <div class="location__map__text">Four Seasons</div>
+            </a>
+            <a href="#" class="location__map__place map__place4">
+                <div class="location__map__number">4</div>
+                <div class="location__map__text">Moder Loft II</div>
+            </a>
+            <a href="#" class="location__map__place map__place5">
+                <div class="location__map__number">5</div>
+                <div class="location__map__text">Lakeside</div>
+            </a>
+            <a href="#" class="location__map__place map__place6">
+                <div class="location__map__number">6</div>
+                <div class="location__map__text">Sky Valley</div>
+            </a>
+        </div>
+        <div class="location__text-block">
+            <div class="location__icon"><img src="{% static 'images/icon-mapclick.svg' %}" alt="Map icon click"></div>
+            <div class="location__text">Click on any project to go to its page</div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiperProject", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next-project",
+        prevEl: ".swiper-button-prev-project",
+      },
+    });
+</script>
+{% endblock %}

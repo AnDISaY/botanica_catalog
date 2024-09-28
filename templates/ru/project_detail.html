@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'ru/base.html' %}
 {% load static %}
 {% load counter %}
 {% block title %}{{ project.title }}{% endblock %}
@@ -50,12 +50,15 @@
 <secion class="project-master-plan">
     <div class="project-master-plan__container container">
         <div class="project-master-plan__wrapper wrapper">
-            <div class="project-master-plan__content">
-                <div class="project-master-plan__title">Мастер-план</div>
-                <div class="project-master-plan__line"></div>
-                <a href="#" class="project-master-plan__zoom"><img src="{% static 'images/icon-zoom-white.svg' %}" alt="Zoom icon"></a>
-            </div>
+            <div class="project-master-plan__title">Мастер-план</div>
             <div class="project-master-plan__image"><img src="{{ project.master_plan.url }}" alt="Master plan image"></div>
+            <div class="project-master-plan__btn">
+                <span>Больше информации о проекте</span>
+            </div>
+        </div>
+        <div class="project-master-plan__btn project-master-plan__btn-mobile">
+            <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
+            <span>подробнее о проекте</span>
         </div>
     </div>
 </secion>

@@ -70,8 +70,10 @@ popupLink.addEventListener('click', function (e) {
     e.preventDefault();
 })
 
-const popupCloseEl = document.querySelector('.close-popup');
-popupCloseEl.addEventListener('click', function (e) {
-    popupClose(popupCloseEl.closest('.popup'));
-    e.preventDefault();
+const popupCloseEl = document.querySelectorAll('.close-popup');
+popupCloseEl.forEach(el => {
+    el.addEventListener('click', function (e) {
+        popupClose(el.closest('.popup'));
+        e.preventDefault();
+    })
 })
