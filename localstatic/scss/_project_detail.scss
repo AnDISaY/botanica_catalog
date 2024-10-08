@@ -598,7 +598,6 @@
 
     &__image {
         width: 1112px;
-        margin-bottom: 40px;
 
         img {
             width: 100%;
@@ -607,12 +606,10 @@
 
         @media screen and (max-width: $md1) {
             width: 695px;
-            margin-bottom: 25.25px;
         }
 
         @media screen and (max-width: $md2) {
             width: 384px;
-            margin-bottom: 0;
         }
 
         @media screen and (max-width: $md3) {
@@ -768,6 +765,7 @@
     &__param {
         font-size: 24px;
         padding: 20px 40px;
+        line-height: 75%;
         background-color: #fff;
         border-radius: 29px;
 
@@ -780,13 +778,13 @@
         @media screen and (max-width: $md2) {
             font-size: 13.5px;
             padding: 12px 30px;
-            border-radius: 16.5px;
+            border-radius: 17px;
         }
 
         @media screen and (max-width: $md3) {
             font-size: 3.75vw;
             padding: 3.75vw 6.25vw;
-            border-radius: 5vw;
+            border-radius: 5.156vw;
         }
     }
 }
@@ -2050,7 +2048,18 @@
         text-transform: uppercase;
 
         img {
-            display: block;
+            display: none;
+
+            @media screen and (max-width: $md2) {
+                display: block;
+                width: 24px;
+                margin-right: 12px;
+            }
+            
+            @media screen and (max-width: $md3) {
+                width: 5vw;
+                margin-right: 2.5vw;
+            }
         }
 
         span {

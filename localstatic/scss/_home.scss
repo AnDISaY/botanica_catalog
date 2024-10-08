@@ -26,7 +26,6 @@
         background-repeat: no-repeat;
         background-position: center;
         width: 682px;
-        height: 573px;
         padding: 40px 0px 0px 40px;
         margin-right: 20px;
         position: relative;
@@ -35,7 +34,6 @@
 
         @media screen and (max-width: $md1) {
             width: 451.25px;
-            height: 383.12px;
             padding: 25px 0px 0px 25px;
             margin-right: 12.5px;
             border-radius: 7.5px;
@@ -197,17 +195,22 @@
     }
 
     &__row1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         background-color: #FFD174;
         margin-bottom: 20px;
         padding: 30px;
         border-radius: 12px;
         width: 410px;
+        height: 268px;
         position: relative;
 
         @media screen and (max-width: $md1) {
             margin-bottom: 12.5px;
             padding: 18.75px;
             width: 256.25px;
+            height: 167.5px;
             border-radius: 7.5px;
         }
 
@@ -223,7 +226,6 @@
         }
 
         &__subtitle {
-            margin-bottom: 137px;
             max-width: 226px;
 
             @media screen and (max-width: $md1) {
@@ -260,6 +262,7 @@
 
         &__description {
             font-size: 13px;
+            line-height: 150%;
             max-width: 290px;
             text-wrap: wrap;
 
@@ -334,11 +337,13 @@
         border-radius: 12px;
         padding: 30px;
         width: 410px;
+        height: 205px;
         color: #fff;
 
         @media screen and (max-width: $md1) {
             border-radius: 7.5px;
             width: 256.25px;
+            height: 128.12px;
             padding: 18.75px;
         }
 
@@ -362,38 +367,40 @@
             font-family: $fn;
             font-weight: 700;
             font-size: 28px;
-            margin-bottom: 55px;
+            line-height: 75%;
+            margin-bottom: 64   px;
 
             @media screen and (max-width: $md1) {
                 font-size: 17.5px;
-                margin-bottom: 55.37px;
+                margin-bottom: 39.38px;
             }
         }
     }
     
     .subtitle-border {
         font-size: 16px;
+        line-height: 75%;
         padding: 15px 20px;
         border: #121212 solid 1px;
-        border-radius: 21px;
+        border-radius: 21.8px;
 
         @media screen and (max-width: $md1) {
             font-size: 10px;
             padding: 9.5px 12.5px;
             border: #121212 solid 0.63px;
-            border-radius: 13.3px;
+            border-radius: 14px;
         }
 
         @media screen and (max-width: $md2) {
             font-size: 16.5px;
             padding: 15px 24px;
-            border-radius: 21px;
+            border-radius: 22px;
         }
 
         @media screen and (max-width: $md3) {
             font-size: 4.063vw;
             padding: 3.75vw 6.25vw;
-            border-radius: 5.313vw;
+            border-radius: 7vw;
         }
     }
 
@@ -645,6 +652,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        flex-grow: 1;
         background-color: #F6F8F7;
         border-radius: 12px;
         padding: 40px;
@@ -680,6 +688,7 @@
         align-items: center;
         font-family: $fn;
         font-size: 14px;
+        letter-spacing: 4px;
         color: #E7A827;
         margin-bottom: 14px;
         text-transform: uppercase;
@@ -818,6 +827,8 @@
     }
 
     &__view-btn {
+        display: flex;
+        justify-content: center;
         font-family: $fg;
         font-weight: 600;
         font-size: 18px;    
@@ -978,32 +989,31 @@
 
     &__parameter {
         font-size: 18px;
+        line-height: 80%;
         padding: 15px 50px;
         background-color: #fff;
-        border-radius: 22px;
+        border-radius: 22.2px;
         margin: 0px 16px 16px 0px;
 
         @media screen and (max-width: $md1) {
             font-size: 11.25px;
             padding: 10px 31px;
-            border-radius: 13.75px;
+            border-radius: 14.5px;
             margin: 0px 10px 10px 0px;
         }
 
         @media screen and (max-width: $md2) {
             font-size: 13.5px;
             padding: 12px 30px;
-            line-height: 9px;
             font-weight: 600;
-            border-radius: 15.6px;
+            border-radius: 17.4px;
             margin: 0px 9px 9px 0px;
         }
 
         @media screen and (max-width: $md3) {
             font-size: 3.438vw;
             padding: 2.5vw 5vw;
-            line-height: 1.875vw;
-            border-radius: 3.75vw;
+            border-radius: 3.906vw;
             margin: 0px 1.875vw 2.5vw 0px;
         }
     }
@@ -1279,6 +1289,7 @@
         font-family: $fn;
         font-weight: 700;
         font-size: 38px;
+        line-height: 130%;
         margin-bottom: 36px;
 
         span {

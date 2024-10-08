@@ -3,6 +3,7 @@
     z-index: 4;
     background-color: #F6F8F7;
     padding: 38px 0px;
+
     &__container {
         display: flex;
         justify-content: space-between;
@@ -194,8 +195,8 @@
     }
 
     &__logo {
-        width: 132px;
-        height: 44px;
+        width: 137px;
+        height: 59px;
 
         img {
             width: 100%;
@@ -203,18 +204,18 @@
         }
 
         @media screen and (max-width: $md1) {
-            width: 83px;
-            height: 28px;
+            width: 86px;
+            height: 37px;
         }
 
         @media screen and (max-width: $md2) {
-            width: 10.9.5px;
-            height: 36.5px;
+            width: 111px;
+            height: 48px;
         }
 
         @media screen and (max-width: $md3) {
-            width: 22.813vw;
-            height: 7.597vw;
+            width: 23.125vw;
+            height: 10vw;
         }
     }
 

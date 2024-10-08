@@ -253,8 +253,8 @@ h2 {
   display: block;
 }
 .header__logo {
-  width: 132px;
-  height: 44px;
+  width: 137px;
+  height: 59px;
 }
 .header__logo img {
   width: 100%;
@@ -262,20 +262,20 @@ h2 {
 }
 @media screen and (max-width: 1236px) {
   .header__logo {
-    width: 83px;
-    height: 28px;
+    width: 86px;
+    height: 37px;
   }
 }
 @media screen and (max-width: 785px) {
   .header__logo {
-    width: 10.9 0.5px;
-    height: 36.5px;
+    width: 111px;
+    height: 48px;
   }
 }
 @media screen and (max-width: 480px) {
   .header__logo {
-    width: 22.813vw;
-    height: 7.597vw;
+    width: 23.125vw;
+    height: 10vw;
   }
 }
 .header__menu {
@@ -468,7 +468,6 @@ h2 {
   background-repeat: no-repeat;
   background-position: center;
   width: 682px;
-  height: 573px;
   padding: 40px 0px 0px 40px;
   margin-right: 20px;
   position: relative;
@@ -478,7 +477,6 @@ h2 {
 @media screen and (max-width: 1236px) {
   .hello__column1 {
     width: 451.25px;
-    height: 383.12px;
     padding: 25px 0px 0px 25px;
     margin-right: 12.5px;
     border-radius: 7.5px;
@@ -646,11 +644,15 @@ h2 {
   }
 }
 .hello__row1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #FFD174;
   margin-bottom: 20px;
   padding: 30px;
   border-radius: 12px;
   width: 410px;
+  height: 268px;
   position: relative;
 }
 @media screen and (max-width: 1236px) {
@@ -658,6 +660,7 @@ h2 {
     margin-bottom: 12.5px;
     padding: 18.75px;
     width: 256.25px;
+    height: 167.5px;
     border-radius: 7.5px;
   }
 }
@@ -675,7 +678,6 @@ h2 {
   }
 }
 .hello__row1__subtitle {
-  margin-bottom: 137px;
   max-width: 226px;
 }
 @media screen and (max-width: 1236px) {
@@ -716,6 +718,7 @@ h2 {
 }
 .hello__row1__description {
   font-size: 13px;
+  line-height: 150%;
   max-width: 290px;
   text-wrap: wrap;
 }
@@ -791,12 +794,14 @@ h2 {
   border-radius: 12px;
   padding: 30px;
   width: 410px;
+  height: 205px;
   color: #fff;
 }
 @media screen and (max-width: 1236px) {
   .hello__row2 {
     border-radius: 7.5px;
     width: 256.25px;
+    height: 128.12px;
     padding: 18.75px;
   }
 }
@@ -821,40 +826,42 @@ h2 {
   font-family: "Neue Machina";
   font-weight: 700;
   font-size: 28px;
-  margin-bottom: 55px;
+  line-height: 75%;
+  margin-bottom: 64 px;
 }
 @media screen and (max-width: 1236px) {
   .hello__row2__title {
     font-size: 17.5px;
-    margin-bottom: 55.37px;
+    margin-bottom: 39.38px;
   }
 }
 .hello .subtitle-border {
   font-size: 16px;
+  line-height: 75%;
   padding: 15px 20px;
   border: #121212 solid 1px;
-  border-radius: 21px;
+  border-radius: 21.8px;
 }
 @media screen and (max-width: 1236px) {
   .hello .subtitle-border {
     font-size: 10px;
     padding: 9.5px 12.5px;
     border: #121212 solid 0.63px;
-    border-radius: 13.3px;
+    border-radius: 14px;
   }
 }
 @media screen and (max-width: 785px) {
   .hello .subtitle-border {
     font-size: 16.5px;
     padding: 15px 24px;
-    border-radius: 21px;
+    border-radius: 22px;
   }
 }
 @media screen and (max-width: 480px) {
   .hello .subtitle-border {
     font-size: 4.063vw;
     padding: 3.75vw 6.25vw;
-    border-radius: 5.313vw;
+    border-radius: 7vw;
   }
 }
 .hello .icon-arrow {
@@ -1113,6 +1120,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
   background-color: #F6F8F7;
   border-radius: 12px;
   padding: 40px;
@@ -1149,6 +1157,7 @@ h2 {
   align-items: center;
   font-family: "Neue Machina";
   font-size: 14px;
+  letter-spacing: 4px;
   color: #E7A827;
   margin-bottom: 14px;
   text-transform: uppercase;
@@ -1289,6 +1298,8 @@ h2 {
   }
 }
 .project__view-btn {
+  display: flex;
+  justify-content: center;
   font-family: "Gilroy";
   font-weight: 600;
   font-size: 18px;
@@ -1454,16 +1465,17 @@ h2 {
 }
 .project__parameter {
   font-size: 18px;
+  line-height: 80%;
   padding: 15px 50px;
   background-color: #fff;
-  border-radius: 22px;
+  border-radius: 22.2px;
   margin: 0px 16px 16px 0px;
 }
 @media screen and (max-width: 1236px) {
   .project__parameter {
     font-size: 11.25px;
     padding: 10px 31px;
-    border-radius: 13.75px;
+    border-radius: 14.5px;
     margin: 0px 10px 10px 0px;
   }
 }
@@ -1471,9 +1483,8 @@ h2 {
   .project__parameter {
     font-size: 13.5px;
     padding: 12px 30px;
-    line-height: 9px;
     font-weight: 600;
-    border-radius: 15.6px;
+    border-radius: 17.4px;
     margin: 0px 9px 9px 0px;
   }
 }
@@ -1481,8 +1492,7 @@ h2 {
   .project__parameter {
     font-size: 3.438vw;
     padding: 2.5vw 5vw;
-    line-height: 1.875vw;
-    border-radius: 3.75vw;
+    border-radius: 3.906vw;
     margin: 0px 1.875vw 2.5vw 0px;
   }
 }
@@ -1690,6 +1700,7 @@ h2 {
   font-family: "Neue Machina";
   font-weight: 700;
   font-size: 38px;
+  line-height: 130%;
   margin-bottom: 36px;
 }
 .project__video-title span {
@@ -1870,12 +1881,12 @@ h2 {
   font-size: 32px;
   color: #E7A827;
   line-height: 23px;
-  margin: 0px 0px 40px 90px;
+  margin: 0px 0px 40px 113px;
 }
 @media screen and (max-width: 1236px) {
   .about-start__subheading {
     font-size: 20px;
-    margin: 0px 0px 25px 51.5px;
+    margin: 0px 0px 25px 71px;
     line-height: 14px;
   }
 }
@@ -4482,7 +4493,6 @@ h2 {
 }
 .project-master-plan__image {
   width: 1112px;
-  margin-bottom: 40px;
 }
 .project-master-plan__image img {
   width: 100%;
@@ -4491,13 +4501,11 @@ h2 {
 @media screen and (max-width: 1236px) {
   .project-master-plan__image {
     width: 695px;
-    margin-bottom: 25.25px;
   }
 }
 @media screen and (max-width: 785px) {
   .project-master-plan__image {
     width: 384px;
-    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -4657,6 +4665,7 @@ h2 {
 .project-structure__param {
   font-size: 24px;
   padding: 20px 40px;
+  line-height: 75%;
   background-color: #fff;
   border-radius: 29px;
 }
@@ -4671,14 +4680,14 @@ h2 {
   .project-structure__param {
     font-size: 13.5px;
     padding: 12px 30px;
-    border-radius: 16.5px;
+    border-radius: 17px;
   }
 }
 @media screen and (max-width: 480px) {
   .project-structure__param {
     font-size: 3.75vw;
     padding: 3.75vw 6.25vw;
-    border-radius: 5vw;
+    border-radius: 5.156vw;
   }
 }
 
@@ -5996,7 +6005,20 @@ h2 {
   text-transform: uppercase;
 }
 .project-consult__btn img {
-  display: block;
+  display: none;
+}
+@media screen and (max-width: 785px) {
+  .project-consult__btn img {
+    display: block;
+    width: 24px;
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .project-consult__btn img {
+    width: 5vw;
+    margin-right: 2.5vw;
+  }
 }
 .project-consult__btn span {
   font-family: "Neue Machina";
@@ -6583,7 +6605,7 @@ h2 {
 }
 .footer__list-item {
   font-size: 14px;
-  max-width: 205px;
+  max-width: 176px;
   margin-bottom: 24px;
   text-wrap: wrap;
 }
@@ -6591,11 +6613,12 @@ h2 {
   .footer__list-item {
     font-size: 8.75px;
     margin-bottom: 15.25px;
-    max-width: 130px;
+    max-width: 110px;
   }
 }
 .footer__address__certain {
   font-size: 14px;
+  line-height: 180%;
   padding-bottom: 0px;
   display: block;
   max-width: 205px;
@@ -6632,7 +6655,7 @@ h2 {
   align-items: center;
   width: 30px;
   height: 30px;
-  margin-right: 60px;
+  margin-right: 41px;
 }
 .footer__callback__icon img {
   width: 100%;
@@ -6642,7 +6665,7 @@ h2 {
   .footer__callback__icon {
     width: 18.75px;
     height: 18.75px;
-    margin-right: 37.5px;
+    margin-right: 23px;
   }
 }
 .footer__callback__title {

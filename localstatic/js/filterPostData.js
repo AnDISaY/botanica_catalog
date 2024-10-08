@@ -14,9 +14,7 @@ function createApart(resp) {
 
   if (resp['apartmentsf'].length != 0 ) {
     if (resp['apartmentsf'].length > 6) {
-      console.log('bebebe')
       for (index in resp['apartmentsf'].slice(0, 5)) {
-        console.log(count)
         fields = resp['apartmentsf'][index]['fields'];
     
         apart = document.createElement("a");

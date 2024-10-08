@@ -20,7 +20,6 @@ function showCard() {
         showMoreEl.appendChild(showMoreSpan);
         document.querySelector('.project-apartments__wrapper').appendChild(showMoreEl);
         const showMore2 = document.querySelector('.project-apartments__show-more');
-        console.log(showMore2)
         showMore2.addEventListener('click', showCard);
     }
 

@@ -37,19 +37,20 @@
 
     &__list-item {
         font-size: 14px;
-        max-width: 205px;
+        max-width: 176px;
         margin-bottom: 24px;
         text-wrap: wrap;
 
         @media screen and (max-width: $md1) {
             font-size: 8.75px;
             margin-bottom: 15.25px;
-            max-width: 130px;
+            max-width: 110px;
         }
     }
 
     &__address__certain {
         font-size: 14px;
+        line-height: 180%;
         padding-bottom: 0px;
         display: block;
         max-width: 205px;
@@ -86,7 +87,7 @@
             align-items: center;
             width: 30px;
             height: 30px;
-            margin-right: 60px;
+            margin-right: 41px;
             
             img {
                 width: 100%;
@@ -96,7 +97,7 @@
             @media screen and (max-width: $md1) {
                 width: 18.75px;
                 height: 18.75px;
-                margin-right: 37.5px;
+                margin-right: 23px;
             }
         }
 
