@@ -827,7 +827,7 @@ h2 {
   font-weight: 700;
   font-size: 28px;
   line-height: 75%;
-  margin-bottom: 64 px;
+  margin-bottom: 64px;
 }
 @media screen and (max-width: 1236px) {
   .hello__row2__title {
