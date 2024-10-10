@@ -210,7 +210,7 @@
             margin-bottom: 12.5px;
             padding: 18.75px;
             width: 256.25px;
-            height: 167.5px;
+            height: auto;
             border-radius: 7.5px;
         }
 
@@ -394,12 +394,14 @@
         @media screen and (max-width: $md2) {
             font-size: 16.5px;
             padding: 15px 24px;
+            border: #121212 solid 1.5px;
             border-radius: 22px;
         }
 
         @media screen and (max-width: $md3) {
             font-size: 4.063vw;
             padding: 3.75vw 6.25vw;
+            border: 0.313vw solid #121212;
             border-radius: 7vw;
         }
     }
