@@ -19,6 +19,10 @@ class Project(models.Model):
     def __str__(self):
         return self.title
     
+    class Meta:
+        verbose_name = "Проект"
+        verbose_name_plural = "Проекты"
+    
 
 
 class Parameter(models.Model):
@@ -29,7 +33,7 @@ class Parameter(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'parametres'
+        verbose_name_plural = 'Параметры'
 
 
 class Facility(models.Model):
@@ -41,7 +45,7 @@ class Facility(models.Model):
         return f'{self.name}-{self.distance}m'
     
     class Meta:
-        verbose_name_plural = 'facilities'
+        verbose_name_plural = 'Удобства'
     
 
 class ProjectImage(models.Model):
@@ -65,6 +69,10 @@ class Apartment(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = "Апартамент"
+        verbose_name_plural = "Апартаменты"
     
         
 class ApartmentImage(models.Model):
