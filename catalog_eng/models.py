@@ -3,7 +3,7 @@ from django.db import models
 
 class Project(models.Model):
     title = models.CharField(max_length=200, verbose_name="Название")
-    slug = models.SlugField(primary_key=True, verbose_name="Текстовый id(ссылка)")
+    slug = models.SlugField(primary_key=True, verbose_name="Ссылка (slug)")
     description = models.TextField(verbose_name="Описание")
     main_image = models.ImageField(upload_to='project/', default=' ', verbose_name="Главное изображение")
     master_plan = models.ImageField(verbose_name="Название")
