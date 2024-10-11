@@ -2,19 +2,19 @@ from django.db import models
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=200)
-    slug = models.SlugField(primary_key=True)
-    description = models.TextField()
-    main_image = models.ImageField(upload_to='project/', default=' ')
-    master_plan = models.ImageField()
-    villas_quantity = models.PositiveSmallIntegerField()
-    villas_design_quantity = models.PositiveSmallIntegerField()
-    min_square = models.PositiveSmallIntegerField()
-    max_square = models.PositiveSmallIntegerField()
-    min_price = models.PositiveIntegerField()
-    max_price = models.PositiveIntegerField()
-    video_url = models.CharField(max_length=400)
-    map_iframe = models.TextField()
+    title = models.CharField(max_length=200, verbose_name="Название")
+    slug = models.SlugField(primary_key=True, verbose_name="Текстовый id(ссылка)")
+    description = models.TextField(verbose_name="Описание")
+    main_image = models.ImageField(upload_to='project/', default=' ', verbose_name="Главное изображение")
+    master_plan = models.ImageField(verbose_name="Название")
+    villas_quantity = models.PositiveSmallIntegerField(verbose_name="Кол-во вилл")
+    villas_design_quantity = models.PositiveSmallIntegerField(verbose_name="Кол-во дизайнов вилл")
+    min_square = models.PositiveSmallIntegerField(verbose_name="Мин. площадь")
+    max_square = models.PositiveSmallIntegerField(verbose_name="Макс. площадь")
+    min_price = models.PositiveIntegerField(verbose_name="Мин. цена")
+    max_price = models.PositiveIntegerField(verbose_name="Макс. цена")
+    video_url = models.CharField(max_length=400, verbose_name="Ссылка на видео")
+    map_iframe = models.TextField(verbose_name="Ссылка на карту")
 
     def __str__(self):
         return self.title
@@ -22,8 +22,8 @@ class Project(models.Model):
 
 
 class Parameter(models.Model):
-    name = models.CharField(max_length=300)
-    project = models.ForeignKey(Project, on_delete=models.SET_NULL, related_name='parametres', null=True)
+    name = models.CharField(max_length=300, verbose_name="Название")
+    project = models.ForeignKey(Project, on_delete=models.SET_NULL, related_name='parametres', null=True, verbose_name="Проект")
 
     def __str__(self):
         return self.name
@@ -33,9 +33,9 @@ class Parameter(models.Model):
 
 
 class Facility(models.Model):
-    name = models.CharField(max_length=300)
-    distance = models.PositiveIntegerField()
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='facilities')
+    name = models.CharField(max_length=300, verbose_name="Название")
+    distance = models.PositiveIntegerField(verbose_name="Расстояние")
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='facilities', verbose_name="Проект")
     
     def __str__(self):
         return f'{self.name}-{self.distance}m'
@@ -45,28 +45,28 @@ class Facility(models.Model):
     
 
 class ProjectImage(models.Model):
-    image = models.ImageField(upload_to='project/images')
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='project/images', verbose_name="Изображение")
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='images', verbose_name="Проект")
 
 
 
 class Apartment(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='apartments')
-    name = models.CharField(max_length=4)
-    description = models.CharField(max_length=100)
-    price = models.PositiveIntegerField()
-    type = models.CharField(max_length=10)
-    bedroom = models.PositiveSmallIntegerField()
-    bathroom = models.PositiveSmallIntegerField(default=0)
-    square = models.PositiveSmallIntegerField()
-    built_square = models.PositiveSmallIntegerField()
-    house_square = models.PositiveSmallIntegerField()
-    image = models.ImageField(upload_to='project/apartments')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='apartments', verbose_name="Проект")
+    name = models.CharField(max_length=4, verbose_name="Название")
+    description = models.CharField(max_length=100, verbose_name="Описание")
+    price = models.PositiveIntegerField(verbose_name="Цена")
+    type = models.CharField(max_length=10, verbose_name="Тип")
+    bedroom = models.PositiveSmallIntegerField(verbose_name="Кол-во спален")
+    bathroom = models.PositiveSmallIntegerField(default=0, verbose_name="Кол-во ванн")
+    square = models.PositiveSmallIntegerField(verbose_name="Площадь")
+    built_square = models.PositiveSmallIntegerField(verbose_name="Застроено")
+    house_square = models.PositiveSmallIntegerField(verbose_name="Площадь виллы")
+    image = models.ImageField(upload_to='project/apartments', verbose_name="Изображение")
 
     def __str__(self):
         return self.name
     
         
 class ApartmentImage(models.Model):
-    image = models.ImageField(upload_to='apartment/images')
-    apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='apartment/images', verbose_name="Изображение")
+    apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE, related_name='images', verbose_name="Вилла")

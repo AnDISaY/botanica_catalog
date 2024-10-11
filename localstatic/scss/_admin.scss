@@ -1,0 +1,79 @@
+.admin-login {
+    &__container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__wrapper {    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 72px 0px;
+        padding: 60px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 70%;
+        color: #DFA633;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0px;
+
+        &__field {
+            position: relative;
+        }
+
+        &__icon {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        &__input {
+            width: 580px;
+            height: 70px;
+            background-color: #EEF1F0;
+            padding: 0;
+            border: none;
+            border-radius: 20px;
+            text-indent: 30px;
+            font-family: $fg;
+            font-size: 20px;
+            font-weight: 600;
+            color: #121212;
+
+            &::placeholder {
+                font-weight: 500;
+                font-size: 16px;
+                color: #777777;
+            }
+        }
+
+        &__btn {
+            width: 580px;
+            height: 76px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 20px;
+            background-color: #DFA633;
+            font-family: $fg;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 75%;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}

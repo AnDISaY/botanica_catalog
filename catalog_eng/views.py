@@ -7,7 +7,6 @@ import json
 
 def home(request):
     projects = Project.objects.all()
-    print(projects)
     for project in projects:
         min_price = str(project.min_price)
         max_price = str(project.max_price)
