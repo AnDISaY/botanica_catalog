@@ -1,0 +1,102 @@
+.admin-header {
+    margin: 32px 0px 20px;
+
+    &__container {
+        display: flex;
+        gap: 0px 20px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        width: 1009px;
+        padding: 15px 21px;
+        background-color: #EEF1F0;
+        border-radius: 20px;
+
+        &__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0px 14px;
+            padding: 18px 50px;
+            background-color: #fff;
+            border-radius: 20px;
+
+            &__icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            &__text {
+                font-size: 20px;
+                line-height: 75%;
+                color: #121212;
+            }
+        }
+
+        .active {
+            background-color: #DFA633;
+            color: #fff;
+        }
+    }
+
+    &__account {
+        &__block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 23px 20px;
+            width: 331px;
+            background-color: #EEF1F0;
+            border-radius: 20px;
+        }
+
+        &__name {
+            font-size: 20px;
+            line-height: 75%;
+        }
+
+        &__settings {
+            display: flex;
+            align-items: center;
+            gap: 0px 6px;
+
+            button {
+                background-color: transparent;
+                border: none;
+                width: 44px;
+                height: 44px;
+                cursor: pointer;
+            }
+
+            &__icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 44px;
+                height: 44px;
+                background-color: #fff;
+                border-radius: 12px;
+    
+                img {
+                    width: 18px;
+                    height: 20px;
+                }
+    
+                &:last-child {
+                    img {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+    }   
+}

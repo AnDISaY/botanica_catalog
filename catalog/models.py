@@ -71,8 +71,8 @@ class Apartment(models.Model):
         return self.name
     
     class Meta:
-        verbose_name = "Апартамент"
-        verbose_name_plural = "Апартаменты"
+        verbose_name = "Вилл"
+        verbose_name_plural = "Виллы"
     
         
 class ApartmentImage(models.Model):

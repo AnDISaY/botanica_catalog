@@ -1772,6 +1772,8 @@
         position: relative;
 
         iframe {
+            width: 1212px;
+            height: 606px;
             border-radius: 12px;
 
             @media screen and (max-width: $md1) {

@@ -40,6 +40,11 @@ h2 {
   }
 }
 
+.acontainer {
+  max-width: 1400px;
+  margin: auto;
+}
+
 .wrapper {
   padding: 50px;
   border-radius: 12px;
@@ -5716,6 +5721,8 @@ h2 {
   position: relative;
 }
 .project-facilites__map iframe {
+  width: 1212px;
+  height: 606px;
   border-radius: 12px;
 }
 @media screen and (max-width: 1236px) {
@@ -6598,10 +6605,17 @@ h2 {
 }
 .admin-login__form__icon {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
   cursor: pointer;
+}
+.admin-login__form__icon img {
+  width: 20px;
+  height: 18px;
 }
 .admin-login__form__input {
   width: 580px;
@@ -6636,6 +6650,91 @@ h2 {
   line-height: 75%;
   color: #fff;
   cursor: pointer;
+}
+
+.admin-header {
+  margin: 32px 0px 20px;
+}
+.admin-header__container {
+  display: flex;
+  gap: 0px 20px;
+}
+.admin-header__list {
+  display: flex;
+  justify-content: space-between;
+  width: 1009px;
+  padding: 15px 21px;
+  background-color: #EEF1F0;
+  border-radius: 20px;
+}
+.admin-header__list__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px 14px;
+  padding: 18px 50px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.admin-header__list__item__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin-header__list__item__icon img {
+  width: 20px;
+  height: 20px;
+}
+.admin-header__list__item__text {
+  font-size: 20px;
+  line-height: 75%;
+  color: #121212;
+}
+.admin-header__list .active {
+  background-color: #DFA633;
+  color: #fff;
+}
+.admin-header__account__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23px 20px;
+  width: 331px;
+  background-color: #EEF1F0;
+  border-radius: 20px;
+}
+.admin-header__account__name {
+  font-size: 20px;
+  line-height: 75%;
+}
+.admin-header__account__settings {
+  display: flex;
+  align-items: center;
+  gap: 0px 6px;
+}
+.admin-header__account__settings button {
+  background-color: transparent;
+  border: none;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+.admin-header__account__settings__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+.admin-header__account__settings__icon img {
+  width: 18px;
+  height: 20px;
+}
+.admin-header__account__settings__icon:last-child img {
+  width: 16px;
+  height: 16px;
 }
 
 .footer {

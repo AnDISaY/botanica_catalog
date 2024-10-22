@@ -20,7 +20,8 @@
                     <div class="admin-login__form__field">{{ form.username }}</div>
                     <div class="admin-login__form__field">
                         {{ form.password }} 
-                        <div class="admin-login__form__icon"><img src="{% static 'images/icon-password-visibility.svg' %}" alt="Password visibility button"></div>
+                        <div class="admin-login__form__icon" id="invisibleIcon"><img src="{% static 'images/icon-password-invisible.svg' %}" alt="Password visibility button"></div>
+                        <div class="admin-login__form__icon" id="visibleIcon"><img src="{% static 'images/icon-password-visible.svg' %}" alt="Password visibility button"></div>
                     </div>
                     <button type="submit" class="admin-login__form__btn">Войти</button>
                     {{ form.errors }}

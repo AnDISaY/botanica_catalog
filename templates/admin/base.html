@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    <link rel=”mask-icon” href=”favicon.svg”>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="admin-header__container acontainer">
+            <div class="admin-header__list">
+                <a href="#" class="admin-header__list__item active">
+                    <div class="admin-header__list__item__icon"><img src="{% static 'images/icon-list-project.svg' %}" alt="Project icon"></div>
+                    <div class="admin-header__list__item__text active">О проекте</div>
+                </a>
+                <a href="#" class="admin-header__list__item">
+                    <div class="admin-header__list__item__icon"><img src="{% static 'images/icon-list-price.svg' %}" alt="Project icon"></div>
+                    <div class="admin-header__list__item__text">Прайс лист</div>
+                </a>
+                <a href="#" class="admin-header__list__item">
+                    <div class="admin-header__list__item__icon"><img src="{% static 'images/icon-list-design.svg' %}" alt="Project icon"></div>
+                    <div class="admin-header__list__item__text">Дизайны</div>
+                </a>
+                <a href="#" class="admin-header__list__item">
+                    <div class="admin-header__list__item__icon"><img src="{% static 'images/icon-list-archive.svg' %}" alt="Project icon"></div>
+                    <div class="admin-header__list__item__text">Архив</div>
+                </a>
+            </div>
+            <div class="admin-header__account__block">
+                <div class="admin-header__account__name">{{ user.username }}</div>
+                <div class="admin-header__account__settings">
+                    <a href="#" class="admin-header__account__settings__icon"><img src="{% static 'images/icon-account-settings.svg' %}" alt="Account settings icon"></a>
+                    <form method="post" class="admin-header__account__settings__icon">
+                        {% csrf_token %}
+                        <input type="text" name="logout" value="True" style="display: none;">
+                        <button type="submit"><img src="{% static 'images/icon-account-quit.svg' %}" alt="Account quit icon"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

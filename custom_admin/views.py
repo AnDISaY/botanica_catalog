@@ -39,4 +39,4 @@ def custom_admin(request):
     if request.method == 'POST' and request.POST['logout'] == 'True':
         logout(request)
         return render(request, 'admin/signin.html', {"form": form,})
-    return render(request, 'admin/home.html')
+    return render(request, 'admin/home.html', {"user": request. user})

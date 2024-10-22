@@ -16,7 +16,7 @@ from django.contrib.auth.models import User
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={"class": "admin-login__form__input", "placeholder": "Логин", }))
-    password = forms.CharField(required=True, widget=forms.TextInput(attrs={"class": "admin-login__form__input", "placeholder": "Пароль", "id": "passwordInput",}))
+    password = forms.CharField(required=True, widget=forms.TextInput(attrs={"class": "admin-login__form__input", "placeholder": "Пароль", "id": "passwordInput", "type": "password"}))
 
     class Meta:
         model = User

@@ -33,10 +33,18 @@
 
         &__icon {
             position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             top: 50%;
             right: 20px;
             transform: translateY(-50%);
             cursor: pointer;
+
+            img {
+                width: 20px;
+                height: 18px;
+            }
         }
 
         &__input {
