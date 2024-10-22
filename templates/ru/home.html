@@ -97,12 +97,12 @@
                                 <div class="project__master-plan__wrapper wrapper">
                                     <div class="project__master-title">Мастер-план</div>
                                     <div class="project__master-image"><img src="{{ project.master_plan.url }}" alt="Master plan image"></div>
-                                    <div class="project__master-btn">Больше информации о проекте</div>
+                                    <a href="{% url 'project_detail' project.pk %}" class="project__master-btn">Больше информации о проекте</a>
                                 </div>
-                                <div class="project__master-btn project__master-btn-mobile">
+                                <a href="{% url 'project_detail' project.pk %}" class="project__master-btn project__master-btn-mobile">
                                     <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
                                     <span>Подробнее о проекте</span>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <div class="project__video-block">
