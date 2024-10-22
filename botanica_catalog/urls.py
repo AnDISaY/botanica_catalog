@@ -10,4 +10,4 @@ urlpatterns = [
     path('ru/', include('catalog.urls')),
     path('eng/', include('catalog_eng.urls', namespace='eng')),
     path('custom_admin/', include('custom_admin.urls', namespace='c_admin')),
-]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -30,7 +30,7 @@ def sign_in(request):
         if user is not None:
             login(request, user)
             return redirect('/custom_admin')
-    return render(request, 'admin/signin.html', {"form": form,})
+    return render(request, 'custom_admin/signin.html', {"form": form,})
 
 
 @login_required(login_url='/custom_admin/login')
@@ -39,4 +39,4 @@ def custom_admin(request):
     if request.method == 'POST' and request.POST['logout'] == 'True':
         logout(request)
         return render(request, 'admin/signin.html', {"form": form,})
-    return render(request, 'admin/home.html', {"user": request. user})
+    return render(request, 'custom_admin/home.html', {"user": request. user})
