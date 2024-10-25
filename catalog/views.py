@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Project, Apartment, ApartmentImage
+from .models import Project, Apartment, ApartmentImage, LatestProject
 from django.http import JsonResponse, HttpResponse
 from django.core.serializers import serialize
 import json
@@ -7,6 +7,7 @@ import json
 
 def home(request):
     projects = Project.objects.all()
+    latest_project = LatestProject.objects.all()[0]
     for project in projects:
         min_price = str(project.min_price)
         max_price = str(project.max_price)
@@ -19,7 +20,7 @@ def home(request):
         else:
             project.max_price = (max_price[-3:][::-1] + ' ' + max_price[-6:-3][::-1] )[::-1]
         project.villas_quantity = str(project.villas_quantity)
-    return render(request, 'ru/home.html', {'projects': projects})
+    return render(request, 'ru/home.html', {'projects': projects, 'latest_project': latest_project, })
 
 
 def about(request):

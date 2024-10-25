@@ -24,10 +24,10 @@
                 <div class="hello__row1__icon icon-shortlogo"><img src="{% static 'images/icon-shortlogo.svg' %}" alt="logo"></div>
                 <a href="{% url 'eng:about' %}" class="hello__row1__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt=""></a>
             </div>  
-            <div class="hello__row2" style="background-image: url('{% static 'images/hello-villa2.jpg' %}');">
+            <div class="hello__row2" style="background-image: url('{{ latest_project.image.url }}');">
                 <div class="hello__row2__subtitle subtitle-border">Latest project</div>
-                <div class="hello__row2__title">«Pru Jampa»</div>
-                <a href="#" class="hello__row2__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt=""></a>
+                <div class="hello__row2__title">«{{ latest_project.title }}»</div>
+                <a href="{% url 'eng:project_detail' latest_project.slug %}" class="hello__row2__icon black-arrow-right icon-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Black right arrow icon"></a>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
                         <div class="project__row1">
                             <div class="project__main-image">
                                 <img src="{{ project.main_image.url }}" alt="Main {{ project.title }} image">
-                                <a href="#" class="project__main-icon-zoom"><img src="{% static 'images/icon-zoom-black.svg' %}" alt="Zoom icon"></a>
+                                <!-- <a href="#" class="project__main-icon-zoom"><img src="{% static 'images/icon-zoom-black.svg' %}" alt="Zoom icon"></a> -->
                             </div>
                             <div class="project__title-block">
                                 <div class="project__title-up">

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Parameter, Facility, ProjectImage, Apartment, ApartmentImage
+from .models import Project, Parameter, Facility, ProjectImage, Apartment, ApartmentImage, LatestProject
 
 
 class ParameterInline(admin.TabularInline):
@@ -28,3 +28,4 @@ class ApartmentAdmin(admin.ModelAdmin):
 
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Apartment, ApartmentAdmin)
+admin.site.register(LatestProject)

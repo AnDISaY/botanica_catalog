@@ -28,10 +28,13 @@
         <div class="project-descr__slider">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
+                    {% for slide in project.images.all %}
+                        <div class="swiper-slide"><img src="{{ slide.image.url }}" alt="Фото галереи"></div>
+                    {% endfor %}
+                  <!-- <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
                   <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
                   <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div> -->
                 </div>
             </div>
             <div class="swiper-button-prev-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowleft.svg' %}" alt="Black left arrow icon"></div>

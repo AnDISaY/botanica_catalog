@@ -13,8 +13,15 @@
                 <div class="project-start__title">{{ project.title }}</div>
             </div>
             <a href="#" class="project-start__request">
-                <img src="{% static 'images/icon-greyarrowright.svg' %}" alt="Grey right arrow icon">
-                <span>ОСТАВИТЬ ЗАЯВКУ</span>
+                <div class="project-start__request__ellipse1"></div>
+                <div class="project-start__request__ellipse2"></div>
+                <div class="project-start__request__ellipse3"></div>
+                <div class="project-start__request__ellipse4">
+                </div>
+                <div class="project-start__request__content">
+                    <div class="project-start__request__image-text"><img src="{% static 'images/icon-yellowarrowright.svg' %}" alt="Grey right arrow icon">ОСТАВИТЬ</div>
+                    <span>ЗАЯВКУ</span>
+                </div>
             </a>
         </div>
         <a href="#" class="project-start__request-mobile">
@@ -28,10 +35,13 @@
         <div class="project-descr__slider">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
+                    {% for slide in project.images.all %}
+                        <div class="swiper-slide"><img src="{{ slide.image.url }}" alt="Фото галереи"></div>
+                    {% endfor %}
+                  <!-- <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
                   <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
                   <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
+                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div> -->
                 </div>
             </div>
             <div class="swiper-button-prev-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowleft.svg' %}" alt="Black left arrow icon"></div>
