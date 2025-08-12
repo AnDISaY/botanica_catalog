@@ -74,7 +74,7 @@
             <div class="header__list">
                 <a href="{% url 'home' %}" class="header__list__item">Главная</a>
                 <a href="{% url 'home' %}#projects__title-block" class="header__list__item smooth_anchor">Список проектов</a>
-                <a href="{% url 'about' %}" class="header__list__item">О застройщике</a>
+                <a href="{% url 'about' %}" class="header__list__item">О нас</a>
                 <a href="#footer" class="header__list__item">Контакты</a>
             </div>
             <div class="header__dropdown">
@@ -118,7 +118,7 @@
             <div class="footer__content">
                 <div class="footer__list">
                     <div class="footer__list-title">Контакты</div>
-                    <a href="tel:+66 84 153 4555" class="footer__list-item contact-list-item">+66 84 153 4555</a>
+                    <a href="tel:+66 91 059 1461" class="footer__list-item contact-list-item">+66 91 059 1461</a>
                     <a href="https://botanicaluxuryvillas.com" class="footer__list-item contact-list-item">botanicaluxuryvillas.com</a>
                     <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__list-item contact-list-item">ru@botanicaluxuryvilla.com</a>
                     <a href="https://botanicaluxuryvillas.com/policy" class="footer__list-item contact-list-item footer-policy-link">Политика обработки персональных данных</a>
@@ -129,12 +129,12 @@
                     <a href="{% url 'project_detail' project.slug %}" class="footer__list-item project-list-item">{{ project.title }}</a>
                     {% endfor %}
                 </div>
-                <div class="footer__list">
+                <!-- <div class="footer__list">
                     <div class="footer__list-title">Соц. сети</div>
                     <a href="#" class="footer__list-item social-list-item">Instagram</a>
                     <a href="#" class="footer__list-item social-list-item">Facebook</a>
                     <a href="#" class="footer__list-item social-list-item">Youtube</a>
-                </div>
+                </div> -->
                 <div class="footer__address">
                     <div class="footer__list-title">Адрес</div>
                     <a href="#" class="footer__address__certain">125/397 Moo 5, TungkaRoad Rassada Sub-district, Muang Phuket District Phuket Province 83000 Thailand</a>
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="footer__callback__button">Перезвоните мне</a>
+                <a href="#appl-popup" class="footer__callback__button popup-link">Перезвоните мне</a>
             </div>
         </div>
     </section>
@@ -160,11 +160,11 @@
             <div class="footer-mobile__head">
                 <div class="footer-mobile__icon-logo"><img src="{% static 'images/icon-secondlogo.svg' %}" alt="Logo"></div>
                 <div class="footer-mobile__icons">
-                    <a href="#" class="footer-mobile__icon-wa"><img src="{% static 'images/icon-whatsapp.svg' %}" alt="Whatsapp icon"></a>
+                    <!-- <a href="#" class="footer-mobile__icon-wa"><img src="{% static 'images/icon-whatsapp.svg' %}" alt="Whatsapp icon"></a>
                     <a href="#" class="footer-mobile__icon-tg"><img src="{% static 'images/icon-tg.svg' %}" alt="Telegram icon"></a>
                     <a href="#" class="footer-mobile__icon-ig"><img src="{% static 'images/icon-insta.svg' %}" alt="Instagram icon"></a>
                     <a href="#" class="footer-mobile__icon-fb"><img src="{% static 'images/icon-facebook.svg' %}" alt="Facebook icon"></a>
-                    <a href="#" class="footer-mobile__icon-yt"><img src="{% static 'images/icon-youtube.svg' %}" alt="Yuotube icon"></a>
+                    <a href="#" class="footer-mobile__icon-yt"><img src="{% static 'images/icon-youtube.svg' %}" alt="Yuotube icon"></a> -->
                 </div>
             </div>
             <div class="footer-mobile__accordeon-block">
@@ -175,7 +175,7 @@
                     </div>
                     <div class="footer-mobile__accordeon__content">
                         <div class="footer-mobile__accordeon__container">
-                            <a href="tel:+66 84 153 4555" class="footer__content-item">+66 84 153 4555</a>
+                            <a href="tel:+66 91 059 1461" class="footer__content-item">+66 91 059 1461</a>
                             <a href="https://botanicaluxuryvillas.com" class="footer__content-item">botanicaluxuryvillas.com</a>
                             <a href="mailto:ru@botanicaluxuryvilla.com" class="footer__content-item">ru@botanicaluxuryvilla.com</a>
                         </div>
@@ -212,11 +212,33 @@
                     <div class="footer-mobile__callback__icon"><img src="{% static 'images/icon-phone.svg' %}" alt="Phone icon"></div>
                     <div class="footer-mobile__callback__title">Мы будем рады ответить на ваши вопросы</div>
                     <div class="footer-mobile__callback__text">и помочь с подходящим вам выбором виллы!</div>
-                    <a href="#" class="footer-mobile__callback__btn">Перезвоните мне</a>
+                    <a href="#appl-popup" class="footer-mobile__callback__btn popup-link">Перезвоните мне</a>
                 </div>
             </div>
         </div>
     </section>
+    <div class="popup-one popup-appl popup" id="appl-popup">
+        <div class="popup-one__container popup__container">
+            <div class="popup-one__head">
+                <div class="popup-one__logo"><img src="{% static 'images/icon-logo.svg' %}" alt="Logo icon"></div>
+                <div class="popup-one__close close-popup"><img src="{% static 'images/icon-popup_close_grey.svg' %}" alt="Close icon"></div>
+            </div>
+            <div class="popup-one__form-block">
+                <div class="popup-one__form__title">Оставьте свой номер телефона, и с вами свяжется наш менеджер</div>
+                <form method="post" class="popup-one__form">{% csrf_token %}
+                    <input type="phone" class="popup-one__form__field" placeholder="Ваш номер телефона" name="phone">
+                    <button type="submit" class="popup-one__form__btn">Оставить заявку</button>
+                </form>
+            </div>
+            <div class="popup-one__bot">
+                <div class="popup-one__bot__title">Или вы можете написать нам:</div>
+                <div class="popup-one__bot__btns">
+                    <a href="https://t.me/Botanica_luxury_villas" class="popup-one__bot__btn"><div class="popup-one__bot__btn__icon"><img src="{% static 'images/icon-tg_white.svg' %}" alt="Telegram icon"></div><span>Telegram</span></a>
+                    <a href="https://wa.me/66910591461" class="popup-one__bot__btn"><div class="popup-one__bot__btn__icon"><img src="{% static 'images/icon-whatsapp_white.svg' %}" alt="WhatsApp icon"></div><span>WhatsApp</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="{% static 'js/popup.js' %}"></script>
     <script src="{% static 'js/accordeon.js' %}"></script>
     <script src="{% static 'js/smoothAnchor.js' %}"></script>

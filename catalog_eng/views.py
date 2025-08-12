@@ -3,7 +3,18 @@ from .models import Project, Apartment, ApartmentImage
 from catalog.models import LatestProject
 from django.http import JsonResponse, HttpResponse
 from django.core.serializers import serialize
+from django.core.mail import send_mail
 import json
+
+
+def send_mail_num(number):
+    send_mail(
+        subject='Consult request',
+        message=f'Phone number: {number}.',
+        from_email='botanica.sender@gmail.com',
+        recipient_list=['online@botanicaluxuryvillas.com'],
+        fail_silently=False,
+    )
 
 
 def home(request):
@@ -44,6 +55,10 @@ def project_detail(request, slug):
         serialized_data = serialize("json", apartmentsf)
         serialized_data = json.loads(serialized_data)
         return JsonResponse({"apartmentsf": serialized_data})
+
+    if request.method == 'POST':
+        send_mail_num(request.POST['phone'])
+
     return render(request, 'en/project_detail.html', {"project": project, "projects": projects, "apartments": apartments})
 
 
@@ -57,4 +72,8 @@ def villa_detail(request, project_slug, pk):
         villa.price = (price[-3:][::-1] + ' ' + price[-6:-3][::-1] + ' ' + price[-9:-6][::-1])[::-1]
     else:
         villa.price = (price[-3:][::-1] + ' ' + price[-6:-3][::-1])[::-1]
+
+    if request.method == 'POST':
+        send_mail_num(request.POST['phone'])
+
     return render(request, 'en/villa_detail.html', {'villa': villa, 'project': project, "projects": projects, 'apartment_images': apartment_images,}) # 'count': count})

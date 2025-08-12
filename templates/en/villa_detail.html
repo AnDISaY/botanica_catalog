@@ -41,13 +41,13 @@
                     <div class="villa-start__text2">{{ villa.house_square }} м²</div>
                 </div>
             </div>
-            <div class="villa-start__btn">
+            <a href="#villa-popup" class="villa-start__btn popup-link">
                 <span>Learn more</span>
-            </div>
-            <div class="villa-start__btn villa-start__btn-mobile">
+            </a>
+            <a href="#villa-popup" class="villa-start__btn villa-start__btn-mobile popup-link">
                 <img src="/localstatic/images/icon-whitearrowright.svg" alt="White right arrow icon">
                 <span>Learn more</span>
-            </div>
+            </a>
         </div>
     </div>
 </section>
@@ -108,6 +108,29 @@
     </div>
 </section>
 
+<div class="popup-one popup-villa popup" id="villa-popup">
+    <div class="popup-one__container popup__container">
+        <div class="popup-one__head">
+            <div class="popup-one__logo"><img src="{% static 'images/icon-logo.svg' %}" alt="Logo icon"></div>
+            <div class="popup-one__close close-popup"><img src="{% static 'images/icon-popup_close_grey.svg' %}" alt="Close icon"></div>
+        </div>
+        <div class="popup-one__form-block">
+            <div class="popup-one__form__title">Do you like it?</div>
+            <div class="popup-one__form__text">Leave your phone number, our manager will tell about villa in details.</div>
+            <form method="post" class="popup-one__form">{% csrf_token %}
+                <input type="phone" class="popup-one__form__field" placeholder="Phone number" name="phone">
+                <button type="submit" class="popup-one__form__btn">Learn more</button>
+            </form>
+        </div>
+        <div class="popup-one__bot">
+            <div class="popup-one__bot__title">Or you can text us:</div>
+            <div class="popup-one__bot__btns">
+                <a href="https://t.me/Botanica_luxury_villas" class="popup-one__bot__btn"><div class="popup-one__bot__btn__icon"><img src="{% static 'images/icon-tg_white.svg' %}" alt="Telegram icon"></div><span>Telegram</span></a>
+                <a href="https://wa.me/66910591461" class="popup-one__bot__btn"><div class="popup-one__bot__btn__icon"><img src="{% static 'images/icon-whatsapp_white.svg' %}" alt="WhatsApp icon"></div><span>WhatsApp</span></a>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".mySwiperVilla", {

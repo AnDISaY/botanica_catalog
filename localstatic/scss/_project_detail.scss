@@ -134,6 +134,7 @@
         justify-content: center;
         position: relative;
         // padding: 155px 87px 153px 57px;
+        color: #E7A827;
 
         &__ellipse1 {
             position: absolute;
@@ -188,8 +189,8 @@
             align-items: end;
             font-family: $fn;
             font-size: 22px;
-            color: #E7A827;
             width: auto;
+            text-transform: uppercase;
 
             @media screen and (max-width: $md1) {
                 font-size: 13.75px;
@@ -2128,7 +2129,6 @@
         padding: 40px 65px;
         background-color: #DFA633;
         border-radius: 12px;
-        text-transform: uppercase;
 
         img {
             display: none;
@@ -2146,7 +2146,6 @@
         }
 
         span {
-            font-family: $fn;
             color: #fff;
             font-weight: 600;
             font-size: 30px;

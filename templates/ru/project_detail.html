@@ -12,19 +12,18 @@
                 <div class="project-start__subheading">BOTANICA</div>
                 <div class="project-start__title">{{ project.title }}</div>
             </div>
-            <a href="#" class="project-start__request">
+            <a href="#appl-popup" class="project-start__request popup-link">
                 <div class="project-start__request__ellipse1"></div>
                 <div class="project-start__request__ellipse2"></div>
                 <div class="project-start__request__ellipse3"></div>
-                <div class="project-start__request__ellipse4">
-                </div>
+                <div class="project-start__request__ellipse4"></div>
                 <div class="project-start__request__content">
-                    <div class="project-start__request__image-text"><img src="{% static 'images/icon-yellowarrowright.svg' %}" alt="Grey right arrow icon">ОСТАВИТЬ</div>
+                    <div class="project-start__request__image-text"><img src="{% static 'images/icon-yellowarrowright.svg' %}" alt="Yellow right arrow icon">ОСТАВИТЬ</div>
                     <span>ЗАЯВКУ</span>
                 </div>
             </a>
         </div>
-        <a href="#" class="project-start__request-mobile">
+        <a href="#appl-popup" class="project-start__request-mobile popup-link">
             <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="Grey right arrow icon">
             <span>ОСТАВИТЬ ЗАЯВКУ</span>
         </a>
@@ -32,6 +31,7 @@
 </section>
 <section class="project-descr">
     <div class="project-descr__container container">
+        {% if project.images.all|length > 0 %}
         <div class="project-descr__slider">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
@@ -51,6 +51,7 @@
                 <div class="project-descr__slider__arrow swiper-button-next-custom"><img src="{% static 'images/icon-sliderarrowright-mobile.svg' %}" alt="Arrow right"></div>
             </div> -->
         </div>
+        {% endif %}
         <div class="project-descr__content">
             <div class="project-descr__text">{{ project.description|linebreaks }}</div>
             <div class="project-descr__about">О Проекте</div>
@@ -256,7 +257,7 @@
 </section>
 <section class="project-facilites">
     <div class="project-facilites__container container">
-            <div class="project-facilites__content">
+        <div class="project-facilites__content">
             <div class="project-facilites__title">Доступность локации</div>
             <div class="project-facilites__grid">
                 {% for facility in project.facilities.all %}
@@ -296,14 +297,36 @@
                 <div class="project-consult__title">Индивидуальная консультация</div>
                 <div class="project-consult__text">Наши эксперты помогут Вам выбрать лучшую виллу и согласовать оптимальные условия покупки по этому проекту</div>
             </div>
-            <a href="#" class="project-consult__btn">
-                <img src="/localstatic/images/icon-whitearrowright.svg" alt="White right arrow icon">
+            <a href="#appl-popup" class="project-consult__btn popup-link">
+                <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
                 <span>Заказать консультацию</span>
             </a>
         </div>
     </div>
 </section>
-<section class="location project-location">
+<!-- <div class="popup-one popup-consult popup" id="consult-popup">
+    <div class="popup-one__container popup__container">
+        <div class="popup-one__head">
+            <div class="popup-one__logo"><img src="{% static 'images/icon-logo.svg' %}" alt="Logo icon"></div>
+            <div class="popup-one__close close-popup"><img src="{% static 'images/icon-popup_close_grey.svg' %}" alt="Close icon"></div>
+        </div>
+        <div class="popup-one__form-block">
+            <div class="popup-one__form__title">Оставьте свой номер телефона, и получите консультацию</div>
+            <form method="post" class="popup-one__form">{% csrf_token %}
+                <input type="phone" class="popup-one__form__field" placeholder="Ваш номер телефона" name="phone">
+                <button type="submit" class="popup-one__form__btn">Заказать консультацию</button>
+            </form>
+        </div>
+        <div class="popup-one__bot">
+            <div class="popup-one__bot__title">Или вы можете написать нам:</div>
+            <div class="popup-one__bot__btns">
+                <a href="https://t.me/Botanica_luxury_villas" class="popup-one__bot__btn"><div class="popup-one__bot__btn__icon"><img src="{% static 'images/icon-tg_white.svg' %}" alt="Telegram icon"></div><span>Telegram</span></a>
+                <a href="https://wa.me/66910591461" class="popup-one__bot__btn"><div class="popup-one__bot__btn__icon"><img src="{% static 'images/icon-whatsapp_white.svg' %}" alt="WhatsApp icon"></div><span>WhatsApp</span></a>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <section class="location project-location">
     <div class="location__container container">
         <div class="location__title">Локации наших проектов</div>
         <div class="location__map" style="background-image: url('{% static 'images/map.jpg' %}');">
@@ -337,7 +360,7 @@
             <div class="location__text">Нажмите на любой проект, чтобы перейти на его страницу</div>
         </div>
     </div>
-</section>
+</section> -->
 
 <script
     src="https://code.jquery.com/jquery-3.7.1.js"

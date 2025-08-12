@@ -70,21 +70,8 @@
                                 <span>Подробнее о проекте</span>
                             </a>
                             <div class="project__param-block">
-                                {% if project.villas_quantity|slice:"-1:" == "1" %}
-                                    <div class="project__parameter">{{ project.villas_quantity }} вилла</div>
-                                {% elif project.villas_quantity|slice:"-1:" > "1" and project.villas_quantity|slice:"-1:" < "5" %}
-                                    <div class="project__parameter">{{ project.villas_quantity }} виллы</div>
-                                {% else %}
-                                    <div class="project__parameter">{{ project.villas_quantity }} вилл</div>
-                                {% endif %}
-                                
-                                {% if project.villas_design_quantity|slice:"-1:" == "1" %}
-                                <div class="project__parameter">{{ project.villas_design_quantity }} дизайн вилл</div>
-                                {% elif project.villas_design_quantity|slice:"-1:" > "1" and project.villas_design_quantity|slice:"-1:" < "5" %}
-                                <div class="project__parameter">{{ project.villas_design_quantity }} дизайна вилл</div>
-                                {% else %}
-                                <div class="project__parameter">{{ project.villas_design_quantity }} дизайнов вилл</div>
-                                {% endif %}
+                                <div class="project__parameter">{{ project.villas_quantity }} {{ project.villa_ending }}</div>
+                                <div class="project__parameter">{{ project.villas_design_quantity }} {{ project.villa_design_ending }}</div>
                                 <div class="project__parameter">{{ project.min_square }} — {{ project.max_square }}м²</div>
                                 <div class="project__parameter">${{ project.min_price }} — ${{ project.max_price }}</div>
                                 {% for parameter in project.parametres.all %}
@@ -105,7 +92,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="project__video-block">
+                        <!-- <div class="project__video-block">
                             <div class="project__video-content">
                                 <div class="project__video-title">Узнать больше<br><span>«{{ project.title }}»</span></div>
                                 <a href="{{ project.video_url }}" class="project__video-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Arrow right"></a>
@@ -113,7 +100,7 @@
                             <a href="{{ project.video_url }}" class="project__video-div">
                                 <div class="project__video-icon-play"><img src="{% static 'images/icon-play.svg' %}" alt="Play video icon"></div>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
 </section>
             </div>

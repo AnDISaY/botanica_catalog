@@ -15,6 +15,8 @@ class Project(models.Model):
     max_price = models.PositiveIntegerField(verbose_name="Макс. цена")
     video_url = models.CharField(max_length=1000, verbose_name="Ссылка на видео")
     map_iframe = models.TextField(verbose_name="Ссылка на карту")
+    villa_ending = models.CharField(max_length=10, blank=True, null=True)
+    villa_design_ending = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
         return self.title

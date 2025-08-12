@@ -12,12 +12,20 @@
                 <div class="project-start__subheading">BOTANICA</div>
                 <div class="project-start__title">{{ project.title }}</div>
             </div>
-            <a href="#" class="project-start__request">
-                <img src="{% static 'images/icon-greyarrowright.svg' %}" alt="Grey right arrow icon">
-                <span>LEAVE A REQUEST</span>
+            <a href="#appl-popup" class="project-start__request popup-link">
+                <div class="project-start__request__ellipse1"></div>
+                <div class="project-start__request__ellipse2"></div>
+                <div class="project-start__request__ellipse3"></div>
+                <div class="project-start__request__ellipse4"></div>
+                <div class="project-start__request__content">
+                    <div class="project-start__request__image-text"><img src="{% static 'images/icon-yellowarrowright.svg' %}" alt="Yellow right arrow icon">submit</div>
+                    <span>application</span>
+                </div>
+                <!-- <img src="{% static 'images/icon-greyarrowright.svg' %}" alt="Grey right arrow icon">
+                <span>LEAVE A REQUEST</span> -->
             </a>
         </div>
-        <a href="#" class="project-start__request-mobile">
+        <a href="#appl-popup" class="project-start__request-mobile popup-link">
             <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="Grey right arrow icon">
             <span>LEAVE A REQUEST</span>
         </a>
@@ -25,25 +33,19 @@
 </section>
 <section class="project-descr">
     <div class="project-descr__container container">
-        <div class="project-descr__slider">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    {% for slide in project.images.all %}
-                        <div class="swiper-slide"><img src="{{ slide.image.url }}" alt="Фото галереи"></div>
-                    {% endfor %}
-                  <!-- <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div>
-                  <div class="swiper-slide"><img src="{{ project.main_image.url }}" alt=""></div> -->
+        {% if project.images.all|length > 0 %}
+            <div class="project-descr__slider">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        {% for slide in project.images.all %}
+                            <div class="swiper-slide"><img src="{{ slide.image.url }}" alt="Фото галереи"></div>
+                        {% endfor %}
+                    </div>
                 </div>
+                <div class="swiper-button-prev-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowleft.svg' %}" alt="Black left arrow icon"></div>
+                <div class="swiper-button-next-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Black right arrow icon"></div>
             </div>
-            <div class="swiper-button-prev-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowleft.svg' %}" alt="Black left arrow icon"></div>
-            <div class="swiper-button-next-custom project-slider-arrow"><img src="{% static 'images/icon-blackarrowright.svg' %}" alt="Black right arrow icon"></div>
-            <!-- <div class="project-descr__slider__arrows">
-                <div class="project-descr__slider__arrow swiper-button-prev-custom"><img src="{% static 'images/icon-sliderarrowleft-mobile.svg' %}" alt="Arrow left"></div>
-                <div class="project-descr__slider__arrow swiper-button-next-custom"><img src="{% static 'images/icon-sliderarrowright-mobile.svg' %}" alt="Arrow right"></div>
-            </div> -->
-        </div>
+        {% endif %}
         <div class="project-descr__content">
             <div class="project-descr__text">{{ project.description|linebreaks }}</div>
             <div class="project-descr__about">About the project</div>
@@ -102,28 +104,6 @@
                             </label>
                         </div>
                     </div>
-                    <!-- <div class="project-filter__range-wrapper project-filter__form__el">
-                        <div class="project-filter__input-title">Цена:</div>
-                        <div class="project-filter__number-input price-input">
-                            <div class="project-filter__field">
-                                <div class="project-filter__text">от</div>
-                                <input type="number" name="price-number" class="project-filter__number-input price-input-style input-min" value="2500000" min="0" max="10000000"><span>$</span>
-                            </div>
-                            <div class="project-filter__field">
-                                <div class="project-filter__text">до</div>
-                                <input type="number" name="price-number" class="project-filter__number-input price-input-style" value="7500000" min="0" max="10000000"><span>$</span>
-                            </div>
-                        </div>
-                        <div class="project-filter__slider">
-                            <div class="project-filter__progress__left"></div>
-                            <div class="project-filter__progress"></div>
-                            <div class="project-filter__progress__right"></div>
-                        </div>
-                        <div class="project-filter__range-input range-input-price">
-                            <input type="range" name="price-range" class="range-min" min="0" max="10000000" value="2500000" step="500">
-                            <input type="range" name="price-range" class="range-max" min="0" max="10000000" value="7500000" step="500">
-                        </div>
-                    </div> -->
                     <div class="project-filter__range-block">
                         <div class="project-filter__range-wrapper project-filter__form__el">
                             <div class="project-filter__input-title">Price:</div>
@@ -271,7 +251,7 @@
 </section>
 <section class="project-facilites">
     <div class="project-facilites__container container">
-            <div class="project-facilites__content">
+        <div class="project-facilites__content">
             <div class="project-facilites__title">Location facilites</div>
             <div class="project-facilites__grid">
                 {% for facility in project.facilities.all %}
@@ -311,14 +291,14 @@
                 <div class="project-consult__title">Individual consulting</div>
                 <div class="project-consult__text">Our experts will help you choose the best villa and agree on the optimal purchase conditions for this project</div>
             </div>
-            <a href="#" class="project-consult__btn">
-                <img src="/localstatic/images/icon-whitearrowright.svg" alt="White right arrow icon">
+            <a href="#appl-popup" class="project-consult__btn popup-link">
+                <img src="{% static 'images/icon-whitearrowright.svg' %}" alt="White right arrow icon">
                 <span>Get a consulting</span>
             </a>
         </div>
     </div>
 </section>
-<section class="location project-location">
+<!-- <section class="location project-location">
     <div class="location__container container">
         <div class="location__title">Our projects locations</div>
         <div class="location__map" style="background-image: url('{% static 'images/map.jpg' %}');">
@@ -352,7 +332,7 @@
             <div class="location__text">Click on any project to go to its page</div>
         </div>
     </div>
-</section>
+</section> -->
 
 <script
     src="https://code.jquery.com/jquery-3.7.1.js"
